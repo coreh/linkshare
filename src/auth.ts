@@ -16,7 +16,12 @@ export function getOrCreateSecret(projectRoot: string): string {
   }
 
   const secret = crypto.randomUUID() + crypto.randomUUID();
-  writeFileSync(secretPath, secret + "\n", { mode: 0o600 });
+  try {
+    writeFileSync(secretPath, secret + "\n", { mode: 0o600 });
+  } catch {
+    // Read-only filesystem (e.g. Vercel) — secret lives only in memory.
+    // Set AUTH_SECRET env var for persistent sessions.
+  }
   return secret;
 }
 

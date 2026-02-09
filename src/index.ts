@@ -132,23 +132,6 @@ async function handleGet(urlPath: string, cookieValue: string | undefined) {
   return htmlResponse(render404(catalogs), 404);
 }
 
-new Elysia()
-  .get("/", ({ cookie: { ls_auth } }) => {
-    return handleGet("/", ls_auth.value as string | undefined);
-  })
-  .get("/*", ({ params, cookie: { ls_auth } }) => {
-    const urlPath = "/" + (params["*"] || "");
-    return handleGet(urlPath, ls_auth.value as string | undefined);
-  })
-  .post("/", async ({ body, cookie: { ls_auth }, redirect }) => {
-    return handlePost("/", body, ls_auth, redirect);
-  })
-  .post("/*", async ({ params, body, cookie: { ls_auth }, redirect }) => {
-    const urlPath = "/" + (params["*"] || "");
-    return handlePost(urlPath, body, ls_auth, redirect);
-  })
-  .listen(PORT);
-
 type RedirectFn = (
   url: string,
   status?: 301 | 302 | 303 | 307 | 308,
@@ -206,9 +189,30 @@ async function handlePost(
   );
 }
 
-console.log(`LinkShare running at http://localhost:${PORT}`);
-console.log(`Serving content from ${CONTENT_DIR}`);
-console.log(`Loading themes from ${THEMES_DIR}`);
-if (isDev) {
-  console.log(`Development mode: content & themes reload on each request`);
+const app = new Elysia()
+  .get("/", ({ cookie: { ls_auth } }) => {
+    return handleGet("/", ls_auth.value as string | undefined);
+  })
+  .get("/*", ({ params, cookie: { ls_auth } }) => {
+    const urlPath = "/" + (params["*"] || "");
+    return handleGet(urlPath, ls_auth.value as string | undefined);
+  })
+  .post("/", async ({ body, cookie: { ls_auth }, redirect }) => {
+    return handlePost("/", body, ls_auth, redirect);
+  })
+  .post("/*", async ({ params, body, cookie: { ls_auth }, redirect }) => {
+    const urlPath = "/" + (params["*"] || "");
+    return handlePost(urlPath, body, ls_auth, redirect);
+  });
+
+if (import.meta.main) {
+  app.listen(PORT);
+  console.log(`LinkShare running at http://localhost:${PORT}`);
+  console.log(`Serving content from ${CONTENT_DIR}`);
+  console.log(`Loading themes from ${THEMES_DIR}`);
+  if (isDev) {
+    console.log(`Development mode: content & themes reload on each request`);
+  }
 }
+
+export default app;

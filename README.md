@@ -203,6 +203,32 @@ docker run -p 3000:3000 \
   linkshare
 ```
 
+### Vercel
+
+LinkShare requires the Bun runtime on Vercel. Setup:
+
+1. Link your project to Vercel:
+
+   ```bash
+   vc link
+   ```
+
+2. Set a random secret for signing authentication cookies. Without this, sessions are invalidated on each cold start.
+
+   ```bash
+   openssl rand -hex 32 | vc env add AUTH_SECRET production
+   ```
+
+(If the command above doesn't work for whatever reason, you can just manually add any random secret string to `AUTH_SECRET`)
+
+3. Deploy:
+
+   ```bash
+   vc deploy
+   ```
+
+Your `content/`, `themes/`, and `locales/` directories are bundled into the deployment. Content changes require a redeploy.
+
 ### fly.io
 
 ```bash
