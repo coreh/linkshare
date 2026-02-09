@@ -40,12 +40,15 @@ description = "Shared resources for the team"
 # password = "secret123"
 
 # Appearance
+# theme = "default"                # Theme name (see Themes below)
+# dark = "auto"                    # true, false, or "auto" (default: "auto")
 # background = "background.jpg"    # Local file or URL
 # background_color = "#0f172a"     # CSS color
 # logo = "logo.png"                # Local file or URL
 # font = "Inter"                   # Any Google Font
-# accent_color = "#6366f1"         # Accent color
-# theme = "dark"                   # "dark" or "light"
+# color = "violet"                 # Tailwind color palette name
+# accent_color = "#6366f1"         # Accent color (hex)
+# locale = "en"                    # Language code (see Localization below)
 # inherit = true                   # Inherit parent styling (default: true)
 
 # Links
@@ -116,6 +119,30 @@ url = "https://www.google.com/maps/embed?..."
 | `code` | `content`, `language` | Syntax-highlighted code snippet (highlight.js) |
 | `embed` | `url`, `height`, `description` | iframe embed (YouTube, Maps, etc.) |
 
+## Themes
+
+LinkShare ships with several built-in themes: `bare`, `book`, `carnival`, `chalk`, `christmas`, `comic-sans`, `cooking`, `default`, `dog`, `easter`, `halloween`, `kawaii`, `retro`, `sherlock`, `vaporwave`, and `win95`.
+
+Set a theme per-section in `config.toml`:
+
+```toml
+theme = "retro"
+```
+
+Each theme is a directory under `themes/` containing a `theme.toml`, Handlebars templates, and a `style.css`. You can create custom themes by adding new directories there.
+
+## Dark Mode
+
+The `dark` option is tri-state:
+
+- `"auto"` (default) — follows the user's system preference via `prefers-color-scheme`
+- `true` — always dark
+- `false` — always light
+
+```toml
+dark = true
+```
+
 ## Style Inheritance
 
 By default, child sections inherit their parent's styling (font, theme, colors, logo, background). Override any property in the child's `config.toml`, or set `inherit = false` to start fresh.
@@ -124,22 +151,56 @@ By default, child sections inherit their parent's styling (font, theme, colors, 
 
 Add `password = "your-password"` to any section's `config.toml`. The password check is **server-side** — protected content is never sent to the browser until authenticated. Auth tokens are stored in signed cookies (24h expiry).
 
+## Localization
+
+LinkShare supports multiple languages. Set `locale` per-section in `config.toml`:
+
+```toml
+locale = "pt-BR"
+```
+
+The locale is inherited by child sections. Available locales: `ar`, `de`, `el`, `en`, `es`, `fr`, `he`, `hi`, `hy`, `it`, `ja`, `ka`, `ko`, `pt-BR`, `th`, `zh-Hans`, `zh-Hant`.
+
 ## Environment Variables
 
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `PORT` | `3000` | Server port |
 | `CONTENT_DIR` | `./content` | Path to content directory |
+| `THEMES_DIR` | `./themes` | Path to themes directory |
+| `LOCALES_DIR` | `./locales` | Path to locales directory |
 | `AUTH_SECRET` | Auto-generated | Secret for signing auth cookies. Set this in production for persistent sessions across restarts. |
 | `NODE_ENV` | — | Set to `production` to cache content at startup |
 
 ## Deployment
 
-### Docker
+### Docker (pre-built image)
+
+A Docker image is published to GitHub Container Registry on every push to `main`. Pull it and bind-mount your content directory:
+
+```bash
+docker run -p 3000:3000 \
+  -v /path/to/your/content:/app/content \
+  -e AUTH_SECRET=your-secret-here \
+  ghcr.io/<owner>/linkshare:main
+```
+
+The bind mount shadows the image's built-in `/app/content`, so the container only sees your mounted files. You can also mount custom themes or locales:
+
+```bash
+docker run -p 3000:3000 \
+  -v /path/to/content:/app/content \
+  -v /path/to/themes:/app/themes \
+  ghcr.io/<owner>/linkshare:main
+```
+
+### Docker (build from source)
 
 ```bash
 docker build -t linkshare .
-docker run -p 3000:3000 linkshare
+docker run -p 3000:3000 \
+  -v /path/to/your/content:/app/content \
+  linkshare
 ```
 
 ### fly.io
@@ -169,6 +230,8 @@ In development mode, content is re-scanned on every request so you can edit `con
 
 - **[Bun](https://bun.sh)** — Runtime
 - **[Elysia](https://elysiajs.com)** — Web framework
+- **[Handlebars](https://handlebarsjs.com)** — Templating
 - **[Tailwind CSS](https://tailwindcss.com)** — Styling (Play CDN)
+- **[highlight.js](https://highlightjs.org)** — Code syntax highlighting
 - **[Google Fonts](https://fonts.google.com)** — Typography
 - **[smol-toml](https://github.com/nicolo-ribaudo/smol-toml)** — TOML parsing
