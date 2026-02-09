@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="{{dc "dark" ""}}">
+<html lang="{{locale}}" class="{{dc "dark" ""}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,7 +51,7 @@
 
     {{#if show_nav}}
     <nav class="ls-nav mb-6 text-sm {{muted}} flex items-center flex-wrap">
-      <a href="/" class="{{hover_text}} transition-colors">🏠 Home</a>
+      <a href="/" class="{{hover_text}} transition-colors">{{t "🏠 Home"}}</a>
       {{#each breadcrumbs}}
       <a href="{{path}}" class="{{../hover_text}} transition-colors">{{title}}</a>
       {{/each}}
@@ -73,7 +73,7 @@
       {{#if is_protected}}
       <div class="mt-3 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-500/10 border border-accent-500/20">
         <span class="text-accent-600 dark:text-accent-400">🔒</span>
-        <span class="text-sm {{muted}}">Password Protected</span>
+        <span class="text-sm {{muted}}">{{t "Password Protected"}}</span>
       </div>
       {{/if}}
     </header>
@@ -82,7 +82,7 @@
     <section class="mb-12">
       <h2 class="text-2xl font-semibold text-accent-700 dark:text-accent-300 mb-6 flex items-center gap-2">
         <span>📂</span>
-        <span>Sections</span>
+        <span>{{t "Sections"}}</span>
       </h2>
       <div class="grid gap-4 md:grid-cols-2">
         {{{children_html}}}
@@ -94,7 +94,7 @@
     <section>
       <h2 class="text-2xl font-semibold text-accent-700 dark:text-accent-300 mb-6 flex items-center gap-2">
         <span>🍽️</span>
-        <span>Items</span>
+        <span>{{t "Items"}}</span>
       </h2>
       <div class="space-y-4">
         {{{items_html}}}
@@ -103,7 +103,7 @@
     {{/if}}
 
     <footer class="mt-16 pt-8 border-t border-accent-500/20 text-center {{muted}} text-sm">
-      <p>Made with 🧑‍🍳 using LinkShare</p>
+      <p>{{t "Made with 🧑‍🍳 using LinkShare"}}</p>
     </footer>
 
   </div>

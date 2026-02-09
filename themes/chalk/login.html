@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="{{dc "dark" ""}}">
+<html lang="{{locale}}" class="{{dc "dark" ""}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,9 +38,9 @@
     <!-- Locked Classroom Notice -->
     <div class="text-center mb-8">
       <div class="text-7xl mb-4">🚪🔒</div>
-      <h1 class="text-3xl font-bold text-accent-200 mb-2">Classroom Locked</h1>
+      <h1 class="text-3xl font-bold text-accent-200 mb-2">{{t "Classroom Locked"}}</h1>
       <p class="{{muted}} text-lg">
-        Password required to enter "{{title}}"
+        {{t "Password required to enter \"{title}\"" title=title}}
       </p>
     </div>
 
@@ -48,7 +48,7 @@
     <form method="POST" class="space-y-6">
       <div>
         <label for="password" class="block text-sm font-medium text-accent-300 mb-2">
-          Enter Password
+          {{t "Enter Password"}}
         </label>
         <input
           type="password"
@@ -57,7 +57,7 @@
           required
           autofocus
           class="w-full px-4 py-3 rounded-lg border-2 {{input}} focus:outline-none focus:border-accent-400 transition-colors"
-          placeholder="Password..."
+          placeholder="{{t "Password..."}}"
         >
       </div>
 
@@ -71,7 +71,7 @@
         type="submit"
         class="w-full px-6 py-3 bg-accent-600 hover:bg-accent-500 text-white font-medium rounded-lg border-2 border-dashed border-accent-400/50 hover:border-accent-300 transition-all shadow-lg hover:shadow-xl"
       >
-        Unlock Classroom
+        {{t "Unlock Classroom"}}
       </button>
     </form>
 
@@ -79,11 +79,11 @@
     <div class="mt-8 text-center">
       {{#if parent}}
         <a href="{{parent.path}}" class="{{muted}} {{hover_text}} text-sm transition-colors inline-block">
-          ← Go Back
+          {{t "← Go Back"}}
         </a>
       {{else}}
         <a href="/" class="{{muted}} {{hover_text}} text-sm transition-colors inline-block">
-          ← Back to Home
+          {{t "← Back to Home"}}
         </a>
       {{/if}}
     </div>

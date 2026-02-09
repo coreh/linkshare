@@ -2,14 +2,14 @@
 {{#if show_nav}}
 <div class="flex items-center justify-between mb-6">
   {{#if parent}}
-  <a href="{{parent.path}}" class="text-sm {{muted}} {{hover_text}} transition-colors">&larr; Back</a>
+  <a href="{{parent.path}}" class="text-sm {{muted}} {{hover_text}} transition-colors">&larr; {{t "Back"}}</a>
   {{else}}
   <div></div>
   {{/if}}
   {{#if is_protected}}
   <form method="POST" action="{{path}}" class="inline">
     <input type="hidden" name="action" value="logout">
-    <button type="submit" class="text-xs {{muted}} {{hover_text}} transition-colors">Logout</button>
+    <button type="submit" class="text-xs {{muted}} {{hover_text}} transition-colors">{{t "Logout"}}</button>
   </form>
   {{/if}}
 </div>
@@ -34,5 +34,5 @@
 
 {{!-- Footer --}}
 <div class="text-center mt-12 pb-4">
-  <p class="text-xs {{muted}}">Powered by LinkShare</p>
+  <p class="text-xs {{muted}}">{{t "Powered by LinkShare"}}</p>
 </div>

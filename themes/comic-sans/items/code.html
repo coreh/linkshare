@@ -6,10 +6,11 @@
     </h3>
     {{/if}}
     <button
-      onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})"
+      data-copy-label="{{t "Copy"}}" data-copied-label="{{t "Copied!"}}"
+      onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{var b=this;b.textContent=b.dataset.copiedLabel;setTimeout(()=>b.textContent=b.dataset.copyLabel,1500)})"
       class="ls-button px-3 py-1 text-sm font-bold {{dc "bg-lime-500 text-fuchsia-950 hover:bg-lime-400" "bg-fuchsia-600 text-white hover:bg-fuchsia-700"}} transition-all"
     >
-      Copy
+      {{t "Copy"}}
     </button>
   </div>
   <div class="overflow-x-auto rounded-lg">

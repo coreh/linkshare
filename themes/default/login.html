@@ -3,7 +3,7 @@
   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
   </svg>
-  Back
+  {{t "Back"}}
 </a>
 {{/if}}
 
@@ -14,18 +14,18 @@
     </svg>
   </div>
   <h1 class="text-2xl font-bold mb-2">{{title}}</h1>
-  <p class="{{muted}}">This section is password protected</p>
+  <p class="{{muted}}">{{t "This section is password protected"}}</p>
 </div>
 
 <form method="POST" action="{{path}}" class="backdrop-blur-sm border rounded-xl p-6 {{card_static}}">
   {{#if error}}
   <div class="mb-4 text-red-400 text-sm text-center bg-red-500/10 border border-red-500/20 rounded-lg p-3">{{error}}</div>
   {{/if}}
-  <label class="block mb-2 text-sm font-medium" for="password">Password</label>
+  <label class="block mb-2 text-sm font-medium" for="password">{{t "Password"}}</label>
   <input type="password" name="password" id="password" required autofocus
          class="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-accent-500 mb-4 {{input}}"
-         placeholder="Enter password">
+         placeholder="{{t "Enter password"}}">
   <button type="submit" class="w-full py-3 px-4 rounded-lg font-semibold text-white transition-all hover:opacity-90 active:scale-[0.98] bg-accent-500">
-    Unlock
+    {{t "Unlock"}}
   </button>
 </form>

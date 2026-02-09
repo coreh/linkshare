@@ -1,0 +1,14 @@
+title = "English"
+description = "Default locale"
+locale = "en"
+color = "blue"
+
+[[items]]
+title = "GitHub"
+url = "https://github.com"
+description = "Where the world builds software"
+
+[[items]]
+title = "About"
+type = "text"
+content = "This section demonstrates the English locale, which is the default. All strings are shown in their original form."

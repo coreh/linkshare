@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="{{dc "dark" ""}}">
+<html lang="{{locale}}" class="{{dc "dark" ""}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,10 +52,10 @@
       <div class="text-center mb-6">
         <div class="text-6xl mb-4">🔐</div>
         <h1 class="text-3xl font-bold text-accent-600 dark:text-accent-400 mb-2">
-          Recipe Box Locked
+          {{t "Recipe Box Locked"}}
         </h1>
         <p class="{{muted}}">
-          This section is password protected
+          {{t "This section is password protected"}}
         </p>
       </div>
 
@@ -77,7 +77,7 @@
       <form method="POST" action="{{path}}" class="space-y-4">
         <div>
           <label for="password" class="block text-sm font-medium {{muted}} mb-2">
-            Enter Password
+            {{t "Enter Password"}}
           </label>
           <input
             type="password"
@@ -86,7 +86,7 @@
             required
             autofocus
             class="w-full px-4 py-3 rounded-lg border-2 {{input}} focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all"
-            placeholder="Your secret ingredient..."
+            placeholder="{{t "Your secret ingredient..."}}"
           >
         </div>
 
@@ -95,7 +95,7 @@
           class="w-full px-6 py-3 bg-accent-600 hover:bg-accent-700 dark:bg-accent-500 dark:hover:bg-accent-600 text-white font-semibold rounded-lg transition-all ls-button flex items-center justify-center gap-2"
         >
           <span>🔓</span>
-          <span>Unlock Recipe Box</span>
+          <span>{{t "Unlock Recipe Box"}}</span>
         </button>
       </form>
 
@@ -103,7 +103,7 @@
       <div class="mt-6 text-center">
         <a href="{{parent.path}}" class="text-sm {{muted}} {{hover_text}} transition-colors inline-flex items-center gap-2">
           <span>←</span>
-          <span>Back to previous section</span>
+          <span>{{t "Back to previous section"}}</span>
         </a>
       </div>
       {{/if}}
@@ -111,7 +111,7 @@
     </div>
 
     <div class="mt-6 text-center {{muted}} text-sm">
-      <p>Made with 🧑‍🍳 using LinkShare</p>
+      <p>{{t "Made with 🧑‍🍳 using LinkShare"}}</p>
     </div>
 
   </div>

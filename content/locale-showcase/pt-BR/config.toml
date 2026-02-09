@@ -1,0 +1,14 @@
+title = "Português (Brasil)"
+description = "Localização em português brasileiro"
+locale = "pt-BR"
+color = "green"
+
+[[items]]
+title = "GitHub"
+url = "https://github.com"
+description = "Onde o mundo constrói software"
+
+[[items]]
+title = "Sobre"
+type = "text"
+content = "Esta seção demonstra a localização em português brasileiro. Todos os elementos da interface são exibidos em português."

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="{{dc "dark" ""}}">
+<html lang="{{locale}}" class="{{dc "dark" ""}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,12 +51,12 @@
       <div class="text-center mb-8">
         <div class="text-6xl mb-4">🔒</div>
         <h1 class="text-3xl font-bold mb-2 ls-title ls-shadow-text">{{title}}</h1>
-        <p class="{{muted}} text-sm">This case file is locked. Enter the password to proceed.</p>
+        <p class="{{muted}} text-sm">{{t "This case file is locked. Enter the password to proceed."}}</p>
       </div>
 
       <form method="POST" class="space-y-4">
         <div>
-          <label for="password" class="block text-sm font-medium mb-2 {{muted}}">Password</label>
+          <label for="password" class="block text-sm font-medium mb-2 {{muted}}">{{t "Password"}}</label>
           <input
             type="password"
             id="password"
@@ -64,7 +64,7 @@
             required
             autofocus
             class="{{input}} w-full px-4 py-3 rounded-lg border-2 transition-colors focus:outline-none focus:ring-2 focus:ring-accent-500"
-            placeholder="Enter the secret code..."
+            placeholder="{{t "Enter the secret code..."}}"
           >
         </div>
 
@@ -78,14 +78,14 @@
           type="submit"
           class="w-full {{dc "bg-emerald-700 hover:bg-emerald-600 text-emerald-100" "bg-emerald-600 hover:bg-emerald-700 text-white"}} font-bold py-3 px-6 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 {{dc "focus:ring-offset-[#0a1a10]" "focus:ring-offset-emerald-50"}}"
         >
-          Unlock Case File
+          {{t "Unlock Case File"}}
         </button>
       </form>
 
       {{#if parent.path}}
       <div class="mt-6 text-center">
         <a href="{{parent.path}}" class="text-sm {{hover_text}} transition-colors">
-          ← Return to previous case
+          {{t "← Return to previous case"}}
         </a>
       </div>
       {{/if}}
@@ -93,7 +93,7 @@
     </div>
 
     <div class="text-center mt-8 {{muted}} text-xs italic">
-      "You see, but you do not observe."
+      {{t "\"You see, but you do not observe.\""}}
     </div>
 
   </div>

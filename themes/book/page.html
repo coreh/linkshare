@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="{{dc "dark" ""}}">
+<html lang="{{locale}}" class="{{dc "dark" ""}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,7 +54,7 @@
       {{#if show_nav}}
       <nav class="mb-8">
         <a href="{{parent.path}}" class="{{muted}} {{hover_text}} text-sm transition-colors">
-          ← Back to {{parent.title}}
+          {{t "← Back to {title}" title=parent.title}}
         </a>
       </nav>
       {{/if}}
@@ -74,7 +74,7 @@
       {{#if is_protected}}
       <div class="mt-6 inline-flex items-center gap-2 px-4 py-2 {{card_static}} border rounded-lg text-sm {{muted}}">
         <span>🔒</span>
-        <span>Protected Section</span>
+        <span>{{t "Protected Section"}}</span>
       </div>
       {{/if}}
     </header>
@@ -85,7 +85,7 @@
     <!-- Subsections -->
     {{#if children_html}}
     <section class="mb-16">
-      <h2 class="text-2xl font-bold mb-8 text-center {{muted}}">Chapters</h2>
+      <h2 class="text-2xl font-bold mb-8 text-center {{muted}}">{{t "Chapters"}}</h2>
       <div class="grid gap-6 md:grid-cols-2">
         {{{children_html}}}
       </div>
@@ -109,10 +109,10 @@
       const container = btn.closest('[data-embed-container]');
       container.classList.toggle('ls-embed-maximized');
       if (container.classList.contains('ls-embed-maximized')) {
-        btn.textContent = '🗗';
+        btn.textContent = btn.dataset.minimizeLabel || '🗗';
         document.body.style.overflow = 'hidden';
       } else {
-        btn.textContent = '🗖';
+        btn.textContent = btn.dataset.maximizeLabel || '🗖';
         document.body.style.overflow = '';
       }
     }

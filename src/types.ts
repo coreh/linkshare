@@ -31,6 +31,7 @@ export interface SectionConfig {
   logo?: string;
   font?: string;
   accent_color?: string;
+  locale?: string;
   inherit?: boolean;
   items?: ItemConfig[];
 }
@@ -46,6 +47,7 @@ export interface ResolvedStyle {
   background_color_light?: string;
   logo?: string;
   accent_color: string;
+  locale: string;
 }
 
 export interface Section {

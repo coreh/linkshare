@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="{{dc "dark" ""}}">
+<html lang="{{locale}}" class="{{dc "dark" ""}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,13 +81,13 @@
       <nav class="mt-6 flex items-center justify-center gap-4 text-sm">
         {{#if parent.path}}
         <a href="{{parent.path}}" class="{{hover_text}} transition-colors">
-          🦇 Back to {{parent.title}}
+          {{t "🦇 Back to {title}" title=parent.title}}
         </a>
         {{/if}}
         {{#if is_protected}}
         <form method="POST" action="{{path}}/logout" class="inline">
           <button type="submit" class="{{hover_text}} transition-colors">
-            🕷️ Logout
+            {{t "🕷️ Logout"}}
           </button>
         </form>
         {{/if}}
@@ -99,7 +99,7 @@
     {{#if children_html}}
     <div class="mb-12">
       <h2 class="text-3xl font-bold mb-6 {{dc "text-orange-300" "text-orange-700"}}">
-        🕸️ Sections
+        {{t "🕸️ Sections"}}
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         {{{children_html}}}
@@ -116,8 +116,8 @@
 
     <!-- Footer -->
     <footer class="mt-16 text-center {{muted}} text-sm">
-      <p>👻 Beware... you've entered the haunted LinkShare 🎃</p>
-      <p class="mt-2">Created with <a href="https://github.com/linkshare/linkshare" class="{{hover_text}} underline">LinkShare</a></p>
+      <p>{{t "👻 Beware... you've entered the haunted LinkShare 🎃"}}</p>
+      <p class="mt-2">{{t "Created with"}} <a href="https://github.com/linkshare/linkshare" class="{{hover_text}} underline">LinkShare</a></p>
     </footer>
   </div>
 
@@ -128,10 +128,10 @@
       const container = btn.closest('[data-embed-container]');
       container.classList.toggle('ls-embed-maximized');
       if (container.classList.contains('ls-embed-maximized')) {
-        btn.textContent = 'Minimize';
+        btn.textContent = btn.dataset.minimizeLabel;
         document.body.style.overflow = 'hidden';
       } else {
-        btn.textContent = 'Maximize';
+        btn.textContent = btn.dataset.maximizeLabel;
         document.body.style.overflow = '';
       }
     }

@@ -12,10 +12,11 @@
       {{/if}}
     </div>
     <button
-      onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})"
+      data-copy-label="{{t "Copy"}}" data-copied-label="{{t "Copied!"}}"
+      onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{var b=this;b.textContent=b.dataset.copiedLabel;setTimeout(()=>b.textContent=b.dataset.copyLabel,1500)})"
       class="flex-shrink-0 {{dc "bg-amber-700/50 hover:bg-amber-600/50 text-amber-200" "bg-amber-200 hover:bg-amber-300 text-amber-900"}} px-3 py-1.5 rounded-lg text-xs font-semibold transition"
     >
-      Copy
+      {{t "Copy"}}
     </button>
   </div>
 

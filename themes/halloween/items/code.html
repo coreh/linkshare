@@ -5,10 +5,11 @@
       💀 {{title}}
     </h3>
     <button
-      onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})"
+      data-copy-label="{{t "Copy"}}" data-copied-label="{{t "Copied!"}}"
+      onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{var b=this;b.textContent=b.dataset.copiedLabel;setTimeout(()=>b.textContent=b.dataset.copyLabel,1500)})"
       class="px-3 py-1 text-sm {{dc "bg-orange-900/50 hover:bg-orange-800/50 text-orange-300" "bg-orange-100 hover:bg-orange-200 text-orange-700"}} rounded transition-colors"
     >
-      Copy
+      {{t "Copy"}}
     </button>
   </div>
   {{/if}}

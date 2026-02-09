@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="{{dc "dark" ""}}">
+<html lang="{{locale}}" class="{{dc "dark" ""}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -102,7 +102,7 @@
     <nav class="mb-8 flex items-center justify-between">
       {{#if parent.path}}
       <a href="{{parent.path}}" class="{{hover_text}} flex items-center gap-2">
-        <span>← Back</span>
+        <span>{{t "← Back"}}</span>
       </a>
       {{else}}
       <div></div>
@@ -132,8 +132,8 @@
 
     <!-- Footer -->
     <footer class="mt-16 text-center {{muted}}">
-      <p class="text-lg">⭐ Wishing you a magical holiday season! ⭐</p>
-      <p class="text-sm mt-2">🎁 Powered by LinkShare 🎁</p>
+      <p class="text-lg">{{t "⭐ Wishing you a magical holiday season! ⭐"}}</p>
+      <p class="text-sm mt-2">{{t "🎁 Powered by LinkShare 🎁"}}</p>
     </footer>
   </div>
 

@@ -11,10 +11,15 @@
     "lint:fix": "eslint src/ --fix",
     "format": "prettier --check 'src/**/*.ts'",
     "format:fix": "prettier --write 'src/**/*.ts'",
-    "check": "bun run typecheck && bun run lint && bun run format"
+    "check": "bun run typecheck && bun run lint && bun run format",
+    "i18n:extract": "bun run scripts/i18n-extract.ts",
+    "i18n:compile": "bun run scripts/i18n-compile.ts",
+    "i18n": "bun run i18n:extract && bun run i18n:compile",
+    "postinstall": "bun run i18n:compile"
   },
   "dependencies": {
     "elysia": "1.4.22",
+    "gettext-parser": "^8.0.0",
     "handlebars": "^4.7.8",
     "smol-toml": "1.6.0"
   },

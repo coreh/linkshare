@@ -4,7 +4,7 @@
   {{#if parent}}
   <a href="{{parent.path}}" class="inline-flex items-center gap-2 text-sm {{muted}} {{hover_text}} transition-colors group">
     <span class="group-hover:-translate-x-1 transition-transform">&larr;</span>
-    <span>go back</span>
+    <span>{{t "go back"}}</span>
   </a>
   {{else}}
   <div></div>
@@ -16,7 +16,7 @@
       <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
       </svg>
-      Logout
+      {{t "Logout"}}
     </button>
   </form>
   {{/if}}
@@ -42,5 +42,5 @@
 
 {{!-- Footer --}}
 <div class="text-center mt-10 text-xs {{dc "text-white/30" "text-accent-400/50"}}">
-  made with &#128150; and &#10024; sparkles
+  {{t "made with 💖 and ✨ sparkles"}}
 </div>

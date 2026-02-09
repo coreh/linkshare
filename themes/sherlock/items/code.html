@@ -3,19 +3,21 @@
     <div class="px-6 pt-4 pb-2 flex items-center justify-between {{dc "bg-emerald-950/50" "bg-emerald-100/50"}}">
       <h3 class="text-lg font-bold ls-title">{{title}}</h3>
       <button
-        onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})"
+        data-copy-label="{{t "Copy"}}" data-copied-label="{{t "Copied!"}}"
+        onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{var b=this;b.textContent=b.dataset.copiedLabel;setTimeout(()=>b.textContent=b.dataset.copyLabel,1500)})"
         class="text-xs px-3 py-1 {{dc "bg-emerald-800 hover:bg-emerald-700" "bg-emerald-200 hover:bg-emerald-300"}} rounded transition-colors"
       >
-        Copy
+        {{t "Copy"}}
       </button>
     </div>
   {{else}}
     <div class="px-6 pt-4 pb-2 flex justify-end {{dc "bg-emerald-950/50" "bg-emerald-100/50"}}">
       <button
-        onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})"
+        data-copy-label="{{t "Copy"}}" data-copied-label="{{t "Copied!"}}"
+        onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{var b=this;b.textContent=b.dataset.copiedLabel;setTimeout(()=>b.textContent=b.dataset.copyLabel,1500)})"
         class="text-xs px-3 py-1 {{dc "bg-emerald-800 hover:bg-emerald-700" "bg-emerald-200 hover:bg-emerald-300"}} rounded transition-colors"
       >
-        Copy
+        {{t "Copy"}}
       </button>
     </div>
   {{/if}}

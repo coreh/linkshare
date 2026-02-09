@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="{{dc "dark" ""}}">
+<html lang="{{locale}}" class="{{dc "dark" ""}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,7 +74,7 @@
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
         </svg>
-        Back
+        {{t "Back"}}
       </a>
     </nav>
     {{/if}}
@@ -83,7 +83,7 @@
       <div class="text-center mb-6">
         <div class="text-6xl mb-4 {{#if error}}wiggle{{/if}}">🥚</div>
         <h1 class="text-3xl font-bold mb-2">{{title}}</h1>
-        <p class="{{muted}}">Password required to access this section</p>
+        <p class="{{muted}}">{{t "Password required to access this section"}}</p>
       </div>
 
       {{#if error}}
@@ -98,7 +98,7 @@
       <form method="POST" action="{{path}}/login" class="space-y-4">
         <div>
           <label for="password" class="block text-sm font-medium mb-2 {{muted}}">
-            Password
+            {{t "Password"}}
           </label>
           <input
             type="password"
@@ -107,7 +107,7 @@
             required
             autofocus
             class="{{input}} w-full px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-accent-500 transition-all"
-            placeholder="Enter password"
+            placeholder="{{t "Enter password"}}"
           >
         </div>
 
@@ -115,13 +115,13 @@
           type="submit"
           class="w-full {{dc "bg-accent-600 hover:bg-accent-700" "bg-accent-600 hover:bg-accent-700"}} text-white font-semibold py-3 px-4 rounded-xl transition-colors shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98]"
         >
-          Unlock Spring Surprise 🐣
+          {{t "Unlock Spring Surprise 🐣"}}
         </button>
       </form>
     </div>
 
     <p class="text-center {{muted}} text-sm mt-6">
-      Made with LinkShare 🌷
+      {{t "Made with LinkShare 🌷"}}
     </p>
   </div>
 </body>

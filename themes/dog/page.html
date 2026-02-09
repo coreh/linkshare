@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="{{dc "dark" ""}}">
+<html lang="{{locale}}" class="{{dc "dark" ""}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -76,11 +76,11 @@
     <nav class="mb-8 flex items-center justify-center gap-3 text-sm">
       {{#if parent.path}}
       <a href="{{parent.path}}" class="{{hover_text}} {{dc "text-amber-400" "text-amber-600"}} flex items-center gap-1">
-        <span>← Back</span>
+        <span>{{t "← Back"}}</span>
       </a>
       <span class="{{muted}}">•</span>
       {{/if}}
-      <a href="/" class="{{hover_text}} {{dc "text-amber-400" "text-amber-600"}}">🏠 Home</a>
+      <a href="/" class="{{hover_text}} {{dc "text-amber-400" "text-amber-600"}}">{{t "🏠 Home"}}</a>
     </nav>
     {{/if}}
 
@@ -88,7 +88,7 @@
     {{#if children_html}}
     <div class="mb-12">
       <h2 class="text-2xl font-bold mb-6 {{dc "text-amber-300" "text-amber-900"}} flex items-center gap-2">
-        <span>📂</span> Sections
+        <span>📂</span> {{t "Sections"}}
       </h2>
       <div class="grid gap-4 sm:grid-cols-2">
         {{{children_html}}}
@@ -100,7 +100,7 @@
     {{#if items_html}}
     <div>
       <h2 class="text-2xl font-bold mb-6 {{dc "text-amber-300" "text-amber-900"}} flex items-center gap-2">
-        <span>🦴</span> Items
+        <span>🦴</span> {{t "Items"}}
       </h2>
       <div class="space-y-4">
         {{{items_html}}}
@@ -116,7 +116,7 @@
         <span class="ls-dog-paw" style="animation-delay: 0.4s;">🐾</span>
         <span class="ls-dog-paw" style="animation-delay: 0.6s;">🐾</span>
       </div>
-      <p class="{{muted}} text-sm">Made with 🐶 by LinkShare</p>
+      <p class="{{muted}} text-sm">{{t "Made with 🐶 by LinkShare"}}</p>
     </footer>
   </div>
 </body>

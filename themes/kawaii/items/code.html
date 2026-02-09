@@ -4,9 +4,10 @@
       <span class="text-base">&#128187;</span>
       <span class="font-semibold text-sm">{{title}}</span>
     </div>
-    <button onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})"
+    <button data-copy-label="{{t "Copy"}}" data-copied-label="{{t "Copied!"}}"
+            onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{var b=this;b.textContent=b.dataset.copiedLabel;setTimeout(()=>b.textContent=b.dataset.copyLabel,1500)})"
             class="text-xs {{dc "text-white/50 hover:text-white/80" "text-accent-400 hover:text-accent-600"}} transition-colors px-2 py-1 rounded-xl">
-      Copy
+      {{t "Copy"}}
     </button>
   </div>
   <div class="ls-code">

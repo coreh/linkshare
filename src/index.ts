@@ -11,9 +11,12 @@ import {
   getThemeDefaults,
 } from "./theme-engine";
 import type { Section, ScanResult } from "./types";
+import { loadCatalogs } from "./i18n";
+import type { Catalogs } from "./i18n";
 
 const CONTENT_DIR = resolve(process.env.CONTENT_DIR || "./content");
 const THEMES_DIR = resolve(process.env.THEMES_DIR || "./themes");
+const LOCALES_DIR = resolve(process.env.LOCALES_DIR || "./locales");
 const AUTH_SECRET = getOrCreateSecret(resolve("."));
 const PORT = parseInt(process.env.PORT || "3000", 10);
 const isDev = process.env.NODE_ENV !== "production";
@@ -21,6 +24,7 @@ const isDev = process.env.NODE_ENV !== "production";
 interface AppState {
   scan: ScanResult;
   themes: Awaited<ReturnType<typeof loadThemes>>;
+  catalogs: Catalogs;
 }
 
 let cached: AppState | null = null;
@@ -31,7 +35,8 @@ async function getState(): Promise<AppState> {
     const scan = await scanContent(CONTENT_DIR, (name) =>
       getThemeDefaults(name, themes),
     );
-    cached = { scan, themes };
+    const catalogs = await loadCatalogs(LOCALES_DIR);
+    cached = { scan, themes, catalogs };
   }
   return cached;
 }
@@ -86,9 +91,10 @@ function htmlResponse(body: string, status = 200): Response {
 }
 
 async function handleGet(urlPath: string, cookieValue: string | undefined) {
-  const { sections, themes } = await getState().then((s) => ({
+  const { sections, themes, catalogs } = await getState().then((s) => ({
     sections: s.scan.sections,
     themes: s.themes,
+    catalogs: s.catalogs,
   }));
   const authedPaths = getAuthedPaths(cookieValue, AUTH_SECRET);
 
@@ -96,14 +102,14 @@ async function handleGet(urlPath: string, cookieValue: string | undefined) {
   if (section) {
     if (!isAuthorized(section, authedPaths)) {
       const locker = findLockingSection(section, authedPaths);
-      return htmlResponse(renderLogin(locker, themes));
+      return htmlResponse(renderLogin(locker, themes, catalogs));
     }
-    return htmlResponse(renderPage(section, themes));
+    return htmlResponse(renderPage(section, themes, catalogs));
   }
 
   // Block config files
   if (urlPath.endsWith(".toml")) {
-    return htmlResponse(render404(), 404);
+    return htmlResponse(render404(catalogs), 404);
   }
 
   // Serve static file from content directory
@@ -111,7 +117,7 @@ async function handleGet(urlPath: string, cookieValue: string | undefined) {
 
   // Prevent path traversal
   if (!resolve(filePath).startsWith(CONTENT_DIR)) {
-    return htmlResponse(render404(), 404);
+    return htmlResponse(render404(catalogs), 404);
   }
 
   const file = Bun.file(filePath);
@@ -123,7 +129,7 @@ async function handleGet(urlPath: string, cookieValue: string | undefined) {
     return new Response(file);
   }
 
-  return htmlResponse(render404(), 404);
+  return htmlResponse(render404(catalogs), 404);
 }
 
 new Elysia()
@@ -154,12 +160,12 @@ async function handlePost(
   authCookie: Cookie<unknown>,
   redirect: RedirectFn,
 ) {
-  const { scan, themes } = await getState();
+  const { scan, themes, catalogs } = await getState();
   const { sections } = scan;
 
   const section = sections.get(urlPath);
   if (!section) {
-    return htmlResponse(render404(), 404);
+    return htmlResponse(render404(catalogs), 404);
   }
 
   const formData = body as Record<string, string> | null;
@@ -194,7 +200,10 @@ async function handlePost(
     return redirect(urlPath);
   }
 
-  return htmlResponse(renderLogin(section, themes, "Incorrect password"), 401);
+  return htmlResponse(
+    renderLogin(section, themes, catalogs, "Incorrect password"),
+    401,
+  );
 }
 
 console.log(`LinkShare running at http://localhost:${PORT}`);

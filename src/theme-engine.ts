@@ -3,6 +3,8 @@ import { parse } from "smol-toml";
 import { readdir } from "fs/promises";
 import { join } from "path";
 import type { Section, ItemConfig, ResolvedStyle } from "./types";
+import { createTranslator, DEFAULT_LOCALE } from "./i18n";
+import type { Catalogs, Translator } from "./i18n";
 
 /* ==================== Types ==================== */
 
@@ -529,6 +531,26 @@ Handlebars.registerHelper(
   },
 );
 
+// {{t "Some string"}} or {{t "Back to {title}" title=parent.title}}
+// Reads the bound translator from options.data.root.__t
+Handlebars.registerHelper(
+  "t",
+  function (msgid: string, options: Handlebars.HelperOptions) {
+    const translator: Translator | undefined = options.data?.root?.__t;
+    let translated = translator ? translator(msgid) : msgid;
+    // Replace {key} placeholders with hash arguments
+    if (options.hash) {
+      for (const [key, value] of Object.entries(options.hash)) {
+        translated = translated.replace(
+          new RegExp(`\\{${key}\\}`, "g"),
+          String(value),
+        );
+      }
+    }
+    return translated;
+  },
+);
+
 /* ==================== Public API ==================== */
 
 export function getThemeDefaults(
@@ -553,12 +575,14 @@ export function listThemes(themes: Map<string, CompiledTheme>): string[] {
 export function renderPage(
   section: Section,
   themes: Map<string, CompiledTheme>,
+  catalogs: Catalogs,
 ): string {
   const theme = themes.get(section.style.theme) || themes.get("default");
   if (!theme) return fallback404();
 
   const { style, config, children, path } = section;
   const vars = getVars(theme, style.dark);
+  const __t = createTranslator(catalogs, style.locale);
 
   const isAuto = style.dark === "auto";
   // When auto, pass dark=false so {{#if dark}} picks light as the base,
@@ -576,6 +600,7 @@ export function renderPage(
         has_password: !!child.config.password,
         dark: darkForTemplate,
         ...autoFlag,
+        __t,
         ...vars,
       }),
     )
@@ -590,7 +615,7 @@ export function renderPage(
       const type = item.type || "link";
       const tmpl = theme.items[type];
       if (!tmpl) return "";
-      return tmpl(buildItemContext(item, type, section, vars));
+      return tmpl(buildItemContext(item, type, section, vars, __t));
     })
     .join("\n");
 
@@ -615,6 +640,8 @@ export function renderPage(
     show_nav: !!(section.parent || section.protected),
     children_html: childrenHtml,
     items_html: itemsHtml,
+    locale: style.locale,
+    __t,
     ...vars,
   });
 
@@ -627,6 +654,7 @@ export function renderPage(
       hasEmbed,
       extraStyles: theme.css,
       bodyClass: theme.config.options?.body_class,
+      locale: style.locale,
     },
     body,
   );
@@ -635,6 +663,7 @@ export function renderPage(
 export function renderLogin(
   section: Section,
   themes: Map<string, CompiledTheme>,
+  catalogs: Catalogs,
   error?: string,
 ): string {
   const theme = themes.get(section.style.theme) || themes.get("default");
@@ -642,6 +671,7 @@ export function renderLogin(
 
   const { style, config, path } = section;
   const vars = getVars(theme, style.dark);
+  const __t = createTranslator(catalogs, style.locale);
   const isAuto = style.dark === "auto";
   const darkForTemplate = isAuto ? false : style.dark;
   const autoFlag = isAuto ? { auto_dark: true } : {};
@@ -662,6 +692,8 @@ export function renderLogin(
       ? { path: section.parent.path, title: section.parent.config.title }
       : null,
     error: error || "",
+    locale: style.locale,
+    __t,
     ...vars,
   });
 
@@ -672,13 +704,14 @@ export function renderLogin(
       sectionPath: path,
       extraStyles: theme.css,
       bodyClass: theme.config.options?.body_class,
+      locale: style.locale,
     },
     body,
   );
 }
 
-export function render404(): string {
-  return fallback404();
+export function render404(catalogs?: Catalogs, locale?: string): string {
+  return fallback404(catalogs, locale);
 }
 
 /* ==================== Internal Helpers ==================== */
@@ -760,6 +793,7 @@ function buildItemContext(
   type: string,
   section: Section,
   vars: Record<string, string>,
+  __t: Translator,
 ): Record<string, unknown> {
   const path = section.path;
   const rawUrl = item.url || "#";
@@ -778,6 +812,7 @@ function buildItemContext(
     dark: section.style.dark === "auto" ? false : section.style.dark,
     auto_dark: section.style.dark === "auto" ? true : false,
     type,
+    __t,
     ...vars,
   };
 }
@@ -792,6 +827,7 @@ interface ShellOpts {
   hasEmbed?: boolean;
   extraStyles?: string;
   bodyClass?: string;
+  locale?: string;
 }
 
 function layoutShell(opts: ShellOpts, body: string): string {
@@ -877,8 +913,10 @@ function layoutShell(opts: ShellOpts, body: string): string {
   </script>`
     : "";
 
+  const lang = opts.locale || DEFAULT_LOCALE;
+
   return `<!DOCTYPE html>
-<html lang="en"${dark === true ? ' class="dark"' : ""}>
+<html lang="${lang}"${dark === true ? ' class="dark"' : ""}>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -946,7 +984,10 @@ function layoutShell(opts: ShellOpts, body: string): string {
 </html>`;
 }
 
-function fallback404(): string {
+function fallback404(catalogs?: Catalogs, locale?: string): string {
+  const __t = catalogs
+    ? createTranslator(catalogs, locale || DEFAULT_LOCALE)
+    : (s: string) => s;
   const style: ResolvedStyle = {
     theme: "default",
     color: "indigo",
@@ -954,17 +995,23 @@ function fallback404(): string {
     font: "Inter",
     background_color: "#0f172a",
     accent_color: "#6366f1",
+    locale: locale || DEFAULT_LOCALE,
   };
   return layoutShell(
-    { title: "Not Found", style, sectionPath: "/" },
+    {
+      title: __t("Not Found"),
+      style,
+      sectionPath: "/",
+      locale: locale || DEFAULT_LOCALE,
+    },
     `
     <div class="text-center py-20">
       <div class="text-6xl font-bold mb-4 text-white/20">404</div>
-      <h1 class="text-2xl font-bold mb-2">Page Not Found</h1>
-      <p class="text-white/60 mb-6">The page you're looking for doesn't exist.</p>
+      <h1 class="text-2xl font-bold mb-2">${e(__t("Page Not Found"))}</h1>
+      <p class="text-white/60 mb-6">${e(__t("The page you're looking for doesn't exist."))}</p>
       <a href="/" class="inline-flex items-center gap-2 text-accent-400 hover:text-accent-300 transition-colors">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-        Go home
+        ${e(__t("Go home"))}
       </a>
     </div>`,
   );

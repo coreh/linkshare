@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="{{dc "dark" ""}}">
+<html lang="{{locale}}" class="{{dc "dark" ""}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -68,13 +68,13 @@
       <div class="text-center mb-6">
         <div class="text-6xl mb-4">🎁</div>
         <h1 class="text-3xl font-bold mb-2">{{title}}</h1>
-        <p class="{{muted}}">This content is password protected</p>
+        <p class="{{muted}}">{{t "This content is password protected"}}</p>
       </div>
 
       <form method="POST" action="{{path}}" class="space-y-4">
         <div>
           <label for="password" class="block text-sm font-medium mb-2">
-            Password
+            {{t "Password"}}
           </label>
           <input
             type="password"
@@ -83,7 +83,7 @@
             required
             autofocus
             class="{{input}} w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-accent-500 focus:border-transparent"
-            placeholder="Enter password..."
+            placeholder="{{t "Enter password..."}}"
           >
         </div>
 
@@ -97,14 +97,14 @@
           type="submit"
           class="w-full bg-accent-600 {{hover_text}} text-white font-medium py-2 px-4 rounded-lg hover:bg-accent-700 transition-colors"
         >
-          Unlock 🔓
+          {{t "Unlock 🔓"}}
         </button>
       </form>
 
       {{#if parent.path}}
       <div class="mt-6 text-center">
         <a href="{{parent.path}}" class="{{muted}} {{hover_text}} text-sm">
-          ← Go back
+          {{t "← Go back"}}
         </a>
       </div>
       {{/if}}

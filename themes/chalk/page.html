@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="{{dc "dark" ""}}">
+<html lang="{{locale}}" class="{{dc "dark" ""}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,7 +54,7 @@
       {{#if show_nav}}
         {{#if parent}}
           <a href="{{parent.path}}" class="inline-block mb-4 {{muted}} {{hover_text}} text-sm transition-colors">
-            ← Back to Class
+            {{t "← Back to Class"}}
           </a>
         {{/if}}
       {{/if}}
@@ -75,7 +75,7 @@
     {{#if children_html}}
       <div class="mb-12">
         <h2 class="text-2xl font-bold text-accent-300 mb-4 flex items-center gap-2">
-          <span class="text-3xl">📚</span> Sections
+          <span class="text-3xl">📚</span> {{t "Sections"}}
         </h2>
         <div class="grid gap-4 sm:grid-cols-2">
           {{{children_html}}}
@@ -93,10 +93,10 @@
     <!-- Footer -->
     <footer class="mt-16 pt-6 border-t-4 border-dashed border-accent-400/30 text-center {{muted}}">
       <p class="text-lg">
-        {{#if items_html}}Class dismissed! 🎓{{else}}Start writing on the board...{{/if}}
+        {{#if items_html}}{{t "Class dismissed! 🎓"}}{{else}}{{t "Start writing on the board..."}}{{/if}}
       </p>
       <p class="text-sm mt-2">
-        <a href="/" class="{{hover_text}} transition-colors">← Back to Home</a>
+        <a href="/" class="{{hover_text}} transition-colors">{{t "← Back to Home"}}</a>
       </p>
     </footer>
   </div>

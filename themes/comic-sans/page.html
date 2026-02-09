@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="{{dc "dark" ""}}">
+<html lang="{{locale}}" class="{{dc "dark" ""}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,7 +81,7 @@
     {{#if show_nav}}
     <nav class="mb-8 {{muted}} ls-wobble">
       <a href="{{#if parent}}{{parent.path}}{{else}}/{{/if}}" class="{{hover_text}} text-sm transition-colors">
-        ← BACK TO {{#if parent}}{{parent.title}}{{else}}HOME{{/if}}
+        {{#if parent}}{{t "← BACK TO {title}" title=parent.title}}{{else}}{{t "← BACK TO HOME"}}{{/if}}
       </a>
     </nav>
     {{/if}}
@@ -98,7 +98,7 @@
       {{/if}}
       {{#if is_protected}}
       <div class="mt-4 inline-block px-4 py-2 bg-lime-500/20 border-2 border-lime-400 rounded-full text-lime-300 text-sm">
-        🔒 PROTECTED ZONE
+        {{t "🔒 PROTECTED ZONE"}}
       </div>
       {{/if}}
     </header>
@@ -106,7 +106,7 @@
     {{#if children_html}}
     <section class="mb-12">
       <h2 class="text-3xl font-bold mb-6 {{dc "text-cyan-300" "text-fuchsia-600"}} ls-fun-shadow">
-        <span class="ls-star">✨</span>SECTIONS<span class="ls-star">✨</span>
+        <span class="ls-star">✨</span>{{t "SECTIONS"}}<span class="ls-star">✨</span>
       </h2>
       <div class="space-y-4">
         {{{children_html}}}
@@ -117,7 +117,7 @@
     {{#if items_html}}
     <section>
       <h2 class="text-3xl font-bold mb-6 {{dc "text-lime-300" "text-fuchsia-600"}} ls-fun-shadow">
-        <span class="ls-star">⭐</span>ITEMS<span class="ls-star">⭐</span>
+        <span class="ls-star">⭐</span>{{t "ITEMS"}}<span class="ls-star">⭐</span>
       </h2>
       <div class="space-y-6">
         {{{items_html}}}
@@ -127,10 +127,10 @@
 
     <footer class="mt-16 pt-8 border-t-4 border-dashed {{dc "border-fuchsia-800" "border-fuchsia-300"}} text-center">
       <p class="text-sm ls-rainbow font-bold">
-        ★ POWERED BY COMIC SANS ★
+        {{t "★ POWERED BY COMIC SANS ★"}}
       </p>
       <p class="text-xs {{muted}} mt-2">
-        Made with LinkShare
+        {{t "Made with LinkShare"}}
       </p>
     </footer>
   </div>

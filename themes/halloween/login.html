@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="{{dc "dark" ""}}">
+<html lang="{{locale}}" class="{{dc "dark" ""}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,9 +65,9 @@
       <div class="text-center mb-8">
         <div class="text-6xl mb-4 halloween-ghost">👻</div>
         <h1 class="text-4xl font-bold mb-2 {{dc "text-orange-400" "text-orange-600"}}">
-          🎃 Protected Area 🎃
+          {{t "🎃 Protected Area 🎃"}}
         </h1>
-        <p class="{{muted}}">Enter the password... if you dare...</p>
+        <p class="{{muted}}">{{t "Enter the password... if you dare..."}}</p>
       </div>
 
       <form method="POST" class="space-y-6">
@@ -81,7 +81,7 @@
 
         <div>
           <label for="password" class="block mb-2 font-bold {{dc "text-orange-300" "text-orange-700"}}">
-            🕷️ Password:
+            {{t "🕷️ Password:"}}
           </label>
           <input
             type="password"
@@ -90,7 +90,7 @@
             required
             autofocus
             class="{{input}} w-full px-4 py-3 rounded-lg border-2 font-sans focus:outline-none focus:ring-2 {{dc "focus:ring-orange-500" "focus:ring-orange-400"}} transition-all"
-            placeholder="Speak friend and enter..."
+            placeholder="{{t "Speak friend and enter..."}}"
           >
         </div>
 
@@ -98,21 +98,21 @@
           type="submit"
           class="w-full {{dc "bg-orange-600 hover:bg-orange-500" "bg-orange-500 hover:bg-orange-600"}} text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105 shadow-lg"
         >
-          🦇 Enter the Haunted Section 🦇
+          {{t "🦇 Enter the Haunted Section 🦇"}}
         </button>
       </form>
 
       {{#if parent.path}}
       <div class="mt-6 text-center">
         <a href="{{parent.path}}" class="{{hover_text}} transition-colors text-sm">
-          🕸️ Flee back to safety 🕸️
+          {{t "🕸️ Flee back to safety 🕸️"}}
         </a>
       </div>
       {{/if}}
     </div>
 
     <p class="text-center mt-8 {{muted}} text-sm">
-      🎃 This section is protected by spooky magic 🎃
+      {{t "🎃 This section is protected by spooky magic 🎃"}}
     </p>
   </div>
 </body>

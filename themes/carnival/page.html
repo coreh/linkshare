@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="{{dc "dark" ""}}">
+<html lang="{{locale}}" class="{{dc "dark" ""}}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -66,10 +66,10 @@
         <!-- Navigation -->
         {{#if show_nav}}
         <nav class="mb-8 {{muted}}">
-            <a href="/" class="{{hover_text}} transition-colors">🏠 Home</a>
+            <a href="/" class="{{hover_text}} transition-colors">{{t "🏠 Home"}}</a>
             {{#if parent.path}}
             <span class="mx-2">/</span>
-            <a href="{{parent.path}}" class="{{hover_text}} transition-colors">↑ Back</a>
+            <a href="{{parent.path}}" class="{{hover_text}} transition-colors">{{t "↑ Back"}}</a>
             {{/if}}
         </nav>
         {{/if}}
@@ -89,7 +89,7 @@
             {{/if}}
             {{#if is_protected}}
             <div class="mt-4 inline-block px-4 py-2 {{dc "bg-yellow-500/20 text-yellow-300" "bg-purple-200 text-purple-800"}} rounded-full text-sm">
-                🔒 Protected Section
+                {{t "🔒 Protected Section"}}
             </div>
             {{/if}}
         </header>
@@ -97,7 +97,7 @@
         <!-- Child Sections -->
         {{#if children_html}}
         <div class="mb-12">
-            <h2 class="text-3xl font-bold mb-6 {{dc "text-purple-200" "text-purple-700"}}">Sections</h2>
+            <h2 class="text-3xl font-bold mb-6 {{dc "text-purple-200" "text-purple-700"}}">{{t "Sections"}}</h2>
             <div class="grid gap-4">
                 {{{children_html}}}
             </div>
@@ -114,7 +114,7 @@
 
     <!-- Footer -->
     <footer class="text-center py-8 {{muted}}">
-        <p>🎪 Powered by LinkShare 🎪</p>
+        <p>{{t "🎪 Powered by LinkShare 🎪"}}</p>
     </footer>
 
     <script>

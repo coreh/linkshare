@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="{{dc "dark" ""}}">
+<html lang="{{locale}}" class="{{dc "dark" ""}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,7 +65,7 @@
     {{#if parent}}
     <nav class="mb-8 {{muted}} text-center">
       <a href="{{parent.path}}" class="{{hover_text}} text-sm transition-colors">
-        ← BACK TO {{parent.title}}
+        {{t "← BACK TO {title}" title=parent.title}}
       </a>
     </nav>
     {{/if}}
@@ -74,10 +74,10 @@
       <div class="text-center mb-8">
         <div class="text-6xl mb-4 ls-wobble">🔐</div>
         <h1 class="text-4xl font-bold mb-3 ls-fun-shadow {{dc "text-fuchsia-200" "text-fuchsia-700"}}">
-          <span class="ls-star">★</span>SECRET ZONE<span class="ls-star">★</span>
+          <span class="ls-star">★</span>{{t "SECRET ZONE"}}<span class="ls-star">★</span>
         </h1>
         <p class="text-lg {{muted}}">{{title}}</p>
-        <p class="text-sm {{muted}} mt-2">Enter the magic password!</p>
+        <p class="text-sm {{muted}} mt-2">{{t "Enter the magic password!"}}</p>
       </div>
 
       {{#if error}}
@@ -89,7 +89,7 @@
       <form method="POST" action="{{path}}" class="space-y-6">
         <div>
           <label for="password" class="block text-sm font-bold mb-2 {{dc "text-fuchsia-300" "text-fuchsia-700"}}">
-            PASSWORD:
+            {{t "PASSWORD:"}}
           </label>
           <input
             type="password"
@@ -98,7 +98,7 @@
             required
             autofocus
             class="{{input}} ls-input w-full px-4 py-3 focus:outline-none focus:ring-4 focus:ring-lime-400/50 transition-all"
-            placeholder="Type password here..."
+            placeholder="{{t "Type password here..."}}"
           >
         </div>
 
@@ -106,13 +106,13 @@
           type="submit"
           class="ls-button w-full py-3 px-6 font-bold text-lg {{dc "bg-lime-500 text-fuchsia-950 hover:bg-lime-400" "bg-fuchsia-600 text-white hover:bg-fuchsia-700"}} transition-all"
         >
-          🚀 ENTER!
+          {{t "🚀 ENTER!"}}
         </button>
       </form>
 
       <div class="mt-6 text-center">
         <p class="text-xs {{muted}} ls-rainbow">
-          ★ AUTHORIZED PERSONNEL ONLY ★
+          {{t "★ AUTHORIZED PERSONNEL ONLY ★"}}
         </p>
       </div>
     </div>

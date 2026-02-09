@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="{{dc "dark" ""}}">
+<html lang="{{locale}}" class="{{dc "dark" ""}}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,10 +57,10 @@
     <div class="container mx-auto px-4 max-w-md">
         <!-- Navigation -->
         <nav class="mb-8 {{muted}} text-center">
-            <a href="/" class="{{hover_text}} transition-colors">🏠 Home</a>
+            <a href="/" class="{{hover_text}} transition-colors">{{t "🏠 Home"}}</a>
             {{#if parent.path}}
             <span class="mx-2">/</span>
-            <a href="{{parent.path}}" class="{{hover_text}} transition-colors">↑ Back</a>
+            <a href="{{parent.path}}" class="{{hover_text}} transition-colors">{{t "↑ Back"}}</a>
             {{/if}}
         </nav>
 
@@ -68,7 +68,7 @@
             <div class="text-center mb-8">
                 <div class="text-6xl mb-4 ls-carnival-mask">🎭</div>
                 <h1 class="text-3xl font-bold mb-2 ls-carnival-title {{dc "text-yellow-300" "text-purple-800"}}">{{title}}</h1>
-                <p class="{{muted}}">This celebration is protected</p>
+                <p class="{{muted}}">{{t "This celebration is protected"}}</p>
             </div>
 
             {{#if error}}
@@ -79,14 +79,14 @@
 
             <form method="POST" action="{{path}}">
                 <div class="mb-6">
-                    <label for="password" class="block mb-2 {{dc "text-purple-200" "text-purple-700"}} font-semibold">Password</label>
+                    <label for="password" class="block mb-2 {{dc "text-purple-200" "text-purple-700"}} font-semibold">{{t "Password"}}</label>
                     <input
                         type="password"
                         id="password"
                         name="password"
                         required
                         class="{{input}} w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 {{dc "focus:ring-yellow-400" "focus:ring-purple-500"}} transition-all"
-                        placeholder="Enter password to join the party"
+                        placeholder="{{t "Enter password to join the party"}}"
                         autofocus
                     >
                 </div>
@@ -94,13 +94,13 @@
                     type="submit"
                     class="w-full {{dc "bg-gradient-to-r from-purple-600 to-yellow-500 hover:from-purple-500 hover:to-yellow-400 text-white" "bg-gradient-to-r from-purple-600 to-yellow-500 hover:from-purple-700 hover:to-yellow-600 text-white"}} font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105 shadow-lg"
                 >
-                    🎉 Enter the Carnival
+                    {{t "🎉 Enter the Carnival"}}
                 </button>
             </form>
         </div>
 
         <div class="text-center mt-8 {{muted}} text-sm">
-            🎪 Protected by LinkShare 🎪
+            {{t "🎪 Protected by LinkShare 🎪"}}
         </div>
     </div>
 

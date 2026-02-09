@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="{{dc "dark" ""}}">
+<html lang="{{locale}}" class="{{dc "dark" ""}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,14 +50,14 @@
       <!-- Library card header -->
       <div class="text-center mb-8">
         <div class="text-6xl mb-4">🔖</div>
-        <h1 class="text-2xl font-bold mb-2">Library Access</h1>
-        <p class="{{muted}} text-sm">This chapter is protected</p>
+        <h1 class="text-2xl font-bold mb-2">{{t "Library Access"}}</h1>
+        <p class="{{muted}} text-sm">{{t "This chapter is protected"}}</p>
       </div>
 
       <!-- Navigation -->
       <nav class="mb-6 text-center">
         <a href="{{parent.path}}" class="{{muted}} {{hover_text}} text-sm transition-colors">
-          ← Return to {{parent.title}}
+          {{t "← Return to {title}" title=parent.title}}
         </a>
       </nav>
 
@@ -65,7 +65,7 @@
       <form method="POST" action="{{path}}" class="space-y-6">
         <div>
           <label for="password" class="block text-sm font-medium mb-2 {{muted}}">
-            Password
+            {{t "Password"}}
           </label>
           <input
             type="password"
@@ -74,7 +74,7 @@
             required
             autofocus
             class="w-full px-4 py-3 rounded-lg border {{input}} focus:outline-none focus:ring-2 focus:ring-accent-500 transition-all"
-            placeholder="Enter the library code"
+            placeholder="{{t "Enter the library code"}}"
           >
         </div>
 
@@ -88,13 +88,13 @@
           type="submit"
           class="w-full bg-accent-600 hover:bg-accent-700 text-white font-medium py-3 px-6 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 {{dc "focus:ring-offset-[#1c1208]" "focus:ring-offset-[#fefce8]"}}"
         >
-          Enter Library
+          {{t "Enter Library"}}
         </button>
       </form>
 
       <!-- Decorative footer -->
       <div class="mt-8 pt-6 border-t {{dc "border-amber-700/20" "border-amber-200"}} text-center">
-        <p class="{{muted}} text-xs">📚 Protected Content</p>
+        <p class="{{muted}} text-xs">{{t "📚 Protected Content"}}</p>
       </div>
     </div>
   </div>

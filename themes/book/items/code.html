@@ -3,13 +3,14 @@
     {{#if title}}
     <h3 class="font-bold text-sm">{{title}}</h3>
     {{else}}
-    <span class="{{muted}} text-sm">Code</span>
+    <span class="{{muted}} text-sm">{{t "Code"}}</span>
     {{/if}}
     <button
-      onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})"
+      data-copy-label="{{t "Copy"}}" data-copied-label="{{t "Copied!"}}"
+      onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{var b=this;b.textContent=b.dataset.copiedLabel;setTimeout(()=>b.textContent=b.dataset.copyLabel,1500)})"
       class="px-3 py-1 text-xs font-medium {{dc "bg-amber-800 hover:bg-amber-700" "bg-amber-200 hover:bg-amber-300"}} rounded transition-colors"
     >
-      Copy
+      {{t "Copy"}}
     </button>
   </div>
   <div class="overflow-x-auto">

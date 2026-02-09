@@ -122,6 +122,7 @@ function resolveStyle(
           background_color_dark: themeDefaults.background_color_dark,
           background_color_light: themeDefaults.background_color_light,
           accent_color: COLOR_500[themeDefaults.color] || "#6366f1",
+          locale: "en",
         };
 
   const color = config.color ?? base.color;
@@ -137,5 +138,6 @@ function resolveStyle(
     background_color_light: base.background_color_light,
     logo: config.logo ?? (inherit ? base.logo : undefined),
     accent_color: config.accent_color ?? COLOR_500[color] ?? base.accent_color,
+    locale: config.locale ?? base.locale,
   };
 }

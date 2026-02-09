@@ -11,9 +11,10 @@
     </div>
     <button
       onclick="toggleMaximize(this)"
+      data-maximize-label="{{t "Maximize"}}" data-minimize-label="{{t "Minimize"}}"
       class="ls-embed-maximize px-3 py-1 text-sm {{dc "bg-orange-900/50 hover:bg-orange-800/50 text-orange-300" "bg-orange-100 hover:bg-orange-200 text-orange-700"}} rounded transition-colors"
     >
-      Maximize
+      {{t "Maximize"}}
     </button>
   </div>
   {{/if}}

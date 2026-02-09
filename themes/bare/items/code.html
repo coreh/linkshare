@@ -1,9 +1,10 @@
 <div class="border {{card_static}}">
   <div class="flex items-center justify-between px-3 py-2 border-b {{card_static}}">
     <span class="text-sm font-medium">{{title}}</span>
-    <button onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})"
+    <button data-copy-label="{{t "Copy"}}" data-copied-label="{{t "Copied!"}}"
+            onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{var b=this;b.textContent=b.dataset.copiedLabel;setTimeout(()=>b.textContent=b.dataset.copyLabel,1500)})"
             class="text-xs {{muted}} {{hover_text}} transition-colors">
-      Copy
+      {{t "Copy"}}
     </button>
   </div>
   <div class="ls-code">

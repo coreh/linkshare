@@ -13,9 +13,10 @@
     </div>
     <button
       onclick="toggleMaximize(this)"
+      data-maximize-label="{{t "Maximize"}}" data-minimize-label="{{t "Minimize"}}"
       class="ls-embed-maximize flex-shrink-0 {{dc "bg-amber-700/50 hover:bg-amber-600/50 text-amber-200" "bg-amber-200 hover:bg-amber-300 text-amber-900"}} px-3 py-1.5 rounded-lg text-xs font-semibold transition"
     >
-      Maximize
+      {{t "Maximize"}}
     </button>
   </div>
 
@@ -42,18 +43,18 @@ function toggleMaximize(btn) {
 
   if (document.fullscreenElement) {
     document.exitFullscreen();
-    btn.textContent = 'Maximize';
+    btn.textContent = btn.dataset.maximizeLabel;
   } else {
     iframe.parentElement.requestFullscreen().catch(err => {
       alert('Could not enter fullscreen mode: ' + err.message);
     });
-    btn.textContent = 'Minimize';
+    btn.textContent = btn.dataset.minimizeLabel;
   }
 }
 
 document.addEventListener('fullscreenchange', () => {
   document.querySelectorAll('.ls-embed-maximize').forEach(btn => {
-    btn.textContent = document.fullscreenElement ? 'Minimize' : 'Maximize';
+    btn.textContent = document.fullscreenElement ? btn.dataset.minimizeLabel : btn.dataset.maximizeLabel;
   });
 });
 </script>

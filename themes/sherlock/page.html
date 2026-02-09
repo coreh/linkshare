@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="{{dc "dark" ""}}">
+<html lang="{{locale}}" class="{{dc "dark" ""}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -69,17 +69,17 @@
     <nav class="mb-8 flex items-center justify-center gap-4 text-sm">
       {{#if parent.path}}
         <a href="{{parent.path}}" class="{{hover_text}} transition-colors flex items-center gap-1">
-          ← Back
+          {{t "← Back"}}
         </a>
       {{/if}}
-      <a href="/" class="{{hover_text}} transition-colors">Home</a>
+      <a href="/" class="{{hover_text}} transition-colors">{{t "Home"}}</a>
     </nav>
     {{/if}}
 
     <!-- Child Sections -->
     {{#if children_html}}
     <section class="mb-12">
-      <h2 class="text-2xl font-bold mb-6 {{dc "text-emerald-300" "text-emerald-800"}} ls-title">Case Files</h2>
+      <h2 class="text-2xl font-bold mb-6 {{dc "text-emerald-300" "text-emerald-800"}} ls-title">{{t "Case Files"}}</h2>
       <div class="grid gap-4">
         {{{children_html}}}
       </div>
@@ -96,9 +96,9 @@
     <!-- Footer - Sherlock Quote -->
     <footer class="mt-16 pt-8 border-t {{dc "border-emerald-800/30" "border-emerald-200/50"}} text-center">
       <div class="ls-quote {{muted}} max-w-2xl mx-auto">
-        "The world is full of obvious things which nobody by any chance ever observes."
+        {{t "\"The world is full of obvious things which nobody by any chance ever observes.\""}}
       </div>
-      <p class="mt-4 text-xs {{muted}}">— Sherlock Holmes</p>
+      <p class="mt-4 text-xs {{muted}}">{{t "— Sherlock Holmes"}}</p>
     </footer>
 
   </div>
@@ -110,11 +110,11 @@
       if (container.classList.contains('ls-maximized')) {
         container.classList.remove('ls-maximized', 'fixed', 'inset-0', 'z-50', 'bg-black/95', 'p-8');
         container.querySelector('.relative').classList.remove('h-full');
-        btn.textContent = 'Maximize';
+        btn.textContent = btn.dataset.maximizeLabel;
       } else {
         container.classList.add('ls-maximized', 'fixed', 'inset-0', 'z-50', 'bg-black/95', 'p-8');
         container.querySelector('.relative').classList.add('h-full');
-        btn.textContent = 'Close';
+        btn.textContent = btn.dataset.minimizeLabel;
       }
     }
   </script>

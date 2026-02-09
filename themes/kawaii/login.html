@@ -1,14 +1,14 @@
 {{#if parent}}
 <a href="{{parent.path}}" class="inline-flex items-center gap-2 mb-6 text-sm {{muted}} {{hover_text}} transition-colors group">
   <span class="group-hover:-translate-x-1 transition-transform">&larr;</span>
-  <span>go back</span>
+  <span>{{t "go back"}}</span>
 </a>
 {{/if}}
 
 <div class="text-center mb-8">
   <div class="text-5xl mb-4 kawaii-float">&#128274;</div>
   <h1 class="text-2xl font-bold {{dc "text-white" "text-accent-800"}}">&#10024; {{title}} &#10024;</h1>
-  <p class="mt-2 text-sm {{dc "text-white/60" "text-accent-600/60"}}">this area is password protected &#128110;&#8205;&#9792;&#65039;</p>
+  <p class="mt-2 text-sm {{dc "text-white/60" "text-accent-600/60"}}">{{t "this area is password protected 💂‍♀️"}}</p>
 </div>
 
 <div class="border-2 rounded-3xl p-6 {{card_static}}">
@@ -17,14 +17,14 @@
     <div class="text-red-500 text-sm text-center bg-red-100/20 rounded-2xl p-2">&#10060; {{error}}</div>
     {{/if}}
     <div>
-      <label class="block text-sm font-medium mb-2 {{dc "text-white/60" "text-accent-600/60"}}">enter the secret password &#128273;</label>
+      <label class="block text-sm font-medium mb-2 {{dc "text-white/60" "text-accent-600/60"}}">{{t "enter the secret password 🔑"}}</label>
       <input type="password" name="password" required autofocus autocomplete="current-password"
              class="w-full rounded-2xl border-2 px-4 py-3 text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent-400 focus:border-accent-400 {{input}}"
-             placeholder="type it here...">
+             placeholder="{{t "type it here..."}}">
     </div>
     <button type="submit"
             class="w-full rounded-2xl px-4 py-3 text-sm font-bold text-white transition-all duration-300 hover:scale-[1.03] hover:shadow-lg {{dc "bg-accent-600 hover:bg-accent-500" "bg-accent-500 hover:bg-accent-400"}}">
-      let me in! &#128640;
+      {{t "let me in! 🚀"}}
     </button>
   </form>
 </div>
