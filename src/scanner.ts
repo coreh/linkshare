@@ -72,6 +72,11 @@ async function scanDirectory(
       .sort((a, b) => a.name.localeCompare(b.name));
 
     for (const entry of sorted) {
+      if (entry.name === "assets" && urlPath === "/") {
+        console.warn(
+          `Warning: content directory "/assets" conflicts with theme asset route /assets/*. It will be shadowed.`,
+        );
+      }
       const childPath =
         urlPath === "/" ? `/${entry.name}` : `${urlPath}/${entry.name}`;
       const childDir = join(dir, entry.name);

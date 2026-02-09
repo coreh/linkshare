@@ -603,6 +603,7 @@ export function renderPage(
   // and auto_dark=true so templates can use {{dc}} helper.
   const darkForTemplate = isAuto ? false : style.dark;
   const autoFlag = isAuto ? { auto_dark: true } : {};
+  const theme_assets = `/assets/${style.theme}`;
 
   // Pre-render child section cards
   const childrenHtml = children
@@ -614,6 +615,7 @@ export function renderPage(
         has_password: !!child.config.password,
         dark: darkForTemplate,
         ...autoFlag,
+        theme_assets,
         __t,
         ...vars,
       }),
@@ -629,7 +631,9 @@ export function renderPage(
       const type = item.type || "link";
       const tmpl = theme.items[type];
       if (!tmpl) return "";
-      return tmpl(buildItemContext(item, type, section, vars, __t));
+      return tmpl(
+        buildItemContext(item, type, section, vars, __t, theme_assets),
+      );
     })
     .join("\n");
 
@@ -654,6 +658,7 @@ export function renderPage(
     show_nav: !!(section.parent || section.protected),
     children_html: childrenHtml,
     items_html: itemsHtml,
+    theme_assets,
     locale: style.locale,
     dir: dirForLocale(style.locale),
     __t,
@@ -695,6 +700,7 @@ export function renderLogin(
     style.background_color_dark || style.background_color || "#0f172a";
   const loginBgLight =
     style.background_color_light || style.background_color || "#ffffff";
+  const theme_assets = `/assets/${style.theme}`;
 
   const body = theme.login({
     title: config.title,
@@ -707,6 +713,7 @@ export function renderLogin(
       ? { path: section.parent.path, title: section.parent.config.title }
       : null,
     error: error || "",
+    theme_assets,
     locale: style.locale,
     dir: dirForLocale(style.locale),
     __t,
@@ -810,6 +817,7 @@ function buildItemContext(
   section: Section,
   vars: Record<string, string>,
   __t: Translator,
+  theme_assets: string,
 ): Record<string, unknown> {
   const path = section.path;
   const rawUrl = item.url || "#";
@@ -828,6 +836,7 @@ function buildItemContext(
     dark: section.style.dark === "auto" ? false : section.style.dark,
     auto_dark: section.style.dark === "auto" ? true : false,
     type,
+    theme_assets,
     __t,
     ...vars,
   };

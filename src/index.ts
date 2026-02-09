@@ -190,6 +190,26 @@ async function handlePost(
 }
 
 const app = new Elysia()
+  .get("/assets/*", async ({ params }) => {
+    const rest = params["*"] || "";
+    const slashIdx = rest.indexOf("/");
+    if (slashIdx < 0) return new Response("Not Found", { status: 404 });
+
+    const themeName = rest.slice(0, slashIdx);
+    const filePath = rest.slice(slashIdx + 1);
+    if (!themeName || !filePath)
+      return new Response("Not Found", { status: 404 });
+
+    const resolved = resolve(join(THEMES_DIR, themeName, "assets", filePath));
+    const assetsRoot = resolve(join(THEMES_DIR, themeName, "assets"));
+    if (!resolved.startsWith(assetsRoot + "/") && resolved !== assetsRoot) {
+      return new Response("Not Found", { status: 404 });
+    }
+
+    const file = Bun.file(resolved);
+    if (await file.exists()) return new Response(file);
+    return new Response("Not Found", { status: 404 });
+  })
   .get("/", ({ cookie: { ls_auth } }) => {
     return handleGet("/", ls_auth.value as string | undefined);
   })
