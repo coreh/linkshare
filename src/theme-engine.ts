@@ -6,6 +6,15 @@ import type { Section, ItemConfig, ResolvedStyle } from "./types";
 import { createTranslator, DEFAULT_LOCALE } from "./i18n";
 import type { Catalogs, Translator } from "./i18n";
 
+const RTL_LOCALES = new Set(["ar", "he", "fa", "ur"]);
+
+/** Returns "rtl" or "ltr" based on the locale's script direction. */
+function dirForLocale(locale: string): "rtl" | "ltr" {
+  // Check the base language tag (e.g. "ar" from "ar-EG")
+  const lang = locale.split("-")[0];
+  return RTL_LOCALES.has(lang) ? "rtl" : "ltr";
+}
+
 /* ==================== Types ==================== */
 
 export interface ThemeDefaults {
@@ -646,6 +655,7 @@ export function renderPage(
     children_html: childrenHtml,
     items_html: itemsHtml,
     locale: style.locale,
+    dir: dirForLocale(style.locale),
     __t,
     ...vars,
   });
@@ -698,6 +708,7 @@ export function renderLogin(
       : null,
     error: error || "",
     locale: style.locale,
+    dir: dirForLocale(style.locale),
     __t,
     ...vars,
   });
@@ -919,9 +930,10 @@ function layoutShell(opts: ShellOpts, body: string): string {
     : "";
 
   const lang = opts.locale || DEFAULT_LOCALE;
+  const dir = dirForLocale(lang);
 
   return `<!DOCTYPE html>
-<html lang="${lang}"${dark === true ? ' class="dark"' : ""}>
+<html lang="${lang}" dir="${dir}"${dark === true ? ' class="dark"' : ""}>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1015,7 +1027,7 @@ function fallback404(catalogs?: Catalogs, locale?: string): string {
       <h1 class="text-2xl font-bold mb-2">${e(__t("Page Not Found"))}</h1>
       <p class="text-white/60 mb-6">${e(__t("The page you're looking for doesn't exist."))}</p>
       <a href="/" class="inline-flex items-center gap-2 text-accent-400 hover:text-accent-300 transition-colors">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        <svg class="w-4 h-4 rtl:scale-x-[-1]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
         ${e(__t("Go home"))}
       </a>
     </div>`,

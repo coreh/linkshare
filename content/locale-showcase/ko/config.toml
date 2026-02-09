@@ -1,0 +1,14 @@
+title = "한국어"
+description = "한국어 로컬라이제이션"
+locale = "ko"
+color = "violet"
+
+[[items]]
+title = "GitHub"
+url = "https://github.com"
+description = "세계가 소프트웨어를 만드는 곳"
+
+[[items]]
+title = "소개"
+type = "text"
+content = "이 섹션은 한국어 로컬라이제이션을 보여줍니다. 모든 인터페이스 요소가 한국어로 표시됩니다."

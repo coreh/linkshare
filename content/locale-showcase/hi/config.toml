@@ -1,0 +1,14 @@
+title = "हिन्दी"
+description = "हिन्दी में स्थानीयकरण"
+locale = "hi"
+color = "orange"
+
+[[items]]
+title = "GitHub"
+url = "https://github.com"
+description = "जहाँ दुनिया सॉफ्टवेयर बनाती है"
+
+[[items]]
+title = "परिचय"
+type = "text"
+content = "यह खंड हिन्दी स्थानीयकरण को प्रदर्शित करता है। सभी इंटरफ़ेस तत्व देवनागरी लिपि में हिन्दी में प्रदर्शित होते हैं।"

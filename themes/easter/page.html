@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{locale}}" class="{{dc "dark" ""}}">
+<html lang="{{locale}}" dir="{{dir}}" class="{{dc "dark" ""}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,7 +67,7 @@
     {{#if show_nav}}
     <nav class="mb-6">
       <a href="{{parent.path}}" class="inline-flex items-center gap-2 {{hover_text}} {{muted}} transition-colors">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-5 h-5 rtl:scale-x-[-1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
         </svg>
         {{t "Back"}}

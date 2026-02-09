@@ -1,0 +1,14 @@
+title = "ภาษาไทย"
+description = "การแปลภาษาไทย"
+locale = "th"
+color = "fuchsia"
+
+[[items]]
+title = "GitHub"
+url = "https://github.com"
+description = "ที่ที่โลกสร้างซอฟต์แวร์"
+
+[[items]]
+title = "เกี่ยวกับ"
+type = "text"
+content = "ส่วนนี้แสดงการแปลภาษาไทย องค์ประกอบอินเทอร์เฟซทั้งหมดแสดงเป็นภาษาไทย"

@@ -1,0 +1,14 @@
+title = "עברית"
+description = "לוקליזציה בעברית"
+locale = "he"
+color = "cyan"
+
+[[items]]
+title = "GitHub"
+url = "https://github.com"
+description = "המקום שבו העולם בונה תוכנה"
+
+[[items]]
+title = "אודות"
+type = "text"
+content = "חלק זה מדגים את הלוקליזציה בעברית. כל רכיבי הממשק מוצגים בעברית עם תמיכה בכתיבה מימין לשמאל."

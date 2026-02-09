@@ -1,0 +1,14 @@
+title = "Deutsch"
+description = "Lokalisierung auf Deutsch"
+locale = "de"
+color = "amber"
+
+[[items]]
+title = "GitHub"
+url = "https://github.com"
+description = "Wo die Welt Software entwickelt"
+
+[[items]]
+title = "Über"
+type = "text"
+content = "Dieser Bereich zeigt die deutsche Lokalisierung. Alle Oberflächenelemente werden auf Deutsch angezeigt."

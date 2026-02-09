@@ -1,0 +1,14 @@
+title = "繁體中文"
+description = "繁體中文本地化"
+locale = "zh-Hant"
+color = "teal"
+
+[[items]]
+title = "GitHub"
+url = "https://github.com"
+description = "全世界建構軟體的地方"
+
+[[items]]
+title = "關於"
+type = "text"
+content = "本節展示繁體中文本地化。所有介面元素均以繁體中文顯示。"

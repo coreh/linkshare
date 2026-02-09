@@ -1,0 +1,14 @@
+title = "Hayeren"
+description = "Armenian localization"
+locale = "hy"
+color = "indigo"
+
+[[items]]
+title = "GitHub"
+url = "https://github.com"
+description = "Where the world builds software"
+
+[[items]]
+title = "About"
+type = "text"
+content = "This section demonstrates the Armenian localization. All interface elements are displayed in Armenian script."

@@ -1,0 +1,14 @@
+title = "Français"
+description = "Localisation en français"
+locale = "fr"
+color = "sky"
+
+[[items]]
+title = "GitHub"
+url = "https://github.com"
+description = "Là où le monde construit du logiciel"
+
+[[items]]
+title = "À propos"
+type = "text"
+content = "Cette section présente la localisation en français. Tous les éléments de l'interface sont affichés en français."

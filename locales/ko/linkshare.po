@@ -1,0 +1,548 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"mime-version: 1.0\n"
+"Language: ko\n"
+
+#: themes/bare/page.html:5
+#: themes/bare/login.html:2
+#: themes/easter/page.html:73
+#: themes/easter/login.html:77
+#: themes/default/page.html:9
+#: themes/default/login.html:6
+msgid "Back"
+msgstr "뒤로"
+
+#: themes/bare/page.html:12
+#: themes/kawaii/page.html:19
+#: themes/default/page.html:21
+msgid "Logout"
+msgstr "로그아웃"
+
+#: themes/bare/page.html:37
+#: themes/default/page.html:47
+msgid "Powered by LinkShare"
+msgstr "LinkShare로 제작"
+
+#: themes/bare/login.html:7
+msgid "This section is password protected."
+msgstr "이 섹션은 비밀번호로 보호되어 있습니다."
+
+#: themes/bare/login.html:14
+#: themes/sherlock/login.html:59
+#: themes/easter/login.html:101
+#: themes/dog/login.html:62
+#: themes/default/login.html:24
+#: themes/christmas/login.html:77
+#: themes/book/login.html:68
+#: themes/carnival/login.html:82
+msgid "Password"
+msgstr "비밀번호"
+
+#: themes/bare/login.html:17
+#: themes/easter/login.html:110
+#: themes/default/login.html:27
+msgid "Enter password"
+msgstr "비밀번호 입력"
+
+#: themes/bare/login.html:19
+#: themes/default/login.html:29
+msgid "Unlock"
+msgstr "잠금 해제"
+
+#: themes/bare/items/code.html:4
+#: themes/bare/items/code.html:7
+#: themes/sherlock/items/code.html:6
+#: themes/sherlock/items/code.html:10
+#: themes/sherlock/items/code.html:16
+#: themes/sherlock/items/code.html:20
+#: themes/easter/items/code.html:9
+#: themes/easter/items/code.html:13
+#: themes/cooking/items/code.html:15
+#: themes/cooking/items/code.html:19
+#: themes/halloween/items/code.html:8
+#: themes/halloween/items/code.html:12
+#: themes/kawaii/items/code.html:7
+#: themes/kawaii/items/code.html:10
+#: themes/dog/items/code.html:15
+#: themes/dog/items/code.html:19
+#: themes/default/items/code.html:4
+#: themes/default/items/code.html:7
+#: themes/chalk/items/code.html:7
+#: themes/chalk/items/code.html:11
+#: themes/chalk/items/code.html:18
+#: themes/chalk/items/code.html:22
+#: themes/christmas/items/code.html:6
+#: themes/christmas/items/code.html:10
+#: themes/book/items/code.html:9
+#: themes/book/items/code.html:13
+#: themes/carnival/items/code.html:7
+#: themes/carnival/items/code.html:11
+#: themes/comic-sans/items/code.html:9
+#: themes/comic-sans/items/code.html:13
+msgid "Copy"
+msgstr "복사"
+
+#: themes/bare/items/code.html:4
+#: themes/sherlock/items/code.html:6
+#: themes/sherlock/items/code.html:16
+#: themes/easter/items/code.html:9
+#: themes/cooking/items/code.html:15
+#: themes/halloween/items/code.html:8
+#: themes/kawaii/items/code.html:7
+#: themes/dog/items/code.html:15
+#: themes/default/items/code.html:4
+#: themes/chalk/items/code.html:7
+#: themes/chalk/items/code.html:18
+#: themes/christmas/items/code.html:6
+#: themes/book/items/code.html:9
+#: themes/carnival/items/code.html:7
+#: themes/comic-sans/items/code.html:9
+msgid "Copied!"
+msgstr "복사됨!"
+
+#: themes/bare/items/embed.html:6
+#: themes/sherlock/items/embed.html:7
+#: themes/sherlock/items/embed.html:10
+#: themes/sherlock/items/embed.html:17
+#: themes/sherlock/items/embed.html:20
+#: themes/easter/items/embed.html:15
+#: themes/easter/items/embed.html:16
+#: themes/cooking/items/embed.html:10
+#: themes/cooking/items/embed.html:11
+#: themes/halloween/items/embed.html:14
+#: themes/halloween/items/embed.html:17
+#: themes/kawaii/items/embed.html:6
+#: themes/dog/items/embed.html:16
+#: themes/dog/items/embed.html:19
+#: themes/default/items/embed.html:6
+#: themes/chalk/items/embed.html:13
+#: themes/chalk/items/embed.html:14
+#: themes/chalk/items/embed.html:25
+#: themes/chalk/items/embed.html:26
+#: themes/christmas/items/embed.html:19
+#: themes/christmas/items/embed.html:20
+#: themes/book/items/embed.html:13
+#: themes/book/items/embed.html:14
+#: themes/carnival/items/embed.html:7
+#: themes/carnival/items/embed.html:8
+#: themes/comic-sans/items/embed.html:9
+#: themes/comic-sans/items/embed.html:10
+msgid "Maximize"
+msgstr "최대화"
+
+#: themes/sherlock/page.html:72
+#: themes/dog/page.html:79
+#: themes/christmas/page.html:105
+msgid "← Back"
+msgstr "← 뒤로"
+
+#: themes/sherlock/page.html:75
+msgid "Home"
+msgstr "홈"
+
+#: themes/sherlock/page.html:82
+msgid "Case Files"
+msgstr "사건 파일"
+
+#: themes/sherlock/page.html:99
+#: themes/sherlock/login.html:96
+msgid "\\"
+msgstr "\\"
+
+#: themes/sherlock/page.html:101
+msgid "— Sherlock Holmes"
+msgstr "— Sherlock Holmes"
+
+#: themes/sherlock/login.html:54
+msgid "This case file is locked. Enter the password to proceed."
+msgstr "이 사건 파일은 잠겨 있습니다. 비밀번호를 입력하세요."
+
+#: themes/sherlock/login.html:67
+msgid "Enter the secret code..."
+msgstr "비밀 코드를 입력하세요..."
+
+#: themes/sherlock/login.html:81
+msgid "Unlock Case File"
+msgstr "사건 파일 잠금 해제"
+
+#: themes/sherlock/login.html:88
+msgid "← Return to previous case"
+msgstr "← 이전 사건으로 돌아가기"
+
+#: themes/sherlock/items/embed.html:7
+#: themes/sherlock/items/embed.html:17
+#: themes/easter/items/embed.html:16
+#: themes/cooking/items/embed.html:11
+#: themes/halloween/items/embed.html:14
+#: themes/dog/items/embed.html:16
+#: themes/chalk/items/embed.html:14
+#: themes/chalk/items/embed.html:26
+#: themes/christmas/items/embed.html:20
+#: themes/book/items/embed.html:14
+#: themes/carnival/items/embed.html:8
+#: themes/comic-sans/items/embed.html:10
+msgid "Minimize"
+msgstr "최소화"
+
+#: themes/easter/page.html:97
+#: themes/cooking/login.html:58
+#: themes/default/login.html:17
+msgid "This section is password protected"
+msgstr "이 섹션은 비밀번호로 보호되어 있습니다"
+
+#: themes/easter/page.html:105
+#: themes/cooking/page.html:85
+#: themes/dog/page.html:91
+#: themes/chalk/page.html:78
+#: themes/carnival/page.html:100
+msgid "Sections"
+msgstr "섹션"
+
+#: themes/easter/page.html:117
+#: themes/cooking/page.html:97
+#: themes/dog/page.html:103
+msgid "Items"
+msgstr "항목"
+
+#: themes/easter/page.html:126
+#: themes/comic-sans/page.html:133
+msgid "Made with LinkShare"
+msgstr "LinkShare로 제작"
+
+#: themes/easter/login.html:86
+msgid "Password required to access this section"
+msgstr "이 섹션에 접근하려면 비밀번호가 필요합니다"
+
+#: themes/easter/login.html:118
+msgid "Unlock Spring Surprise 🐣"
+msgstr "봄의 깜짝 선물 열기 🐣"
+
+#: themes/easter/login.html:124
+msgid "Made with LinkShare 🌷"
+msgstr "LinkShare로 제작 🌷"
+
+#: themes/cooking/page.html:54
+#: themes/dog/page.html:83
+#: themes/carnival/page.html:69
+#: themes/carnival/login.html:60
+msgid "🏠 Home"
+msgstr "🏠 홈"
+
+#: themes/cooking/page.html:76
+msgid "Password Protected"
+msgstr "비밀번호 보호됨"
+
+#: themes/cooking/page.html:106
+#: themes/cooking/login.html:114
+msgid "Made with 🧑‍🍳 using LinkShare"
+msgstr "🧑‍🍳 LinkShare로 제작"
+
+#: themes/cooking/login.html:55
+msgid "Recipe Box Locked"
+msgstr "레시피 상자 잠김"
+
+#: themes/cooking/login.html:80
+#: themes/chalk/login.html:51
+msgid "Enter Password"
+msgstr "비밀번호 입력"
+
+#: themes/cooking/login.html:89
+msgid "Your secret ingredient..."
+msgstr "비밀 재료를 입력하세요..."
+
+#: themes/cooking/login.html:98
+msgid "Unlock Recipe Box"
+msgstr "레시피 상자 열기"
+
+#: themes/cooking/login.html:106
+msgid "Back to previous section"
+msgstr "이전 섹션으로 돌아가기"
+
+#: themes/cooking/items/code.html:11
+#: themes/book/items/code.html:6
+msgid "Code"
+msgstr "코드"
+
+#: themes/halloween/page.html:84
+msgid "🦇 Back to {title}"
+msgstr "🦇 {title}(으)로 돌아가기"
+
+#: themes/halloween/page.html:90
+msgid "🕷️ Logout"
+msgstr "🕷️ 로그아웃"
+
+#: themes/halloween/page.html:102
+msgid "🕸️ Sections"
+msgstr "🕸️ 섹션"
+
+#: themes/halloween/page.html:119
+msgid "👻 Beware... you've entered the haunted LinkShare 🎃"
+msgstr "👻 조심하세요... 유령이 나오는 LinkShare에 들어왔습니다 🎃"
+
+#: themes/halloween/page.html:120
+msgid "Created with"
+msgstr "제작 도구:"
+
+#: themes/halloween/login.html:68
+msgid "🎃 Protected Area 🎃"
+msgstr "🎃 보호 구역 🎃"
+
+#: themes/halloween/login.html:70
+msgid "Enter the password... if you dare..."
+msgstr "비밀번호를 입력하세요... 용기가 있다면..."
+
+#: themes/halloween/login.html:84
+msgid "🕷️ Password:"
+msgstr "🕷️ 비밀번호:"
+
+#: themes/halloween/login.html:93
+msgid "Speak friend and enter..."
+msgstr "친구라 말하고 들어오라..."
+
+#: themes/halloween/login.html:101
+msgid "🦇 Enter the Haunted Section 🦇"
+msgstr "🦇 유령의 섹션에 입장하기 🦇"
+
+#: themes/halloween/login.html:108
+msgid "🕸️ Flee back to safety 🕸️"
+msgstr "🕸️ 안전한 곳으로 도망치기 🕸️"
+
+#: themes/halloween/login.html:115
+msgid "🎃 This section is protected by spooky magic 🎃"
+msgstr "🎃 이 섹션은 으스스한 마법으로 보호되어 있습니다 🎃"
+
+#: themes/kawaii/page.html:7
+#: themes/kawaii/login.html:4
+msgid "go back"
+msgstr "돌아가기~"
+
+#: themes/kawaii/page.html:45
+msgid "made with 💖 and ✨ sparkles"
+msgstr "💖 사랑과 ✨ 반짝임으로 만들었어요"
+
+#: themes/kawaii/login.html:11
+msgid "this area is password protected 💂‍♀️"
+msgstr "여기는 비밀번호로 보호되고 있어요 💂‍♀️"
+
+#: themes/kawaii/login.html:20
+msgid "enter the secret password 🔑"
+msgstr "비밀 암호를 입력해줘 🔑"
+
+#: themes/kawaii/login.html:23
+msgid "type it here..."
+msgstr "여기에 입력해줘..."
+
+#: themes/kawaii/login.html:27
+msgid "let me in! 🚀"
+msgstr "들여보내줘! 🚀"
+
+#: themes/dog/page.html:119
+msgid "Made with 🐶 by LinkShare"
+msgstr "🐶 LinkShare가 만들었어요"
+
+#: themes/dog/login.html:52
+msgid "Guard Dog on Duty!"
+msgstr "경비견 근무 중!"
+
+#: themes/dog/login.html:54
+msgid "This section is protected. Please enter the password."
+msgstr "이 섹션은 보호되어 있습니다. 비밀번호를 입력해 주세요."
+
+#: themes/dog/login.html:71
+#: themes/christmas/login.html:86
+msgid "Enter password..."
+msgstr "비밀번호 입력..."
+
+#: themes/dog/login.html:88
+msgid "🦴 Let Me In!"
+msgstr "🦴 들여보내 줘!"
+
+#: themes/dog/login.html:95
+#: themes/chalk/login.html:82
+msgid "← Go Back"
+msgstr "← 돌아가기"
+
+#: themes/chalk/page.html:57
+msgid "← Back to Class"
+msgstr "← 교실로 돌아가기"
+
+#: themes/chalk/page.html:96
+msgid "Class dismissed! 🎓"
+msgstr "수업 끝! 🎓"
+
+#: themes/chalk/page.html:96
+msgid "Start writing on the board..."
+msgstr "칠판에 쓰기 시작..."
+
+#: themes/chalk/page.html:99
+#: themes/chalk/login.html:86
+msgid "← Back to Home"
+msgstr "← 홈으로 돌아가기"
+
+#: themes/chalk/login.html:41
+msgid "Classroom Locked"
+msgstr "교실 잠김"
+
+#: themes/chalk/login.html:43
+msgid "Password required to enter \\"
+msgstr "입장하려면 비밀번호 필요 \\"
+
+#: themes/chalk/login.html:60
+msgid "Password..."
+msgstr "비밀번호..."
+
+#: themes/chalk/login.html:74
+msgid "Unlock Classroom"
+msgstr "교실 잠금 해제"
+
+#: themes/christmas/page.html:135
+msgid "⭐ Wishing you a magical holiday season! ⭐"
+msgstr "⭐ 마법 같은 연말연시 보내세요! ⭐"
+
+#: themes/christmas/page.html:136
+msgid "🎁 Powered by LinkShare 🎁"
+msgstr "🎁 LinkShare로 제작 🎁"
+
+#: themes/christmas/login.html:71
+msgid "This content is password protected"
+msgstr "이 콘텐츠는 비밀번호로 보호되어 있습니다"
+
+#: themes/christmas/login.html:100
+msgid "Unlock 🔓"
+msgstr "잠금 해제 🔓"
+
+#: themes/christmas/login.html:107
+msgid "← Go back"
+msgstr "← 돌아가기"
+
+#: themes/book/page.html:57
+msgid "← Back to {title}"
+msgstr "← {title}(으)로 돌아가기"
+
+#: themes/book/page.html:77
+msgid "Protected Section"
+msgstr "보호된 섹션"
+
+#: themes/book/page.html:88
+msgid "Chapters"
+msgstr "챕터"
+
+#: themes/book/login.html:53
+msgid "Library Access"
+msgstr "도서관 출입"
+
+#: themes/book/login.html:54
+msgid "This chapter is protected"
+msgstr "이 챕터는 보호되어 있습니다"
+
+#: themes/book/login.html:60
+msgid "← Return to {title}"
+msgstr "← {title}(으)로 돌아가기"
+
+#: themes/book/login.html:77
+msgid "Enter the library code"
+msgstr "도서관 코드를 입력하세요"
+
+#: themes/book/login.html:91
+msgid "Enter Library"
+msgstr "도서관 입장"
+
+#: themes/book/login.html:97
+msgid "📚 Protected Content"
+msgstr "📚 보호된 콘텐츠"
+
+#: themes/carnival/page.html:72
+#: themes/carnival/login.html:63
+msgid "↑ Back"
+msgstr "↑ 뒤로"
+
+#: themes/carnival/page.html:92
+msgid "🔒 Protected Section"
+msgstr "🔒 보호된 섹션"
+
+#: themes/carnival/page.html:117
+msgid "🎪 Powered by LinkShare 🎪"
+msgstr "🎪 LinkShare로 제작 🎪"
+
+#: themes/carnival/login.html:71
+msgid "This celebration is protected"
+msgstr "이 축제는 보호되어 있습니다"
+
+#: themes/carnival/login.html:89
+msgid "Enter password to join the party"
+msgstr "파티에 참가하려면 비밀번호를 입력하세요"
+
+#: themes/carnival/login.html:97
+msgid "🎉 Enter the Carnival"
+msgstr "🎉 축제에 입장하기"
+
+#: themes/carnival/login.html:103
+msgid "🎪 Protected by LinkShare 🎪"
+msgstr "🎪 LinkShare가 보호합니다 🎪"
+
+#: themes/comic-sans/page.html:84
+#: themes/comic-sans/login.html:68
+msgid "← BACK TO {title}"
+msgstr "← {title}(으)로 돌아가기!!"
+
+#: themes/comic-sans/page.html:84
+msgid "← BACK TO HOME"
+msgstr "← 홈으로 돌아가기!!"
+
+#: themes/comic-sans/page.html:101
+msgid "🔒 PROTECTED ZONE"
+msgstr "🔒 보호 구역!!"
+
+#: themes/comic-sans/page.html:109
+msgid "SECTIONS"
+msgstr "섹션들!!"
+
+#: themes/comic-sans/page.html:120
+msgid "ITEMS"
+msgstr "항목들!!"
+
+#: themes/comic-sans/page.html:130
+msgid "★ POWERED BY COMIC SANS ★"
+msgstr "★ COMIC SANS의 힘으로!! ★"
+
+#: themes/comic-sans/login.html:77
+msgid "SECRET ZONE"
+msgstr "비밀 구역!!"
+
+#: themes/comic-sans/login.html:80
+msgid "Enter the magic password!"
+msgstr "마법의 비밀번호를 입력하세요!"
+
+#: themes/comic-sans/login.html:92
+msgid "PASSWORD:"
+msgstr "비밀번호:"
+
+#: themes/comic-sans/login.html:101
+msgid "Type password here..."
+msgstr "여기에 비밀번호 입력..."
+
+#: themes/comic-sans/login.html:109
+msgid "🚀 ENTER!"
+msgstr "🚀 입장!!"
+
+#: themes/comic-sans/login.html:115
+msgid "★ AUTHORIZED PERSONNEL ONLY ★"
+msgstr "★ 관계자 외 출입금지!! ★"
+
+#: src/theme-engine.ts:1007
+msgid "Not Found"
+msgstr "찾을 수 없음"
+
+#: src/theme-engine.ts:1015
+msgid "Page Not Found"
+msgstr "페이지를 찾을 수 없습니다"
+
+#: src/theme-engine.ts:1016
+msgid "The page you're looking for doesn't exist."
+msgstr "찾으시는 페이지가 존재하지 않습니다."
+
+#: src/theme-engine.ts:1019
+msgid "Go home"
+msgstr "홈으로 이동"

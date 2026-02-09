@@ -1,0 +1,14 @@
+title = "日本語"
+description = "日本語ローカライゼーション"
+locale = "ja"
+color = "rose"
+
+[[items]]
+title = "GitHub"
+url = "https://github.com"
+description = "世界がソフトウェアを構築する場所"
+
+[[items]]
+title = "概要"
+type = "text"
+content = "このセクションは日本語のローカライゼーションを紹介しています。すべてのインターフェース要素が日本語で表示されます。"

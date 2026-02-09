@@ -1,0 +1,548 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"mime-version: 1.0\n"
+"Language: he\n"
+
+#: themes/bare/page.html:5
+#: themes/bare/login.html:2
+#: themes/easter/page.html:73
+#: themes/easter/login.html:77
+#: themes/default/page.html:9
+#: themes/default/login.html:6
+msgid "Back"
+msgstr "חזרה"
+
+#: themes/bare/page.html:12
+#: themes/kawaii/page.html:19
+#: themes/default/page.html:21
+msgid "Logout"
+msgstr "התנתקות"
+
+#: themes/bare/page.html:37
+#: themes/default/page.html:47
+msgid "Powered by LinkShare"
+msgstr "מופעל באמצעות LinkShare"
+
+#: themes/bare/login.html:7
+msgid "This section is password protected."
+msgstr "מדור זה מוגן בסיסמה."
+
+#: themes/bare/login.html:14
+#: themes/sherlock/login.html:59
+#: themes/easter/login.html:101
+#: themes/dog/login.html:62
+#: themes/default/login.html:24
+#: themes/christmas/login.html:77
+#: themes/book/login.html:68
+#: themes/carnival/login.html:82
+msgid "Password"
+msgstr "סיסמה"
+
+#: themes/bare/login.html:17
+#: themes/easter/login.html:110
+#: themes/default/login.html:27
+msgid "Enter password"
+msgstr "הזינו סיסמה"
+
+#: themes/bare/login.html:19
+#: themes/default/login.html:29
+msgid "Unlock"
+msgstr "פתיחה"
+
+#: themes/bare/items/code.html:4
+#: themes/bare/items/code.html:7
+#: themes/sherlock/items/code.html:6
+#: themes/sherlock/items/code.html:10
+#: themes/sherlock/items/code.html:16
+#: themes/sherlock/items/code.html:20
+#: themes/easter/items/code.html:9
+#: themes/easter/items/code.html:13
+#: themes/cooking/items/code.html:15
+#: themes/cooking/items/code.html:19
+#: themes/halloween/items/code.html:8
+#: themes/halloween/items/code.html:12
+#: themes/kawaii/items/code.html:7
+#: themes/kawaii/items/code.html:10
+#: themes/dog/items/code.html:15
+#: themes/dog/items/code.html:19
+#: themes/default/items/code.html:4
+#: themes/default/items/code.html:7
+#: themes/chalk/items/code.html:7
+#: themes/chalk/items/code.html:11
+#: themes/chalk/items/code.html:18
+#: themes/chalk/items/code.html:22
+#: themes/christmas/items/code.html:6
+#: themes/christmas/items/code.html:10
+#: themes/book/items/code.html:9
+#: themes/book/items/code.html:13
+#: themes/carnival/items/code.html:7
+#: themes/carnival/items/code.html:11
+#: themes/comic-sans/items/code.html:9
+#: themes/comic-sans/items/code.html:13
+msgid "Copy"
+msgstr "העתקה"
+
+#: themes/bare/items/code.html:4
+#: themes/sherlock/items/code.html:6
+#: themes/sherlock/items/code.html:16
+#: themes/easter/items/code.html:9
+#: themes/cooking/items/code.html:15
+#: themes/halloween/items/code.html:8
+#: themes/kawaii/items/code.html:7
+#: themes/dog/items/code.html:15
+#: themes/default/items/code.html:4
+#: themes/chalk/items/code.html:7
+#: themes/chalk/items/code.html:18
+#: themes/christmas/items/code.html:6
+#: themes/book/items/code.html:9
+#: themes/carnival/items/code.html:7
+#: themes/comic-sans/items/code.html:9
+msgid "Copied!"
+msgstr "הועתק!"
+
+#: themes/bare/items/embed.html:6
+#: themes/sherlock/items/embed.html:7
+#: themes/sherlock/items/embed.html:10
+#: themes/sherlock/items/embed.html:17
+#: themes/sherlock/items/embed.html:20
+#: themes/easter/items/embed.html:15
+#: themes/easter/items/embed.html:16
+#: themes/cooking/items/embed.html:10
+#: themes/cooking/items/embed.html:11
+#: themes/halloween/items/embed.html:14
+#: themes/halloween/items/embed.html:17
+#: themes/kawaii/items/embed.html:6
+#: themes/dog/items/embed.html:16
+#: themes/dog/items/embed.html:19
+#: themes/default/items/embed.html:6
+#: themes/chalk/items/embed.html:13
+#: themes/chalk/items/embed.html:14
+#: themes/chalk/items/embed.html:25
+#: themes/chalk/items/embed.html:26
+#: themes/christmas/items/embed.html:19
+#: themes/christmas/items/embed.html:20
+#: themes/book/items/embed.html:13
+#: themes/book/items/embed.html:14
+#: themes/carnival/items/embed.html:7
+#: themes/carnival/items/embed.html:8
+#: themes/comic-sans/items/embed.html:9
+#: themes/comic-sans/items/embed.html:10
+msgid "Maximize"
+msgstr "הגדלה"
+
+#: themes/sherlock/page.html:72
+#: themes/dog/page.html:79
+#: themes/christmas/page.html:105
+msgid "← Back"
+msgstr "→ חזרה"
+
+#: themes/sherlock/page.html:75
+msgid "Home"
+msgstr "דף הבית"
+
+#: themes/sherlock/page.html:82
+msgid "Case Files"
+msgstr "תיקי החקירה"
+
+#: themes/sherlock/page.html:99
+#: themes/sherlock/login.html:96
+msgid "\\"
+msgstr "\\"
+
+#: themes/sherlock/page.html:101
+msgid "— Sherlock Holmes"
+msgstr "— Sherlock Holmes"
+
+#: themes/sherlock/login.html:54
+msgid "This case file is locked. Enter the password to proceed."
+msgstr "תיק החקירה נעול. הזינו את הסיסמה כדי להמשיך."
+
+#: themes/sherlock/login.html:67
+msgid "Enter the secret code..."
+msgstr "הזינו את הקוד הסודי..."
+
+#: themes/sherlock/login.html:81
+msgid "Unlock Case File"
+msgstr "פתיחת תיק החקירה"
+
+#: themes/sherlock/login.html:88
+msgid "← Return to previous case"
+msgstr "→ חזרה לתיק הקודם"
+
+#: themes/sherlock/items/embed.html:7
+#: themes/sherlock/items/embed.html:17
+#: themes/easter/items/embed.html:16
+#: themes/cooking/items/embed.html:11
+#: themes/halloween/items/embed.html:14
+#: themes/dog/items/embed.html:16
+#: themes/chalk/items/embed.html:14
+#: themes/chalk/items/embed.html:26
+#: themes/christmas/items/embed.html:20
+#: themes/book/items/embed.html:14
+#: themes/carnival/items/embed.html:8
+#: themes/comic-sans/items/embed.html:10
+msgid "Minimize"
+msgstr "הקטנה"
+
+#: themes/easter/page.html:97
+#: themes/cooking/login.html:58
+#: themes/default/login.html:17
+msgid "This section is password protected"
+msgstr "מדור זה מוגן בסיסמה"
+
+#: themes/easter/page.html:105
+#: themes/cooking/page.html:85
+#: themes/dog/page.html:91
+#: themes/chalk/page.html:78
+#: themes/carnival/page.html:100
+msgid "Sections"
+msgstr "מדורים"
+
+#: themes/easter/page.html:117
+#: themes/cooking/page.html:97
+#: themes/dog/page.html:103
+msgid "Items"
+msgstr "פריטים"
+
+#: themes/easter/page.html:126
+#: themes/comic-sans/page.html:133
+msgid "Made with LinkShare"
+msgstr "נוצר באמצעות LinkShare"
+
+#: themes/easter/login.html:86
+msgid "Password required to access this section"
+msgstr "נדרשת סיסמה כדי לגשת למדור זה"
+
+#: themes/easter/login.html:118
+msgid "Unlock Spring Surprise 🐣"
+msgstr "פתיחת הפתעת האביב 🐣"
+
+#: themes/easter/login.html:124
+msgid "Made with LinkShare 🌷"
+msgstr "נוצר באמצעות LinkShare 🌷"
+
+#: themes/cooking/page.html:54
+#: themes/dog/page.html:83
+#: themes/carnival/page.html:69
+#: themes/carnival/login.html:60
+msgid "🏠 Home"
+msgstr "🏠 דף הבית"
+
+#: themes/cooking/page.html:76
+msgid "Password Protected"
+msgstr "מוגן בסיסמה"
+
+#: themes/cooking/page.html:106
+#: themes/cooking/login.html:114
+msgid "Made with 🧑‍🍳 using LinkShare"
+msgstr "נוצר עם 🧑‍🍳 באמצעות LinkShare"
+
+#: themes/cooking/login.html:55
+msgid "Recipe Box Locked"
+msgstr "תיבת המתכונים נעולה"
+
+#: themes/cooking/login.html:80
+#: themes/chalk/login.html:51
+msgid "Enter Password"
+msgstr "הזינו סיסמה"
+
+#: themes/cooking/login.html:89
+msgid "Your secret ingredient..."
+msgstr "המרכיב הסודי שלכם..."
+
+#: themes/cooking/login.html:98
+msgid "Unlock Recipe Box"
+msgstr "פתיחת תיבת המתכונים"
+
+#: themes/cooking/login.html:106
+msgid "Back to previous section"
+msgstr "חזרה למדור הקודם"
+
+#: themes/cooking/items/code.html:11
+#: themes/book/items/code.html:6
+msgid "Code"
+msgstr "קוד"
+
+#: themes/halloween/page.html:84
+msgid "🦇 Back to {title}"
+msgstr "🦇 חזרה אל {title}"
+
+#: themes/halloween/page.html:90
+msgid "🕷️ Logout"
+msgstr "🕷️ התנתקות"
+
+#: themes/halloween/page.html:102
+msgid "🕸️ Sections"
+msgstr "🕸️ מדורים"
+
+#: themes/halloween/page.html:119
+msgid "👻 Beware... you've entered the haunted LinkShare 🎃"
+msgstr "👻 היזהרו... נכנסתם אל LinkShare הרדוף 🎃"
+
+#: themes/halloween/page.html:120
+msgid "Created with"
+msgstr "נוצר באמצעות"
+
+#: themes/halloween/login.html:68
+msgid "🎃 Protected Area 🎃"
+msgstr "🎃 אזור מוגן 🎃"
+
+#: themes/halloween/login.html:70
+msgid "Enter the password... if you dare..."
+msgstr "הזינו את הסיסמה... אם אתם מעזים..."
+
+#: themes/halloween/login.html:84
+msgid "🕷️ Password:"
+msgstr "🕷️ סיסמה:"
+
+#: themes/halloween/login.html:93
+msgid "Speak friend and enter..."
+msgstr "אמרו ידיד והיכנסו..."
+
+#: themes/halloween/login.html:101
+msgid "🦇 Enter the Haunted Section 🦇"
+msgstr "🦇 היכנסו למדור הרדוף 🦇"
+
+#: themes/halloween/login.html:108
+msgid "🕸️ Flee back to safety 🕸️"
+msgstr "🕸️ ברחו חזרה למקום בטוח 🕸️"
+
+#: themes/halloween/login.html:115
+msgid "🎃 This section is protected by spooky magic 🎃"
+msgstr "🎃 מדור זה מוגן בכישוף מפחיד 🎃"
+
+#: themes/kawaii/page.html:7
+#: themes/kawaii/login.html:4
+msgid "go back"
+msgstr "חזרה"
+
+#: themes/kawaii/page.html:45
+msgid "made with 💖 and ✨ sparkles"
+msgstr "נוצר עם 💖 ו✨ נצנוצים"
+
+#: themes/kawaii/login.html:11
+msgid "this area is password protected 💂‍♀️"
+msgstr "האזור הזה מוגן בסיסמה 💂‍♀️"
+
+#: themes/kawaii/login.html:20
+msgid "enter the secret password 🔑"
+msgstr "הזינו את הסיסמה הסודית 🔑"
+
+#: themes/kawaii/login.html:23
+msgid "type it here..."
+msgstr "כתבו כאן..."
+
+#: themes/kawaii/login.html:27
+msgid "let me in! 🚀"
+msgstr "תנו לי להיכנס! 🚀"
+
+#: themes/dog/page.html:119
+msgid "Made with 🐶 by LinkShare"
+msgstr "נוצר עם 🐶 על ידי LinkShare"
+
+#: themes/dog/login.html:52
+msgid "Guard Dog on Duty!"
+msgstr "כלב שמירה בתפקיד!"
+
+#: themes/dog/login.html:54
+msgid "This section is protected. Please enter the password."
+msgstr "מדור זה מוגן. אנא הזינו את הסיסמה."
+
+#: themes/dog/login.html:71
+#: themes/christmas/login.html:86
+msgid "Enter password..."
+msgstr "הזינו סיסמה..."
+
+#: themes/dog/login.html:88
+msgid "🦴 Let Me In!"
+msgstr "🦴 תנו לי להיכנס!"
+
+#: themes/dog/login.html:95
+#: themes/chalk/login.html:82
+msgid "← Go Back"
+msgstr "→ חזרה"
+
+#: themes/chalk/page.html:57
+msgid "← Back to Class"
+msgstr "→ חזרה לכיתה"
+
+#: themes/chalk/page.html:96
+msgid "Class dismissed! 🎓"
+msgstr "השיעור נגמר! 🎓"
+
+#: themes/chalk/page.html:96
+msgid "Start writing on the board..."
+msgstr "התחילו לכתוב על הלוח..."
+
+#: themes/chalk/page.html:99
+#: themes/chalk/login.html:86
+msgid "← Back to Home"
+msgstr "→ חזרה לדף הבית"
+
+#: themes/chalk/login.html:41
+msgid "Classroom Locked"
+msgstr "הכיתה נעולה"
+
+#: themes/chalk/login.html:43
+msgid "Password required to enter \\"
+msgstr "נדרשת סיסמה כדי להיכנס \\"
+
+#: themes/chalk/login.html:60
+msgid "Password..."
+msgstr "סיסמה..."
+
+#: themes/chalk/login.html:74
+msgid "Unlock Classroom"
+msgstr "פתיחת הכיתה"
+
+#: themes/christmas/page.html:135
+msgid "⭐ Wishing you a magical holiday season! ⭐"
+msgstr "⭐ מאחלים לכם חג קסום! ⭐"
+
+#: themes/christmas/page.html:136
+msgid "🎁 Powered by LinkShare 🎁"
+msgstr "🎁 מופעל באמצעות LinkShare 🎁"
+
+#: themes/christmas/login.html:71
+msgid "This content is password protected"
+msgstr "תוכן זה מוגן בסיסמה"
+
+#: themes/christmas/login.html:100
+msgid "Unlock 🔓"
+msgstr "פתיחה 🔓"
+
+#: themes/christmas/login.html:107
+msgid "← Go back"
+msgstr "→ חזרה"
+
+#: themes/book/page.html:57
+msgid "← Back to {title}"
+msgstr "→ חזרה אל {title}"
+
+#: themes/book/page.html:77
+msgid "Protected Section"
+msgstr "מדור מוגן"
+
+#: themes/book/page.html:88
+msgid "Chapters"
+msgstr "פרקים"
+
+#: themes/book/login.html:53
+msgid "Library Access"
+msgstr "כניסה לספרייה"
+
+#: themes/book/login.html:54
+msgid "This chapter is protected"
+msgstr "פרק זה מוגן"
+
+#: themes/book/login.html:60
+msgid "← Return to {title}"
+msgstr "→ חזרה אל {title}"
+
+#: themes/book/login.html:77
+msgid "Enter the library code"
+msgstr "הזינו את קוד הספרייה"
+
+#: themes/book/login.html:91
+msgid "Enter Library"
+msgstr "כניסה לספרייה"
+
+#: themes/book/login.html:97
+msgid "📚 Protected Content"
+msgstr "📚 תוכן מוגן"
+
+#: themes/carnival/page.html:72
+#: themes/carnival/login.html:63
+msgid "↑ Back"
+msgstr "↑ חזרה"
+
+#: themes/carnival/page.html:92
+msgid "🔒 Protected Section"
+msgstr "🔒 מדור מוגן"
+
+#: themes/carnival/page.html:117
+msgid "🎪 Powered by LinkShare 🎪"
+msgstr "🎪 מופעל באמצעות LinkShare 🎪"
+
+#: themes/carnival/login.html:71
+msgid "This celebration is protected"
+msgstr "החגיגה הזו מוגנת"
+
+#: themes/carnival/login.html:89
+msgid "Enter password to join the party"
+msgstr "הזינו סיסמה כדי להצטרף למסיבה"
+
+#: themes/carnival/login.html:97
+msgid "🎉 Enter the Carnival"
+msgstr "🎉 היכנסו לקרנבל"
+
+#: themes/carnival/login.html:103
+msgid "🎪 Protected by LinkShare 🎪"
+msgstr "🎪 מוגן באמצעות LinkShare 🎪"
+
+#: themes/comic-sans/page.html:84
+#: themes/comic-sans/login.html:68
+msgid "← BACK TO {title}"
+msgstr "→ חזרה אל {title}"
+
+#: themes/comic-sans/page.html:84
+msgid "← BACK TO HOME"
+msgstr "→ חזרה לדף הבית"
+
+#: themes/comic-sans/page.html:101
+msgid "🔒 PROTECTED ZONE"
+msgstr "🔒 אזור מוגן"
+
+#: themes/comic-sans/page.html:109
+msgid "SECTIONS"
+msgstr "מדורים"
+
+#: themes/comic-sans/page.html:120
+msgid "ITEMS"
+msgstr "פריטים"
+
+#: themes/comic-sans/page.html:130
+msgid "★ POWERED BY COMIC SANS ★"
+msgstr "★ מופעל על ידי COMIC SANS ★"
+
+#: themes/comic-sans/login.html:77
+msgid "SECRET ZONE"
+msgstr "אזור סודי"
+
+#: themes/comic-sans/login.html:80
+msgid "Enter the magic password!"
+msgstr "הזינו את הסיסמה הקסומה!"
+
+#: themes/comic-sans/login.html:92
+msgid "PASSWORD:"
+msgstr "סיסמה:"
+
+#: themes/comic-sans/login.html:101
+msgid "Type password here..."
+msgstr "הקלידו סיסמה כאן..."
+
+#: themes/comic-sans/login.html:109
+msgid "🚀 ENTER!"
+msgstr "🚀 היכנסו!"
+
+#: themes/comic-sans/login.html:115
+msgid "★ AUTHORIZED PERSONNEL ONLY ★"
+msgstr "★ למורשים בלבד ★"
+
+#: src/theme-engine.ts:1007
+msgid "Not Found"
+msgstr "לא נמצא"
+
+#: src/theme-engine.ts:1015
+msgid "Page Not Found"
+msgstr "הדף לא נמצא"
+
+#: src/theme-engine.ts:1016
+msgid "The page you're looking for doesn't exist."
+msgstr "הדף שאתם מחפשים לא קיים."
+
+#: src/theme-engine.ts:1019
+msgid "Go home"
+msgstr "חזרה לדף הבית"

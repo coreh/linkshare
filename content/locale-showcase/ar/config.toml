@@ -1,0 +1,14 @@
+title = "العربية"
+description = "التوطين باللغة العربية"
+locale = "ar"
+color = "orange"
+
+[[items]]
+title = "GitHub"
+url = "https://github.com"
+description = "حيث يبني العالم البرمجيات"
+
+[[items]]
+title = "حول"
+type = "text"
+content = "يعرض هذا القسم التوطين باللغة العربية. يتم عرض جميع عناصر الواجهة باللغة العربية مع دعم الكتابة من اليمين إلى اليسار."

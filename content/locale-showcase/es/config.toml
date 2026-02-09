@@ -1,0 +1,14 @@
+title = "Español"
+description = "Localización en español"
+locale = "es"
+color = "red"
+
+[[items]]
+title = "GitHub"
+url = "https://github.com"
+description = "Donde el mundo construye software"
+
+[[items]]
+title = "Acerca de"
+type = "text"
+content = "Esta sección demuestra la localización en español. Todos los elementos de la interfaz se muestran en español."

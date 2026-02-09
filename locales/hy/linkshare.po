@@ -1,0 +1,321 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"mime-version: 1.0\n"
+"Language: hy\n"
+
+msgid "Back"
+msgstr "Հետ"
+
+msgid "Logout"
+msgstr "Դուրս գալ"
+
+msgid "Powered by LinkShare"
+msgstr "Ստեղծված է LinkShare-ի միջոցով"
+
+msgid "This section is password protected."
+msgstr "Այս բաժինը գաղտնաբառով պաշտպանված է։"
+
+msgid "Password"
+msgstr "Գաղտնաբառ"
+
+msgid "Enter password"
+msgstr "Մուտքագրեք գաղտնաբառը"
+
+msgid "Unlock"
+msgstr "Բացել"
+
+msgid "Copy"
+msgstr "Պատճենել"
+
+msgid "Copied!"
+msgstr "Պատճենված է։"
+
+msgid "Maximize"
+msgstr "Մեծացնել"
+
+msgid "← Back"
+msgstr "← Հետ"
+
+msgid "Home"
+msgstr "Գլխավոր"
+
+msgid "Case Files"
+msgstr "Գործի ֆայլեր"
+
+msgid "\\"
+msgstr "\\"
+
+msgid "— Sherlock Holmes"
+msgstr "— Sherlock Holmes"
+
+msgid "This case file is locked. Enter the password to proceed."
+msgstr "Այս գործի ֆայլը կողպված է։ Մուտքագրեք գաղտնաբառը շարունակելու համար։"
+
+msgid "Enter the secret code..."
+msgstr "Մուտքագրեք գաղտնի կոդը..."
+
+msgid "Unlock Case File"
+msgstr "Բացել գործի ֆայլը"
+
+msgid "← Return to previous case"
+msgstr "← Վերադառնալ նախորդ գործին"
+
+msgid "Minimize"
+msgstr "Փոքրացնել"
+
+msgid "This section is password protected"
+msgstr "Այս բաժինը գաղտնաբառով պաշտպանված է"
+
+msgid "Sections"
+msgstr "Բաժիններ"
+
+msgid "Items"
+msgstr "Տառրեր"
+
+msgid "Made with LinkShare"
+msgstr "Ստեղծված է LinkShare-ով"
+
+msgid "Password required to access this section"
+msgstr "Այս բաժնին մուտք գործելու համար գաղտնաբառ է պահանջվում"
+
+msgid "Unlock Spring Surprise 🐣"
+msgstr "Բացել գարնանային անակնկալը 🐣"
+
+msgid "Made with LinkShare 🌷"
+msgstr "Ստեղծված է LinkShare-ով 🌷"
+
+msgid "🏠 Home"
+msgstr "🏠 Գլխավոր"
+
+msgid "Password Protected"
+msgstr "Գաղտնաբառով պաշտպանված"
+
+msgid "Made with 🧑‍🍳 using LinkShare"
+msgstr "Ստեղծված է 🧑‍🍳 LinkShare-ով"
+
+msgid "Recipe Box Locked"
+msgstr "Բաղադրատոմսը կողպված է"
+
+msgid "Enter Password"
+msgstr "Մուտքագրեք գաղտնաբառը"
+
+msgid "Your secret ingredient..."
+msgstr "Ձեր գաղտնի բաղադրիճը..."
+
+msgid "Unlock Recipe Box"
+msgstr "Բացել բաղադրատոմսը"
+
+msgid "Back to previous section"
+msgstr "Վերադառնալ նախորդ բաժին"
+
+msgid "Code"
+msgstr "Կոդ"
+
+msgid "🦇 Back to {title}"
+msgstr "🦇 Հետ դեպի {title}"
+
+msgid "🕷️ Logout"
+msgstr "🕷️ Դուրս գալ"
+
+msgid "🕸️ Sections"
+msgstr "🕸️ Բաժիններ"
+
+msgid "👻 Beware... you've entered the haunted LinkShare 🎃"
+msgstr "👻 Զգուշացեք... դուք մտանք LinkShare-ի ուրվականների աշխարհ 🎃"
+
+msgid "Created with"
+msgstr "Ստեղծված է"
+
+msgid "🎃 Protected Area 🎃"
+msgstr "🎃 Պաշտպանված տարածք 🎃"
+
+msgid "Enter the password... if you dare..."
+msgstr "Մուտքագրեք գաղտնաբառը... եթե համարձակվում եք..."
+
+msgid "🕷️ Password:"
+msgstr "🕷️ Գաղտնաբառ՝"
+
+msgid "Speak friend and enter..."
+msgstr "Ասա բարեկամ և մտիր..."
+
+msgid "🦇 Enter the Haunted Section 🦇"
+msgstr "🦇 Մտիր ուրվականների բաժին 🦇"
+
+msgid "🕸️ Flee back to safety 🕸️"
+msgstr "🕸️ Փախեք ապահով տեղ 🕸️"
+
+msgid "🎃 This section is protected by spooky magic 🎃"
+msgstr "🎃 Այս բաժինը պաշտպանված է սարսափելի կախարդությամբ 🎃"
+
+msgid "go back"
+msgstr "հետ գնա"
+
+msgid "made with 💖 and ✨ sparkles"
+msgstr "ստեղծված է 💖 և ✨ փայլերով"
+
+msgid "this area is password protected 💂‍♀️"
+msgstr "այս տարածքը գաղտնաբառով պաշտպանված է 💂‍♀️"
+
+msgid "enter the secret password 🔑"
+msgstr "մուտքագրեք գաղտնի բառը 🔑"
+
+msgid "type it here..."
+msgstr "գրեք այստեղ..."
+
+msgid "let me in! 🚀"
+msgstr "թողեք մտնեմ! 🚀"
+
+msgid "Made with 🐶 by LinkShare"
+msgstr "Ստեղծված է 🐶 LinkShare-ով"
+
+msgid "Guard Dog on Duty!"
+msgstr "Պահակ շունը հերթապահության վրա։"
+
+msgid "This section is protected. Please enter the password."
+msgstr "Այս բաժինը պաշտպանված է։ Խնդրում ենք մուտքագրել գաղտնաբառը։"
+
+msgid "Enter password..."
+msgstr "Մուտքագրեք գաղտնաբառը..."
+
+msgid "🦴 Let Me In!"
+msgstr "🦴 Թողեք մտնեմ!"
+
+msgid "← Go Back"
+msgstr "← Հետ գնալ"
+
+msgid "← Back to Class"
+msgstr "← Հետ դասարան"
+
+msgid "Class dismissed! 🎓"
+msgstr "Դասը ավարտվեց! 🎓"
+
+msgid "Start writing on the board..."
+msgstr "Սկսեք գրել գրատախտակին..."
+
+msgid "← Back to Home"
+msgstr "← Հետ գլխավոր"
+
+msgid "Classroom Locked"
+msgstr "Դասարանը կողպված է"
+
+msgid "Password required to enter \\"
+msgstr "Գաղտնաբառ է պահանջվում մտնելու համար \\"
+
+msgid "Password..."
+msgstr "Գաղտնաբառ..."
+
+msgid "Unlock Classroom"
+msgstr "Բացել դասարանը"
+
+msgid "⭐ Wishing you a magical holiday season! ⭐"
+msgstr "⭐ Տոնական տոներ ենք մաղթում! ⭐"
+
+msgid "🎁 Powered by LinkShare 🎁"
+msgstr "🎁 Ստեղծված է LinkShare-ով 🎁"
+
+msgid "This content is password protected"
+msgstr "Այս բովանդակությունը գաղտնաբառով պաշտպանված է"
+
+msgid "Unlock 🔓"
+msgstr "Բացել 🔓"
+
+msgid "← Go back"
+msgstr "← Հետ գնալ"
+
+msgid "← Back to {title}"
+msgstr "← Հետ դեպի {title}"
+
+msgid "Protected Section"
+msgstr "Պաշտպանված բաժին"
+
+msgid "Chapters"
+msgstr "Գլուխներ"
+
+msgid "Library Access"
+msgstr "Գրադարանի մուտք"
+
+msgid "This chapter is protected"
+msgstr "Այս գլուխը պաշտպանված է"
+
+msgid "← Return to {title}"
+msgstr "← Վերադառնալ {title}"
+
+msgid "Enter the library code"
+msgstr "Մուտքագրեք գրադարանի կոդը"
+
+msgid "Enter Library"
+msgstr "Մտնել գրադարան"
+
+msgid "📚 Protected Content"
+msgstr "📚 Պաշտպանված բովանդակություն"
+
+msgid "↑ Back"
+msgstr "↑ Հետ"
+
+msgid "🔒 Protected Section"
+msgstr "🔒 Պաշտպանված բաժին"
+
+msgid "🎪 Powered by LinkShare 🎪"
+msgstr "🎪 Ստեղծված է LinkShare-ով 🎪"
+
+msgid "This celebration is protected"
+msgstr "Այս տոնը պաշտպանված է"
+
+msgid "Enter password to join the party"
+msgstr "Մուտքագրեք գաղտնաբառը տոնին միանալու համար"
+
+msgid "🎉 Enter the Carnival"
+msgstr "🎉 Մտիր կատավալ"
+
+msgid "🎪 Protected by LinkShare 🎪"
+msgstr "🎪 Պաշտպանված է LinkShare-ով 🎪"
+
+msgid "← BACK TO {title}"
+msgstr "← ՀԵՏ ԴԵՊԻ {title}"
+
+msgid "← BACK TO HOME"
+msgstr "← ՀԵՏ ԳԼԽԱՎՈՌ"
+
+msgid "🔒 PROTECTED ZONE"
+msgstr "🔒 ՊԱՇՏՊԱՆՎԱԾ ԳՈՏԻ"
+
+msgid "SECTIONS"
+msgstr "ԲԱՊԻՆՆԵՌ"
+
+msgid "ITEMS"
+msgstr "ՏԱՌՌԵՌ"
+
+msgid "★ POWERED BY COMIC SANS ★"
+msgstr "★ ՍՏԵՂԾՎԱԾ Է COMIC SANS-ՈՎ ★"
+
+msgid "SECRET ZONE"
+msgstr "ԳԱՂՏՆԻ ԳՈՏԻ"
+
+msgid "Enter the magic password!"
+msgstr "Մուտքագրեք կախարդական գաղտնաբառը!"
+
+msgid "PASSWORD:"
+msgstr "ԳԱՂՏՆԱԲԱՌ՝"
+
+msgid "Type password here..."
+msgstr "Գրեք գաղտնաբառը այստեղ..."
+
+msgid "🚀 ENTER!"
+msgstr "🚀 ՄՏԻՌ!"
+
+msgid "★ AUTHORIZED PERSONNEL ONLY ★"
+msgstr "★ ՄԻԱՅՆ ԼԻԱԶՈՌՎԱԾ ԱՆՁՆԱԿԱԶՄԻ ՀԱՄԱՌ ★"
+
+msgid "Not Found"
+msgstr "Չի գտնվել"
+
+msgid "Page Not Found"
+msgstr "Էջը չի գտնվել"
+
+msgid "The page you're looking for doesn't exist."
+msgstr "Ձեր փնտրած էջը գոյություն չունի։"
+
+msgid "Go home"
+msgstr "Գնալ գլխավոր"

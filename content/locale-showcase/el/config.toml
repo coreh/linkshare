@@ -1,0 +1,14 @@
+title = "Ελληνικά"
+description = "Μετάφραση στα ελληνικά"
+locale = "el"
+color = "sky"
+
+[[items]]
+title = "GitHub"
+url = "https://github.com"
+description = "Εκεί όπου ο κόσμος δημιουργεί λογισμικό"
+
+[[items]]
+title = "Σχετικά"
+type = "text"
+content = "Αυτή η ενότητα παρουσιάζει τη μετάφραση στα ελληνικά. Όλα τα στοιχεία της διεπαφής εμφανίζονται στα ελληνικά."

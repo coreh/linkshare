@@ -1,0 +1,548 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"mime-version: 1.0\n"
+"Language: ka\n"
+
+#: themes/bare/page.html:5
+#: themes/bare/login.html:2
+#: themes/easter/page.html:73
+#: themes/easter/login.html:77
+#: themes/default/page.html:9
+#: themes/default/login.html:6
+msgid "Back"
+msgstr "უკან"
+
+#: themes/bare/page.html:12
+#: themes/kawaii/page.html:19
+#: themes/default/page.html:21
+msgid "Logout"
+msgstr "გასვლა"
+
+#: themes/bare/page.html:37
+#: themes/default/page.html:47
+msgid "Powered by LinkShare"
+msgstr "შექმნილია LinkShare-ით"
+
+#: themes/bare/login.html:7
+msgid "This section is password protected."
+msgstr "ეს განყოფილება პაროლით არის დაცული."
+
+#: themes/bare/login.html:14
+#: themes/sherlock/login.html:59
+#: themes/easter/login.html:101
+#: themes/dog/login.html:62
+#: themes/default/login.html:24
+#: themes/christmas/login.html:77
+#: themes/book/login.html:68
+#: themes/carnival/login.html:82
+msgid "Password"
+msgstr "პაროლი"
+
+#: themes/bare/login.html:17
+#: themes/easter/login.html:110
+#: themes/default/login.html:27
+msgid "Enter password"
+msgstr "შეიყვანეთ პაროლი"
+
+#: themes/bare/login.html:19
+#: themes/default/login.html:29
+msgid "Unlock"
+msgstr "განბლოკვა"
+
+#: themes/bare/items/code.html:4
+#: themes/bare/items/code.html:7
+#: themes/sherlock/items/code.html:6
+#: themes/sherlock/items/code.html:10
+#: themes/sherlock/items/code.html:16
+#: themes/sherlock/items/code.html:20
+#: themes/easter/items/code.html:9
+#: themes/easter/items/code.html:13
+#: themes/cooking/items/code.html:15
+#: themes/cooking/items/code.html:19
+#: themes/halloween/items/code.html:8
+#: themes/halloween/items/code.html:12
+#: themes/kawaii/items/code.html:7
+#: themes/kawaii/items/code.html:10
+#: themes/dog/items/code.html:15
+#: themes/dog/items/code.html:19
+#: themes/default/items/code.html:4
+#: themes/default/items/code.html:7
+#: themes/chalk/items/code.html:7
+#: themes/chalk/items/code.html:11
+#: themes/chalk/items/code.html:18
+#: themes/chalk/items/code.html:22
+#: themes/christmas/items/code.html:6
+#: themes/christmas/items/code.html:10
+#: themes/book/items/code.html:9
+#: themes/book/items/code.html:13
+#: themes/carnival/items/code.html:7
+#: themes/carnival/items/code.html:11
+#: themes/comic-sans/items/code.html:9
+#: themes/comic-sans/items/code.html:13
+msgid "Copy"
+msgstr "კოპირება"
+
+#: themes/bare/items/code.html:4
+#: themes/sherlock/items/code.html:6
+#: themes/sherlock/items/code.html:16
+#: themes/easter/items/code.html:9
+#: themes/cooking/items/code.html:15
+#: themes/halloween/items/code.html:8
+#: themes/kawaii/items/code.html:7
+#: themes/dog/items/code.html:15
+#: themes/default/items/code.html:4
+#: themes/chalk/items/code.html:7
+#: themes/chalk/items/code.html:18
+#: themes/christmas/items/code.html:6
+#: themes/book/items/code.html:9
+#: themes/carnival/items/code.html:7
+#: themes/comic-sans/items/code.html:9
+msgid "Copied!"
+msgstr "დაკოპირდა!"
+
+#: themes/bare/items/embed.html:6
+#: themes/sherlock/items/embed.html:7
+#: themes/sherlock/items/embed.html:10
+#: themes/sherlock/items/embed.html:17
+#: themes/sherlock/items/embed.html:20
+#: themes/easter/items/embed.html:15
+#: themes/easter/items/embed.html:16
+#: themes/cooking/items/embed.html:10
+#: themes/cooking/items/embed.html:11
+#: themes/halloween/items/embed.html:14
+#: themes/halloween/items/embed.html:17
+#: themes/kawaii/items/embed.html:6
+#: themes/dog/items/embed.html:16
+#: themes/dog/items/embed.html:19
+#: themes/default/items/embed.html:6
+#: themes/chalk/items/embed.html:13
+#: themes/chalk/items/embed.html:14
+#: themes/chalk/items/embed.html:25
+#: themes/chalk/items/embed.html:26
+#: themes/christmas/items/embed.html:19
+#: themes/christmas/items/embed.html:20
+#: themes/book/items/embed.html:13
+#: themes/book/items/embed.html:14
+#: themes/carnival/items/embed.html:7
+#: themes/carnival/items/embed.html:8
+#: themes/comic-sans/items/embed.html:9
+#: themes/comic-sans/items/embed.html:10
+msgid "Maximize"
+msgstr "გადიდება"
+
+#: themes/sherlock/page.html:72
+#: themes/dog/page.html:79
+#: themes/christmas/page.html:105
+msgid "← Back"
+msgstr "← უკან"
+
+#: themes/sherlock/page.html:75
+msgid "Home"
+msgstr "მთავარი"
+
+#: themes/sherlock/page.html:82
+msgid "Case Files"
+msgstr "საქმის მასალები"
+
+#: themes/sherlock/page.html:99
+#: themes/sherlock/login.html:96
+msgid "\\"
+msgstr "\\"
+
+#: themes/sherlock/page.html:101
+msgid "— Sherlock Holmes"
+msgstr "— Sherlock Holmes"
+
+#: themes/sherlock/login.html:54
+msgid "This case file is locked. Enter the password to proceed."
+msgstr "ეს საქმის მასალა ჩაკეტილია. გასაგრძელებლად შეიყვანეთ პაროლი."
+
+#: themes/sherlock/login.html:67
+msgid "Enter the secret code..."
+msgstr "შეიყვანეთ საიდუმლო კოდი..."
+
+#: themes/sherlock/login.html:81
+msgid "Unlock Case File"
+msgstr "საქმის მასალის განბლოკვა"
+
+#: themes/sherlock/login.html:88
+msgid "← Return to previous case"
+msgstr "← წინა საქმეზე დაბრუნება"
+
+#: themes/sherlock/items/embed.html:7
+#: themes/sherlock/items/embed.html:17
+#: themes/easter/items/embed.html:16
+#: themes/cooking/items/embed.html:11
+#: themes/halloween/items/embed.html:14
+#: themes/dog/items/embed.html:16
+#: themes/chalk/items/embed.html:14
+#: themes/chalk/items/embed.html:26
+#: themes/christmas/items/embed.html:20
+#: themes/book/items/embed.html:14
+#: themes/carnival/items/embed.html:8
+#: themes/comic-sans/items/embed.html:10
+msgid "Minimize"
+msgstr "შემცირება"
+
+#: themes/easter/page.html:97
+#: themes/cooking/login.html:58
+#: themes/default/login.html:17
+msgid "This section is password protected"
+msgstr "ეს განყოფილება პაროლით არის დაცული"
+
+#: themes/easter/page.html:105
+#: themes/cooking/page.html:85
+#: themes/dog/page.html:91
+#: themes/chalk/page.html:78
+#: themes/carnival/page.html:100
+msgid "Sections"
+msgstr "განყოფილებები"
+
+#: themes/easter/page.html:117
+#: themes/cooking/page.html:97
+#: themes/dog/page.html:103
+msgid "Items"
+msgstr "ელემენტები"
+
+#: themes/easter/page.html:126
+#: themes/comic-sans/page.html:133
+msgid "Made with LinkShare"
+msgstr "შექმნილია LinkShare-ით"
+
+#: themes/easter/login.html:86
+msgid "Password required to access this section"
+msgstr "ამ განყოფილებაზე წვდომისთვის საჭიროა პაროლი"
+
+#: themes/easter/login.html:118
+msgid "Unlock Spring Surprise 🐣"
+msgstr "გაზაფხულის სიურპრიზის განბლოკვა 🐣"
+
+#: themes/easter/login.html:124
+msgid "Made with LinkShare 🌷"
+msgstr "შექმნილია LinkShare-ით 🌷"
+
+#: themes/cooking/page.html:54
+#: themes/dog/page.html:83
+#: themes/carnival/page.html:69
+#: themes/carnival/login.html:60
+msgid "🏠 Home"
+msgstr "🏠 მთავარი"
+
+#: themes/cooking/page.html:76
+msgid "Password Protected"
+msgstr "პაროლით დაცული"
+
+#: themes/cooking/page.html:106
+#: themes/cooking/login.html:114
+msgid "Made with 🧑‍🍳 using LinkShare"
+msgstr "შექმნილია 🧑‍🍳 LinkShare-ის გამოყენებით"
+
+#: themes/cooking/login.html:55
+msgid "Recipe Box Locked"
+msgstr "რეცეპტების ყუთი ჩაკეტილია"
+
+#: themes/cooking/login.html:80
+#: themes/chalk/login.html:51
+msgid "Enter Password"
+msgstr "შეიყვანეთ პაროლი"
+
+#: themes/cooking/login.html:89
+msgid "Your secret ingredient..."
+msgstr "თქვენი საიდუმლო ინგრედიენტი..."
+
+#: themes/cooking/login.html:98
+msgid "Unlock Recipe Box"
+msgstr "რეცეპტების ყუთის განბლოკვა"
+
+#: themes/cooking/login.html:106
+msgid "Back to previous section"
+msgstr "წინა განყოფილებაში დაბრუნება"
+
+#: themes/cooking/items/code.html:11
+#: themes/book/items/code.html:6
+msgid "Code"
+msgstr "კოდი"
+
+#: themes/halloween/page.html:84
+msgid "🦇 Back to {title}"
+msgstr "🦇 უკან {title}-ზე"
+
+#: themes/halloween/page.html:90
+msgid "🕷️ Logout"
+msgstr "🕷️ გასვლა"
+
+#: themes/halloween/page.html:102
+msgid "🕸️ Sections"
+msgstr "🕸️ განყოფილებები"
+
+#: themes/halloween/page.html:119
+msgid "👻 Beware... you've entered the haunted LinkShare 🎃"
+msgstr "👻 ფრთხილად... თქვენ მოჩვენებების LinkShare-ში შეხვედით 🎃"
+
+#: themes/halloween/page.html:120
+msgid "Created with"
+msgstr "შექმნილია"
+
+#: themes/halloween/login.html:68
+msgid "🎃 Protected Area 🎃"
+msgstr "🎃 დაცული ტერიტორია 🎃"
+
+#: themes/halloween/login.html:70
+msgid "Enter the password... if you dare..."
+msgstr "შეიყვანეთ პაროლი... თუ გაბედავთ..."
+
+#: themes/halloween/login.html:84
+msgid "🕷️ Password:"
+msgstr "🕷️ პაროლი:"
+
+#: themes/halloween/login.html:93
+msgid "Speak friend and enter..."
+msgstr "თქვი მეგობარო და შედი..."
+
+#: themes/halloween/login.html:101
+msgid "🦇 Enter the Haunted Section 🦇"
+msgstr "🦇 შედი მოჩვენებების განყოფილებაში 🦇"
+
+#: themes/halloween/login.html:108
+msgid "🕸️ Flee back to safety 🕸️"
+msgstr "🕸️ გაიქეცი უსაფრთხო ადგილას 🕸️"
+
+#: themes/halloween/login.html:115
+msgid "🎃 This section is protected by spooky magic 🎃"
+msgstr "🎃 ეს განყოფილება საშინელი მაგიით არის დაცული 🎃"
+
+#: themes/kawaii/page.html:7
+#: themes/kawaii/login.html:4
+msgid "go back"
+msgstr "უკან დაბრუნება"
+
+#: themes/kawaii/page.html:45
+msgid "made with 💖 and ✨ sparkles"
+msgstr "შექმნილია 💖-ით და ✨ ბრჭყვიალით"
+
+#: themes/kawaii/login.html:11
+msgid "this area is password protected 💂‍♀️"
+msgstr "ეს ადგილი პაროლით არის დაცული 💂‍♀️"
+
+#: themes/kawaii/login.html:20
+msgid "enter the secret password 🔑"
+msgstr "შეიყვანე საიდუმლო პაროლი 🔑"
+
+#: themes/kawaii/login.html:23
+msgid "type it here..."
+msgstr "აქ ჩაწერე..."
+
+#: themes/kawaii/login.html:27
+msgid "let me in! 🚀"
+msgstr "შემიშვი! 🚀"
+
+#: themes/dog/page.html:119
+msgid "Made with 🐶 by LinkShare"
+msgstr "შექმნილია 🐶 LinkShare-ის მიერ"
+
+#: themes/dog/login.html:52
+msgid "Guard Dog on Duty!"
+msgstr "მცველი ძაღლი მორიგეობაზეა!"
+
+#: themes/dog/login.html:54
+msgid "This section is protected. Please enter the password."
+msgstr "ეს განყოფილება დაცულია. გთხოვთ, შეიყვანეთ პაროლი."
+
+#: themes/dog/login.html:71
+#: themes/christmas/login.html:86
+msgid "Enter password..."
+msgstr "შეიყვანეთ პაროლი..."
+
+#: themes/dog/login.html:88
+msgid "🦴 Let Me In!"
+msgstr "🦴 შემიშვით!"
+
+#: themes/dog/login.html:95
+#: themes/chalk/login.html:82
+msgid "← Go Back"
+msgstr "← უკან დაბრუნება"
+
+#: themes/chalk/page.html:57
+msgid "← Back to Class"
+msgstr "← უკან გაკვეთილზე"
+
+#: themes/chalk/page.html:96
+msgid "Class dismissed! 🎓"
+msgstr "გაკვეთილი დასრულდა! 🎓"
+
+#: themes/chalk/page.html:96
+msgid "Start writing on the board..."
+msgstr "დაიწყეთ დაფაზე წერა..."
+
+#: themes/chalk/page.html:99
+#: themes/chalk/login.html:86
+msgid "← Back to Home"
+msgstr "← მთავარზე დაბრუნება"
+
+#: themes/chalk/login.html:41
+msgid "Classroom Locked"
+msgstr "საკლასო ოთახი ჩაკეტილია"
+
+#: themes/chalk/login.html:43
+msgid "Password required to enter \\"
+msgstr "შესასვლელად საჭიროა პაროლი \\"
+
+#: themes/chalk/login.html:60
+msgid "Password..."
+msgstr "პაროლი..."
+
+#: themes/chalk/login.html:74
+msgid "Unlock Classroom"
+msgstr "საკლასო ოთახის განბლოკვა"
+
+#: themes/christmas/page.html:135
+msgid "⭐ Wishing you a magical holiday season! ⭐"
+msgstr "⭐ გისურვებთ ჯადოსნურ სადღესასწაულო დღეებს! ⭐"
+
+#: themes/christmas/page.html:136
+msgid "🎁 Powered by LinkShare 🎁"
+msgstr "🎁 შექმნილია LinkShare-ით 🎁"
+
+#: themes/christmas/login.html:71
+msgid "This content is password protected"
+msgstr "ეს კონტენტი პაროლით არის დაცული"
+
+#: themes/christmas/login.html:100
+msgid "Unlock 🔓"
+msgstr "განბლოკვა 🔓"
+
+#: themes/christmas/login.html:107
+msgid "← Go back"
+msgstr "← უკან დაბრუნება"
+
+#: themes/book/page.html:57
+msgid "← Back to {title}"
+msgstr "← უკან {title}-ზე"
+
+#: themes/book/page.html:77
+msgid "Protected Section"
+msgstr "დაცული განყოფილება"
+
+#: themes/book/page.html:88
+msgid "Chapters"
+msgstr "თავები"
+
+#: themes/book/login.html:53
+msgid "Library Access"
+msgstr "ბიბლიოთეკაზე წვდომა"
+
+#: themes/book/login.html:54
+msgid "This chapter is protected"
+msgstr "ეს თავი დაცულია"
+
+#: themes/book/login.html:60
+msgid "← Return to {title}"
+msgstr "← დაბრუნება {title}-ზე"
+
+#: themes/book/login.html:77
+msgid "Enter the library code"
+msgstr "შეიყვანეთ ბიბლიოთეკის კოდი"
+
+#: themes/book/login.html:91
+msgid "Enter Library"
+msgstr "ბიბლიოთეკაში შესვლა"
+
+#: themes/book/login.html:97
+msgid "📚 Protected Content"
+msgstr "📚 დაცული კონტენტი"
+
+#: themes/carnival/page.html:72
+#: themes/carnival/login.html:63
+msgid "↑ Back"
+msgstr "↑ უკან"
+
+#: themes/carnival/page.html:92
+msgid "🔒 Protected Section"
+msgstr "🔒 დაცული განყოფილება"
+
+#: themes/carnival/page.html:117
+msgid "🎪 Powered by LinkShare 🎪"
+msgstr "🎪 შექმნილია LinkShare-ით 🎪"
+
+#: themes/carnival/login.html:71
+msgid "This celebration is protected"
+msgstr "ეს ზეიმი დაცულია"
+
+#: themes/carnival/login.html:89
+msgid "Enter password to join the party"
+msgstr "წვეულებაზე შესასვლელად შეიყვანეთ პაროლი"
+
+#: themes/carnival/login.html:97
+msgid "🎉 Enter the Carnival"
+msgstr "🎉 შედი კარნავალზე"
+
+#: themes/carnival/login.html:103
+msgid "🎪 Protected by LinkShare 🎪"
+msgstr "🎪 დაცულია LinkShare-ით 🎪"
+
+#: themes/comic-sans/page.html:84
+#: themes/comic-sans/login.html:68
+msgid "← BACK TO {title}"
+msgstr "← უკან {title}-ზე"
+
+#: themes/comic-sans/page.html:84
+msgid "← BACK TO HOME"
+msgstr "← უკან მთავარზე"
+
+#: themes/comic-sans/page.html:101
+msgid "🔒 PROTECTED ZONE"
+msgstr "🔒 დაცული ზონა"
+
+#: themes/comic-sans/page.html:109
+msgid "SECTIONS"
+msgstr "განყოფილებები"
+
+#: themes/comic-sans/page.html:120
+msgid "ITEMS"
+msgstr "ელემენტები"
+
+#: themes/comic-sans/page.html:130
+msgid "★ POWERED BY COMIC SANS ★"
+msgstr "★ COMIC SANS-ის ძალით ★"
+
+#: themes/comic-sans/login.html:77
+msgid "SECRET ZONE"
+msgstr "საიდუმლო ზონა"
+
+#: themes/comic-sans/login.html:80
+msgid "Enter the magic password!"
+msgstr "შეიყვანეთ ჯადოსნური პაროლი!"
+
+#: themes/comic-sans/login.html:92
+msgid "PASSWORD:"
+msgstr "პაროლი:"
+
+#: themes/comic-sans/login.html:101
+msgid "Type password here..."
+msgstr "აქ ჩაწერეთ პაროლი..."
+
+#: themes/comic-sans/login.html:109
+msgid "🚀 ENTER!"
+msgstr "🚀 შესვლა!"
+
+#: themes/comic-sans/login.html:115
+msgid "★ AUTHORIZED PERSONNEL ONLY ★"
+msgstr "★ მხოლოდ უფლებამოსილი პირებისთვის ★"
+
+#: src/theme-engine.ts:1007
+msgid "Not Found"
+msgstr "ვერ მოიძებნა"
+
+#: src/theme-engine.ts:1015
+msgid "Page Not Found"
+msgstr "გვერდი ვერ მოიძებნა"
+
+#: src/theme-engine.ts:1016
+msgid "The page you're looking for doesn't exist."
+msgstr "გვერდი, რომელსაც ეძებთ, არ არსებობს."
+
+#: src/theme-engine.ts:1019
+msgid "Go home"
+msgstr "მთავარზე გადასვლა"

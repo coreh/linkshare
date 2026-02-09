@@ -1,0 +1,552 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"mime-version: 1.0\n"
+"Language: zh-Hans\n"
+
+#: themes/bare/page.html:5
+#: themes/bare/login.html:2
+#: themes/easter/page.html:73
+#: themes/easter/login.html:77
+#: themes/default/page.html:9
+#: themes/default/login.html:6
+msgid "Back"
+msgstr "返回"
+
+#: themes/bare/page.html:12
+#: themes/kawaii/page.html:19
+#: themes/default/page.html:21
+msgid "Logout"
+msgstr "退出登录"
+
+#: themes/bare/page.html:37
+#: themes/default/page.html:47
+msgid "Powered by LinkShare"
+msgstr "由 LinkShare 驱动"
+
+#: themes/bare/login.html:7
+msgid "This section is password protected."
+msgstr "此分区受密码保护。"
+
+#: themes/bare/login.html:14
+#: themes/sherlock/login.html:59
+#: themes/easter/login.html:101
+#: themes/dog/login.html:62
+#: themes/default/login.html:24
+#: themes/christmas/login.html:77
+#: themes/book/login.html:68
+#: themes/carnival/login.html:82
+msgid "Password"
+msgstr "密码"
+
+#: themes/bare/login.html:17
+#: themes/easter/login.html:110
+#: themes/default/login.html:27
+msgid "Enter password"
+msgstr "输入密码"
+
+#: themes/bare/login.html:19
+#: themes/default/login.html:29
+msgid "Unlock"
+msgstr "解锁"
+
+#: themes/bare/items/code.html:4
+#: themes/bare/items/code.html:7
+#: themes/sherlock/items/code.html:6
+#: themes/sherlock/items/code.html:10
+#: themes/sherlock/items/code.html:16
+#: themes/sherlock/items/code.html:20
+#: themes/easter/items/code.html:9
+#: themes/easter/items/code.html:13
+#: themes/cooking/items/code.html:15
+#: themes/cooking/items/code.html:19
+#: themes/halloween/items/code.html:8
+#: themes/halloween/items/code.html:12
+#: themes/kawaii/items/code.html:7
+#: themes/kawaii/items/code.html:10
+#: themes/dog/items/code.html:15
+#: themes/dog/items/code.html:19
+#: themes/default/items/code.html:4
+#: themes/default/items/code.html:7
+#: themes/chalk/items/code.html:7
+#: themes/chalk/items/code.html:11
+#: themes/chalk/items/code.html:18
+#: themes/chalk/items/code.html:22
+#: themes/christmas/items/code.html:6
+#: themes/christmas/items/code.html:10
+#: themes/book/items/code.html:9
+#: themes/book/items/code.html:13
+#: themes/carnival/items/code.html:7
+#: themes/carnival/items/code.html:11
+#: themes/comic-sans/items/code.html:9
+#: themes/comic-sans/items/code.html:13
+msgid "Copy"
+msgstr "复制"
+
+#: themes/bare/items/code.html:4
+#: themes/sherlock/items/code.html:6
+#: themes/sherlock/items/code.html:16
+#: themes/easter/items/code.html:9
+#: themes/cooking/items/code.html:15
+#: themes/halloween/items/code.html:8
+#: themes/kawaii/items/code.html:7
+#: themes/dog/items/code.html:15
+#: themes/default/items/code.html:4
+#: themes/chalk/items/code.html:7
+#: themes/chalk/items/code.html:18
+#: themes/christmas/items/code.html:6
+#: themes/book/items/code.html:9
+#: themes/carnival/items/code.html:7
+#: themes/comic-sans/items/code.html:9
+msgid "Copied!"
+msgstr "已复制！"
+
+#: themes/bare/items/embed.html:6
+#: themes/sherlock/items/embed.html:7
+#: themes/sherlock/items/embed.html:10
+#: themes/sherlock/items/embed.html:17
+#: themes/sherlock/items/embed.html:20
+#: themes/easter/items/embed.html:15
+#: themes/easter/items/embed.html:16
+#: themes/cooking/items/embed.html:10
+#: themes/cooking/items/embed.html:11
+#: themes/halloween/items/embed.html:14
+#: themes/halloween/items/embed.html:17
+#: themes/kawaii/items/embed.html:6
+#: themes/dog/items/embed.html:16
+#: themes/dog/items/embed.html:19
+#: themes/default/items/embed.html:6
+#: themes/chalk/items/embed.html:13
+#: themes/chalk/items/embed.html:14
+#: themes/chalk/items/embed.html:25
+#: themes/chalk/items/embed.html:26
+#: themes/christmas/items/embed.html:19
+#: themes/christmas/items/embed.html:20
+#: themes/book/items/embed.html:13
+#: themes/book/items/embed.html:14
+#: themes/carnival/items/embed.html:7
+#: themes/carnival/items/embed.html:8
+#: themes/comic-sans/items/embed.html:9
+#: themes/comic-sans/items/embed.html:10
+msgid "Maximize"
+msgstr "最大化"
+
+#: themes/sherlock/page.html:72
+#: themes/dog/page.html:79
+#: themes/christmas/page.html:105
+msgid "← Back"
+msgstr "← 返回"
+
+#: themes/sherlock/page.html:75
+msgid "Home"
+msgstr "首页"
+
+#: themes/sherlock/page.html:82
+msgid "Case Files"
+msgstr "案件档案"
+
+#: themes/sherlock/page.html:99
+#: themes/sherlock/login.html:96
+msgid "\\"
+msgstr "\\"
+
+#: themes/sherlock/page.html:101
+msgid "— Sherlock Holmes"
+msgstr "— Sherlock Holmes"
+
+#: themes/sherlock/login.html:54
+msgid "This case file is locked. Enter the password to proceed."
+msgstr "此案件档案已锁定。请输入密码以继续。"
+
+#: themes/sherlock/login.html:67
+msgid "Enter the secret code..."
+msgstr "输入密码暗号..."
+
+#: themes/sherlock/login.html:81
+msgid "Unlock Case File"
+msgstr "解锁案件档案"
+
+#: themes/sherlock/login.html:88
+msgid "← Return to previous case"
+msgstr "← 返回上一案件"
+
+#: themes/sherlock/items/embed.html:7
+#: themes/sherlock/items/embed.html:17
+#: themes/easter/items/embed.html:16
+#: themes/cooking/items/embed.html:11
+#: themes/halloween/items/embed.html:14
+#: themes/dog/items/embed.html:16
+#: themes/chalk/items/embed.html:14
+#: themes/chalk/items/embed.html:26
+#: themes/christmas/items/embed.html:20
+#: themes/book/items/embed.html:14
+#: themes/carnival/items/embed.html:8
+#: themes/comic-sans/items/embed.html:10
+msgid "Minimize"
+msgstr "最小化"
+
+#: themes/easter/page.html:97
+#: themes/cooking/login.html:58
+#: themes/default/login.html:17
+msgid "This section is password protected"
+msgstr "此分区受密码保护"
+
+#: themes/easter/page.html:105
+#: themes/cooking/page.html:85
+#: themes/dog/page.html:91
+#: themes/chalk/page.html:78
+#: themes/carnival/page.html:100
+msgid "Sections"
+msgstr "分区"
+
+#: themes/easter/page.html:117
+#: themes/cooking/page.html:97
+#: themes/dog/page.html:103
+msgid "Items"
+msgstr "项目"
+
+#: themes/easter/page.html:126
+#: themes/comic-sans/page.html:133
+msgid "Made with LinkShare"
+msgstr "由 LinkShare 制作"
+
+#: themes/easter/login.html:86
+msgid "Password required to access this section"
+msgstr "访问此分区需要密码"
+
+#: themes/easter/login.html:118
+msgid "Unlock Spring Surprise 🐣"
+msgstr "解锁春日惊喜 🐣"
+
+#: themes/easter/login.html:124
+msgid "Made with LinkShare 🌷"
+msgstr "由 LinkShare 制作 🌷"
+
+#: themes/cooking/page.html:54
+#: themes/dog/page.html:83
+#: themes/carnival/page.html:69
+#: themes/carnival/login.html:60
+msgid "🏠 Home"
+msgstr "🏠 首页"
+
+#: themes/cooking/page.html:76
+msgid "Password Protected"
+msgstr "密码保护"
+
+#: themes/cooking/page.html:106
+#: themes/cooking/login.html:114
+msgid "Made with 🧑‍🍳 using LinkShare"
+msgstr "用 🧑‍🍳 和 LinkShare 制作"
+
+#: themes/cooking/login.html:55
+msgid "Recipe Box Locked"
+msgstr "食谱箱已锁定"
+
+#: themes/cooking/login.html:80
+#: themes/chalk/login.html:51
+msgid "Enter Password"
+msgstr "输入密码"
+
+#: themes/cooking/login.html:89
+msgid "Your secret ingredient..."
+msgstr "你的秘密配料..."
+
+#: themes/cooking/login.html:98
+msgid "Unlock Recipe Box"
+msgstr "解锁食谱箱"
+
+#: themes/cooking/login.html:106
+msgid "Back to previous section"
+msgstr "返回上一分区"
+
+#: themes/cooking/items/code.html:11
+#: themes/book/items/code.html:6
+msgid "Code"
+msgstr "代码"
+
+#: themes/halloween/page.html:84
+msgid "🦇 Back to {title}"
+msgstr "🦇 回到 {title}"
+
+#: themes/halloween/page.html:90
+msgid "🕷️ Logout"
+msgstr "🕷️ 退出登录"
+
+#: themes/halloween/page.html:102
+msgid "🕸️ Sections"
+msgstr "🕸️ 分区"
+
+#: themes/halloween/page.html:119
+msgid "👻 Beware... you've entered the haunted LinkShare 🎃"
+msgstr "👻 当心...你已踏入闹鬼的 LinkShare 🎃"
+
+#: themes/halloween/page.html:120
+msgid "Created with"
+msgstr "使用以下工具创建"
+
+#: themes/halloween/login.html:68
+msgid "🎃 Protected Area 🎃"
+msgstr "🎃 受保护区域 🎃"
+
+#: themes/halloween/login.html:70
+msgid "Enter the password... if you dare..."
+msgstr "输入密码...如果你敢的话..."
+
+#: themes/halloween/login.html:84
+msgid "🕷️ Password:"
+msgstr "🕷️ 密码："
+
+#: themes/halloween/login.html:93
+msgid "Speak friend and enter..."
+msgstr "说出暗号，方可进入..."
+
+#: themes/halloween/login.html:101
+msgid "🦇 Enter the Haunted Section 🦇"
+msgstr "🦇 进入闹鬼分区 🦇"
+
+#: themes/halloween/login.html:108
+msgid "🕸️ Flee back to safety 🕸️"
+msgstr "🕸️ 逃回安全之地 🕸️"
+
+#: themes/halloween/login.html:115
+msgid "🎃 This section is protected by spooky magic 🎃"
+msgstr "🎃 此分区受诡异魔法保护 🎃"
+
+#: themes/kawaii/page.html:7
+#: themes/kawaii/login.html:4
+msgid "go back"
+msgstr "回去吧"
+
+#: themes/kawaii/page.html:45
+msgid "made with 💖 and ✨ sparkles"
+msgstr "用 💖 和 ✨ 亮晶晶做的哦"
+
+#: themes/kawaii/login.html:11
+msgid "this area is password protected 💂‍♀️"
+msgstr "这里需要密码才能进入哦 💂‍♀️"
+
+#: themes/kawaii/login.html:20
+msgid "enter the secret password 🔑"
+msgstr "输入秘密密码吧 🔑"
+
+#: themes/kawaii/login.html:23
+msgid "type it here..."
+msgstr "在这里输入..."
+
+#: themes/kawaii/login.html:27
+msgid "let me in! 🚀"
+msgstr "让我进去嘛！🚀"
+
+#: themes/dog/page.html:119
+msgid "Made with 🐶 by LinkShare"
+msgstr "由 LinkShare 用 🐶 制作"
+
+#: themes/dog/login.html:52
+msgid "Guard Dog on Duty!"
+msgstr "看门狗值班中！"
+
+#: themes/dog/login.html:54
+msgid "This section is protected. Please enter the password."
+msgstr "此分区受保护。请输入密码。"
+
+#: themes/dog/login.html:71
+#: themes/christmas/login.html:86
+msgid "Enter password..."
+msgstr "输入密码..."
+
+#: themes/dog/login.html:88
+msgid "🦴 Let Me In!"
+msgstr "🦴 让我进去！"
+
+#: themes/dog/login.html:95
+#: themes/chalk/login.html:82
+msgid "← Go Back"
+msgstr "← 返回"
+
+#: themes/chalk/page.html:57
+msgid "← Back to Class"
+msgstr "← 回到课堂"
+
+#: themes/chalk/page.html:96
+msgid "Class dismissed! 🎓"
+msgstr "下课了！🎓"
+
+#: themes/chalk/page.html:96
+msgid "Start writing on the board..."
+msgstr "在黑板上开始书写..."
+
+#: themes/chalk/page.html:99
+#: themes/chalk/login.html:86
+msgid "← Back to Home"
+msgstr "← 回到首页"
+
+#: themes/chalk/login.html:41
+msgid "Classroom Locked"
+msgstr "教室已锁定"
+
+#: themes/chalk/login.html:43
+msgid "Password required to enter \\"
+msgstr "需要密码才能进入 \\"
+
+#: themes/chalk/login.html:60
+msgid "Password..."
+msgstr "密码..."
+
+#: themes/chalk/login.html:74
+msgid "Unlock Classroom"
+msgstr "解锁教室"
+
+#: themes/christmas/page.html:135
+msgid "⭐ Wishing you a magical holiday season! ⭐"
+msgstr "⭐ 祝你度过一个奇妙的假日季！⭐"
+
+#: themes/christmas/page.html:136
+msgid "🎁 Powered by LinkShare 🎁"
+msgstr "🎁 由 LinkShare 驱动 🎁"
+
+#: themes/christmas/login.html:71
+msgid "This content is password protected"
+msgstr "此内容受密码保护"
+
+#: themes/christmas/login.html:100
+msgid "Unlock 🔓"
+msgstr "解锁 🔓"
+
+#: themes/christmas/login.html:107
+msgid "← Go back"
+msgstr "← 返回"
+
+#: themes/book/page.html:57
+msgid "← Back to {title}"
+msgstr "← 返回 {title}"
+
+#: themes/book/page.html:77
+msgid "Protected Section"
+msgstr "受保护的分区"
+
+#: themes/book/page.html:88
+msgid "Chapters"
+msgstr "章节"
+
+#: themes/book/login.html:53
+msgid "Library Access"
+msgstr "图书馆入口"
+
+#: themes/book/login.html:54
+msgid "This chapter is protected"
+msgstr "此章节受保护"
+
+#: themes/book/login.html:60
+msgid "← Return to {title}"
+msgstr "← 返回 {title}"
+
+#: themes/book/login.html:77
+msgid "Enter the library code"
+msgstr "输入图书馆密码"
+
+#: themes/book/login.html:91
+msgid "Enter Library"
+msgstr "进入图书馆"
+
+#: themes/book/login.html:97
+msgid "📚 Protected Content"
+msgstr "📚 受保护的内容"
+
+#: themes/carnival/page.html:72
+#: themes/carnival/login.html:63
+msgid "↑ Back"
+msgstr "↑ 返回"
+
+#: themes/carnival/page.html:92
+msgid "🔒 Protected Section"
+msgstr "🔒 受保护的分区"
+
+#: themes/carnival/page.html:117
+msgid "🎪 Powered by LinkShare 🎪"
+msgstr "🎪 由 LinkShare 驱动 🎪"
+
+#: themes/carnival/login.html:71
+msgid "This celebration is protected"
+msgstr "此庆典受保护"
+
+#: themes/carnival/login.html:89
+msgid "Enter password to join the party"
+msgstr "输入密码加入派对"
+
+#: themes/carnival/login.html:97
+msgid "🎉 Enter the Carnival"
+msgstr "🎉 进入嘉年华"
+
+#: themes/carnival/login.html:103
+msgid "🎪 Protected by LinkShare 🎪"
+msgstr "🎪 受 LinkShare 保护 🎪"
+
+#: themes/comic-sans/page.html:84
+#: themes/comic-sans/login.html:68
+msgid "← BACK TO {title}"
+msgstr "← 返回到 {title}！！"
+
+#: themes/comic-sans/page.html:84
+msgid "← BACK TO HOME"
+msgstr "← 返回首页！！"
+
+#: themes/comic-sans/page.html:101
+msgid "🔒 PROTECTED ZONE"
+msgstr "🔒 保护区域！！"
+
+#: themes/comic-sans/page.html:109
+msgid "SECTIONS"
+msgstr "分区！！"
+
+#: themes/comic-sans/page.html:120
+msgid "ITEMS"
+msgstr "项目！！"
+
+#: themes/comic-sans/page.html:130
+msgid "★ POWERED BY COMIC SANS ★"
+msgstr "★ 由 COMIC SANS 强力驱动 ★"
+
+#: themes/comic-sans/page.html:133
+msgid "Made with LinkShare"
+msgstr "由 LinkShare 制作"
+
+#: themes/comic-sans/login.html:77
+msgid "SECRET ZONE"
+msgstr "秘密区域！！"
+
+#: themes/comic-sans/login.html:80
+msgid "Enter the magic password!"
+msgstr "输入神奇密码！！"
+
+#: themes/comic-sans/login.html:92
+msgid "PASSWORD:"
+msgstr "密码："
+
+#: themes/comic-sans/login.html:101
+msgid "Type password here..."
+msgstr "在这里输入密码..."
+
+#: themes/comic-sans/login.html:109
+msgid "🚀 ENTER!"
+msgstr "🚀 进入！！"
+
+#: themes/comic-sans/login.html:115
+msgid "★ AUTHORIZED PERSONNEL ONLY ★"
+msgstr "★ 仅限授权人员 ★"
+
+#: src/theme-engine.ts:1007
+msgid "Not Found"
+msgstr "未找到"
+
+#: src/theme-engine.ts:1015
+msgid "Page Not Found"
+msgstr "页面未找到"
+
+#: src/theme-engine.ts:1016
+msgid "The page you're looking for doesn't exist."
+msgstr "你要找的页面不存在。"
+
+#: src/theme-engine.ts:1019
+msgid "Go home"
+msgstr "回到首页"
