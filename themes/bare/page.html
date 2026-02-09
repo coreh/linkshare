@@ -1,0 +1,38 @@
+{{!-- Navigation bar: back button + logout --}}
+{{#if show_nav}}
+<div class="flex items-center justify-between mb-6">
+  {{#if parent}}
+  <a href="{{parent.path}}" class="text-sm {{muted}} {{hover_text}} transition-colors">&larr; Back</a>
+  {{else}}
+  <div></div>
+  {{/if}}
+  {{#if is_protected}}
+  <form method="POST" action="{{path}}" class="inline">
+    <input type="hidden" name="action" value="logout">
+    <button type="submit" class="text-xs {{muted}} {{hover_text}} transition-colors">Logout</button>
+  </form>
+  {{/if}}
+</div>
+{{/if}}
+
+{{!-- Header --}}
+<div class="text-center mb-8">
+  {{#if logo}}
+  <img src="{{logo}}" alt="" class="w-16 h-16 mx-auto mb-4 rounded object-cover">
+  {{/if}}
+  <h1 class="text-2xl font-semibold mb-1">{{title}}</h1>
+  {{#if description}}
+  <p class="{{muted}}">{{description}}</p>
+  {{/if}}
+</div>
+
+{{!-- Content: child sections + items --}}
+<div class="space-y-2">
+  {{{children_html}}}
+  {{{items_html}}}
+</div>
+
+{{!-- Footer --}}
+<div class="text-center mt-12 pb-4">
+  <p class="text-xs {{muted}}">Powered by LinkShare</p>
+</div>

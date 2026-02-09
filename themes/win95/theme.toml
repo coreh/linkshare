@@ -1,0 +1,21 @@
+name = "Windows 95"
+
+[defaults]
+font = "system-ui"
+color = "sky"
+dark = false
+background_color = "#008080"
+
+[vars.light]
+muted = "text-gray-500"
+card = ""
+card_static = ""
+input = ""
+hover_text = ""
+
+[vars.dark]
+muted = "text-gray-500"
+card = ""
+card_static = ""
+input = ""
+hover_text = ""

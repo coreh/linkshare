@@ -1,0 +1,19 @@
+<div class="{{card_static}} rounded-2xl border-2 p-6 shadow-sm">
+  <div class="flex items-start gap-4 mb-4">
+    <div class="flex-shrink-0 text-4xl">🎵</div>
+    <div class="flex-1 min-w-0">
+      {{#if title}}
+      <h3 class="font-bold text-lg mb-1">{{title}}</h3>
+      {{/if}}
+      {{#if description}}
+      <p class="{{muted}} text-sm">{{description}}</p>
+      {{/if}}
+    </div>
+    <span class="flex-shrink-0 text-xl ls-dog-paw">🐾</span>
+  </div>
+
+  <audio controls class="w-full">
+    <source src="{{file_url}}" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>

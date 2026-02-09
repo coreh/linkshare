@@ -1,0 +1,14 @@
+<div class="ls-card {{card_static}} border rounded-xl p-6">
+  {{#if title}}
+  <div class="mb-4">
+    <h3 class="font-bold text-lg mb-2">{{title}}</h3>
+    {{#if description}}
+    <p class="{{muted}} text-sm leading-relaxed">{{description}}</p>
+    {{/if}}
+  </div>
+  {{/if}}
+  <audio controls class="w-full">
+    <source src="{{file_url}}">
+    Your browser does not support the audio element.
+  </audio>
+</div>

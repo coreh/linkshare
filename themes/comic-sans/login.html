@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" class="{{dc "dark" ""}}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}} - Password Required</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            accent: {
+              50: 'rgb(var(--c-50) / <alpha-value>)',
+              100: 'rgb(var(--c-100) / <alpha-value>)',
+              200: 'rgb(var(--c-200) / <alpha-value>)',
+              300: 'rgb(var(--c-300) / <alpha-value>)',
+              400: 'rgb(var(--c-400) / <alpha-value>)',
+              500: 'rgb(var(--c-500) / <alpha-value>)',
+              600: 'rgb(var(--c-600) / <alpha-value>)',
+              700: 'rgb(var(--c-700) / <alpha-value>)',
+              800: 'rgb(var(--c-800) / <alpha-value>)',
+              900: 'rgb(var(--c-900) / <alpha-value>)',
+              950: 'rgb(var(--c-950) / <alpha-value>)'
+            }
+          },
+          fontFamily: {
+            'display': ['{{{font}}}', 'Comic Sans MS', 'cursive'],
+            'body': ['{{{font}}}', 'Comic Sans MS', 'cursive']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family={{{font}}}:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/theme.css">
+  <style>
+    :root {
+      --c-50: {{{c50}}};
+      --c-100: {{{c100}}};
+      --c-200: {{{c200}}};
+      --c-300: {{{c300}}};
+      --c-400: {{{c400}}};
+      --c-500: {{{c500}}};
+      --c-600: {{{c600}}};
+      --c-700: {{{c700}}};
+      --c-800: {{{c800}}};
+      --c-900: {{{c900}}};
+      --c-950: {{{c950}}};
+    }
+  </style>
+  {{#if auto_dark}}
+  <script>
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  {{/if}}
+</head>
+<body class="font-body min-h-screen flex items-center justify-center {{dc "bg-[#2d004d] text-fuchsia-100" "bg-[#fffbeb] text-fuchsia-900"}}" style="{{#if background_color}}background-color: {{{background_color}}};{{/if}}">
+  <div class="w-full max-w-md px-4">
+    {{#if parent}}
+    <nav class="mb-8 {{muted}} text-center">
+      <a href="{{parent.path}}" class="{{hover_text}} text-sm transition-colors">
+        ← BACK TO {{parent.title}}
+      </a>
+    </nav>
+    {{/if}}
+
+    <div class="{{card_static}} ls-card p-8">
+      <div class="text-center mb-8">
+        <div class="text-6xl mb-4 ls-wobble">🔐</div>
+        <h1 class="text-4xl font-bold mb-3 ls-fun-shadow {{dc "text-fuchsia-200" "text-fuchsia-700"}}">
+          <span class="ls-star">★</span>SECRET ZONE<span class="ls-star">★</span>
+        </h1>
+        <p class="text-lg {{muted}}">{{title}}</p>
+        <p class="text-sm {{muted}} mt-2">Enter the magic password!</p>
+      </div>
+
+      {{#if error}}
+      <div class="mb-6 p-4 bg-red-500/20 border-3 border-red-400 rounded-lg text-red-300 text-center font-bold ls-wobble">
+        ❌ {{error}}
+      </div>
+      {{/if}}
+
+      <form method="POST" action="{{path}}" class="space-y-6">
+        <div>
+          <label for="password" class="block text-sm font-bold mb-2 {{dc "text-fuchsia-300" "text-fuchsia-700"}}">
+            PASSWORD:
+          </label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            autofocus
+            class="{{input}} ls-input w-full px-4 py-3 focus:outline-none focus:ring-4 focus:ring-lime-400/50 transition-all"
+            placeholder="Type password here..."
+          >
+        </div>
+
+        <button
+          type="submit"
+          class="ls-button w-full py-3 px-6 font-bold text-lg {{dc "bg-lime-500 text-fuchsia-950 hover:bg-lime-400" "bg-fuchsia-600 text-white hover:bg-fuchsia-700"}} transition-all"
+        >
+          🚀 ENTER!
+        </button>
+      </form>
+
+      <div class="mt-6 text-center">
+        <p class="text-xs {{muted}} ls-rainbow">
+          ★ AUTHORIZED PERSONNEL ONLY ★
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<div class="{{card_static}} ls-card p-6">
+  {{#if title}}
+  <h3 class="text-xl font-bold mb-4 ls-fun-shadow">
+    🖼️ {{title}}
+  </h3>
+  {{/if}}
+  <div class="mb-4 overflow-hidden rounded-lg border-3 border-fuchsia-400">
+    <img src="{{file_url}}" alt="{{title}}" class="w-full h-auto">
+  </div>
+  {{#if description}}
+  <p class="{{muted}}">{{description}}</p>
+  {{/if}}
+</div>

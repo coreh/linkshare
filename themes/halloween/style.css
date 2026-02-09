@@ -1,0 +1,88 @@
+/* Halloween Theme - Spooky Styling */
+
+/* Spider web background pattern */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(circle at 20% 20%, transparent 0%, transparent 40%, rgba(255,255,255,0.1) 41%, transparent 42%),
+    radial-gradient(circle at 80% 30%, transparent 0%, transparent 35%, rgba(255,255,255,0.1) 36%, transparent 37%),
+    radial-gradient(circle at 50% 60%, transparent 0%, transparent 45%, rgba(255,255,255,0.1) 46%, transparent 47%);
+  background-size: 100% 100%;
+}
+
+/* Floating ghost animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+}
+
+.halloween-ghost {
+  animation: float 6s ease-in-out infinite;
+  display: inline-block;
+}
+
+/* Spooky glow effect for cards */
+.ls-card {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.ls-card:hover {
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.3);
+}
+
+/* Creepy text shadow for headers */
+h1, h2, h3 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Pumpkin cursor effect on links */
+a {
+  cursor: pointer;
+}
+
+/* Spooky border animation */
+@keyframes spooky-pulse {
+  0%, 100% {
+    border-color: rgba(249, 115, 22, 0.2);
+  }
+  50% {
+    border-color: rgba(249, 115, 22, 0.4);
+  }
+}
+
+.ls-card-static {
+  animation: spooky-pulse 3s ease-in-out infinite;
+}
+
+/* Haunted input glow */
+input:focus, button:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(249, 115, 22, 0.5);
+}
+
+/* Code block spooky styling */
+.ls-code {
+  position: relative;
+}
+
+.ls-code::before {
+  content: '👻';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  opacity: 0.1;
+  font-size: 3rem;
+  pointer-events: none;
+}

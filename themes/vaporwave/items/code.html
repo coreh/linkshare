@@ -1,0 +1,24 @@
+<div class="ls-code {{card_static}} rounded-lg border overflow-hidden">
+  {{#if title}}
+  <div class="px-6 py-3 border-b border-accent-500/20 flex items-center justify-between bg-accent-950/40">
+    <h3 class="text-sm font-semibold bg-gradient-to-r from-accent-300 to-cyan-300 bg-clip-text text-transparent">{{title}}</h3>
+    <button
+      onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})"
+      class="text-xs px-3 py-1 rounded bg-accent-600/30 {{dc "hover:bg-accent-600/50" "hover:bg-accent-600/40"}} border border-accent-500/30 transition-all"
+    >
+      Copy
+    </button>
+  </div>
+  {{/if}}
+  <pre class="p-6 overflow-x-auto"><code class="language-{{language}}">{{code}}</code></pre>
+  {{#unless title}}
+  <div class="px-6 pb-3 flex justify-end">
+    <button
+      onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})"
+      class="text-xs px-3 py-1 rounded bg-accent-600/30 {{dc "hover:bg-accent-600/50" "hover:bg-accent-600/40"}} border border-accent-500/30 transition-all"
+    >
+      Copy
+    </button>
+  </div>
+  {{/unless}}
+</div>

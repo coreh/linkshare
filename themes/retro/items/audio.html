@@ -1,0 +1,15 @@
+<div class="border border-accent-500/20 rounded-sm p-3 {{card_static}}">
+  <div class="flex items-start gap-2 font-mono">
+    <span class="{{dc "text-accent-600" "text-accent-700"}} shrink-0 select-none mt-0.5">~</span>
+    <div class="flex-1 min-w-0">
+      <div class="{{dc "text-accent-600" "text-accent-700"}} text-xs mb-1 select-none">$ aplay {{title}}</div>
+      <div class="{{dc "text-accent-400" "text-accent-700"}} text-sm font-bold mb-1">{{title}}</div>
+      {{#if description}}
+      <div class="text-xs {{muted}} mb-2"># {{description}}</div>
+      {{/if}}
+      <audio controls preload="metadata" class="w-full h-10">
+        <source src="{{file_url}}">
+      </audio>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<a href="{{url}}" target="_blank" rel="noopener noreferrer"
+   class="group block border border-accent-500/30 rounded-sm p-3 font-mono transition-all duration-150 hover:border-accent-400 hover:bg-accent-500/10">
+  <div class="flex items-start gap-2">
+    <span class="{{dc "text-accent-600" "text-accent-700"}} shrink-0 select-none">{{#if icon}}{{icon}}{{else}}${{/if}}</span>
+    <div class="flex-1 min-w-0">
+      <span class="{{dc "text-accent-400 group-hover:text-accent-300" "text-accent-700 group-hover:text-accent-600"}} transition-colors">open</span>
+      <span class="{{dc "text-white/80" "text-gray-800"}} ml-2 truncate inline-block max-w-full">{{title}}</span>
+      {{#if description}}
+      <div class="text-xs {{dc "text-white/30" "text-gray-500"}} mt-1 truncate"># {{description}}</div>
+      {{/if}}
+    </div>
+    <span class="{{dc "text-accent-700" "text-accent-700"}} shrink-0 retro-blink select-none">&block;</span>
+  </div>
+</a>

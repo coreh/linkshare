@@ -1,0 +1,11 @@
+<div class="backdrop-blur-sm border rounded-xl overflow-hidden {{card_static}}">
+  <video controls preload="metadata" class="w-full">
+    <source src="{{file_url}}">
+  </video>
+  <div class="p-4">
+    <div class="font-semibold">{{title}}</div>
+    {{#if description}}
+    <div class="text-sm {{muted}} mt-1">{{description}}</div>
+    {{/if}}
+  </div>
+</div>

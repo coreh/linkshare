@@ -1,0 +1,8 @@
+<div class="{{card_static}} border rounded-xl p-6 ls-carnival-card">
+    {{#if title}}
+    <h3 class="text-xl font-bold mb-4 {{dc "text-purple-100" "text-purple-800"}}">📝 {{title}}</h3>
+    {{/if}}
+    <div class="{{dc "text-purple-200" "text-purple-900"}} prose prose-invert max-w-none">
+        {{{content}}}
+    </div>
+</div>

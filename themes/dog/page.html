@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" class="{{dc "dark" ""}}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  {{#if description}}<meta name="description" content="{{description}}">{{/if}}
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            accent: {
+              50: 'var(--c-50)', 100: 'var(--c-100)', 200: 'var(--c-200)',
+              300: 'var(--c-300)', 400: 'var(--c-400)', 500: 'var(--c-500)',
+              600: 'var(--c-600)', 700: 'var(--c-700)', 800: 'var(--c-800)',
+              900: 'var(--c-900)', 950: 'var(--c-950)'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/themes/dog/style.css">
+  <style>
+    :root {
+      --c-50: #fffbeb; --c-100: #fef3c7; --c-200: #fde68a;
+      --c-300: #fcd34d; --c-400: #fbbf24; --c-500: #f59e0b;
+      --c-600: #d97706; --c-700: #b45309; --c-800: #92400e;
+      --c-900: #78350f; --c-950: #451a03;
+    }
+    body { font-family: 'Nunito', sans-serif; }
+  </style>
+  {{#if auto_dark}}
+  <script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  {{/if}}
+</head>
+<body class="{{dc "bg-[#1a1000] text-amber-100" "bg-[#fffbeb] text-amber-950"}} min-h-screen transition-colors">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <!-- Header with playful dog -->
+    <header class="text-center mb-12">
+      {{#if logo}}
+      <div class="mb-4">
+        <img src="{{logo}}" alt="{{title}}" class="w-24 h-24 mx-auto rounded-full object-cover border-4 {{dc "border-amber-600/30" "border-amber-300"}}">
+      </div>
+      {{else}}
+      <div class="text-6xl mb-4 ls-dog-wag">🐶</div>
+      {{/if}}
+
+      <h1 class="text-4xl font-bold mb-2 {{dc "text-amber-300" "text-amber-900"}}">
+        {{title}}
+      </h1>
+
+      {{#if description}}
+      <p class="text-lg {{muted}} max-w-2xl mx-auto">{{description}}</p>
+      {{/if}}
+
+      <div class="mt-4 text-2xl">
+        <span class="ls-dog-paw">🐾</span>
+        <span class="ls-dog-paw" style="animation-delay: 0.3s;">🐾</span>
+        <span class="ls-dog-paw" style="animation-delay: 0.6s;">🐾</span>
+      </div>
+    </header>
+
+    <!-- Navigation -->
+    {{#if show_nav}}
+    <nav class="mb-8 flex items-center justify-center gap-3 text-sm">
+      {{#if parent.path}}
+      <a href="{{parent.path}}" class="{{hover_text}} {{dc "text-amber-400" "text-amber-600"}} flex items-center gap-1">
+        <span>← Back</span>
+      </a>
+      <span class="{{muted}}">•</span>
+      {{/if}}
+      <a href="/" class="{{hover_text}} {{dc "text-amber-400" "text-amber-600"}}">🏠 Home</a>
+    </nav>
+    {{/if}}
+
+    <!-- Child sections -->
+    {{#if children_html}}
+    <div class="mb-12">
+      <h2 class="text-2xl font-bold mb-6 {{dc "text-amber-300" "text-amber-900"}} flex items-center gap-2">
+        <span>📂</span> Sections
+      </h2>
+      <div class="grid gap-4 sm:grid-cols-2">
+        {{{children_html}}}
+      </div>
+    </div>
+    {{/if}}
+
+    <!-- Items -->
+    {{#if items_html}}
+    <div>
+      <h2 class="text-2xl font-bold mb-6 {{dc "text-amber-300" "text-amber-900"}} flex items-center gap-2">
+        <span>🦴</span> Items
+      </h2>
+      <div class="space-y-4">
+        {{{items_html}}}
+      </div>
+    </div>
+    {{/if}}
+
+    <!-- Footer with paw prints -->
+    <footer class="mt-16 pt-8 border-t {{dc "border-amber-600/20" "border-amber-300/30"}} text-center">
+      <div class="text-3xl mb-3">
+        <span class="ls-dog-paw">🐾</span>
+        <span class="ls-dog-paw" style="animation-delay: 0.2s;">🐾</span>
+        <span class="ls-dog-paw" style="animation-delay: 0.4s;">🐾</span>
+        <span class="ls-dog-paw" style="animation-delay: 0.6s;">🐾</span>
+      </div>
+      <p class="{{muted}} text-sm">Made with 🐶 by LinkShare</p>
+    </footer>
+  </div>
+</body>
+</html>

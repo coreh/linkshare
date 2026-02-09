@@ -1,0 +1,9 @@
+<div class="border p-3 {{card_static}}">
+  <div class="font-medium mb-1">{{title}}</div>
+  {{#if description}}
+  <div class="text-sm {{muted}} mb-2">{{description}}</div>
+  {{/if}}
+  <audio controls preload="metadata" class="w-full h-10">
+    <source src="{{file_url}}">
+  </audio>
+</div>

@@ -1,0 +1,26 @@
+name = "Kawaii"
+
+[defaults]
+font = "Quicksand"
+color = "pink"
+dark = "auto"
+background_color = "#fdf2f8"
+background_color_dark = "#1a0510"
+background_color_light = "#fdf2f8"
+
+# CSS class variables available in all templates.
+# The system picks [vars.dark] or [vars.light] based on the section's dark mode setting.
+
+[vars.dark]
+muted = "text-white/50"
+card = "bg-accent-900/50 border-accent-500/30 hover:bg-accent-800/60 hover:border-accent-400/50"
+card_static = "bg-accent-900/40 border-accent-500/25"
+input = "bg-accent-950/80 border-accent-600/50 text-white placeholder-white/30"
+hover_text = "hover:text-accent-400"
+
+[vars.light]
+muted = "text-accent-600/50"
+card = "bg-accent-50/80 border-accent-200/60 hover:bg-accent-100/90"
+card_static = "bg-white/70 border-accent-200/50"
+input = "bg-accent-50/80 border-accent-200 text-accent-900 placeholder-accent-400/50"
+hover_text = "hover:text-accent-400"

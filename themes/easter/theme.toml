@@ -1,0 +1,23 @@
+name = "Easter"
+
+[defaults]
+font = "Baloo 2"
+color = "violet"
+dark = "auto"
+background_color = "#1e1033"
+background_color_dark = "#1e1033"
+background_color_light = "#faf5ff"
+
+[vars.dark]
+muted = "text-violet-300/50"
+card = "bg-violet-950/40 border-violet-500/20 hover:border-violet-400 hover:bg-violet-900/30"
+card_static = "bg-violet-950/40 border-violet-500/20"
+input = "bg-violet-950/60 border-violet-500/30 text-violet-200 placeholder-violet-700"
+hover_text = "hover:text-violet-300"
+
+[vars.light]
+muted = "text-violet-500/60"
+card = "bg-white/80 border-violet-200 hover:border-violet-400 hover:bg-violet-50/80"
+card_static = "bg-white/80 border-violet-200"
+input = "bg-white border-violet-300 text-violet-900 placeholder-violet-400"
+hover_text = "hover:text-violet-700"

@@ -1,0 +1,34 @@
+{{!-- Desktop Icons --}}
+{{#if show_nav}}
+<div class="win95-desktop-icons">
+  <a href="/" class="win95-desktop-icon">
+    <span class="win95-desktop-icon-img">🖥️</span>
+    <span class="win95-desktop-icon-label">My Computer</span>
+  </a>
+  {{#if parent.path}}
+  <a href="{{parent.path}}" class="win95-desktop-icon">
+    <span class="win95-desktop-icon-img">📂</span>
+    <span class="win95-desktop-icon-label">Back</span>
+  </a>
+  {{/if}}
+</div>
+{{/if}}
+
+{{!-- Page title --}}
+<h1 class="win95-page-title">{{title}}</h1>
+
+{{#if description}}
+<p style="margin: 0 0 12px 0; color: #fff; font-size: 11px; text-shadow: 1px 1px #000;">{{description}}</p>
+{{/if}}
+
+{{!-- Sections --}}
+{{#if children_html}}
+{{{children_html}}}
+{{/if}}
+
+{{!-- Items --}}
+{{#if items_html}}
+<div class="win95-items-area">
+  {{{items_html}}}
+</div>
+{{/if}}

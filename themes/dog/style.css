@@ -1,0 +1,49 @@
+/* Dog Theme - Paw prints and playful animations */
+
+/* Paw print decorations */
+.ls-dog-paw {
+  display: inline-block;
+  opacity: 0.3;
+  animation: ls-dog-paw-fade 3s ease-in-out infinite;
+}
+
+@keyframes ls-dog-paw-fade {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.4; }
+}
+
+/* Tail wagging animation for logo/header */
+.ls-dog-wag {
+  display: inline-block;
+  animation: ls-dog-wag 0.8s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+@keyframes ls-dog-wag {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+/* Playful hover effect for cards */
+.ls-dog-card:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease-out;
+}
+
+/* Bone divider */
+.ls-dog-bone::before {
+  content: "🦴";
+  opacity: 0.2;
+  font-size: 1.5rem;
+}
+
+/* Paw print trail */
+.ls-dog-paw-trail::after {
+  content: "🐾";
+  opacity: 0.15;
+  position: absolute;
+  right: -1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+}

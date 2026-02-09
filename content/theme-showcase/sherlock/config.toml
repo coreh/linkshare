@@ -1,0 +1,9 @@
+title = "Sherlock"
+description = "Elementary, my dear Watson"
+theme = "sherlock"
+color = "emerald"
+
+[[items]]
+title = "The Game is Afoot"
+type = "text"
+content = "The Sherlock theme channels Victorian London with moody emerald tones, elegant serif typography, and a mysterious detective-noir atmosphere. Perfect for mystery buffs and sophisticated collections."

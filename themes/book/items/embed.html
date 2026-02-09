@@ -1,0 +1,44 @@
+<div class="ls-card {{card_static}} border rounded-xl overflow-hidden" data-embed-container>
+  <div class="relative">
+    <div class="aspect-video bg-black">
+      <iframe
+        src="{{url}}"
+        class="w-full h-full border-0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <button
+      onclick="toggleMaximize(this)"
+      class="ls-embed-maximize absolute top-2 right-2 px-3 py-1 text-xs font-medium bg-black/70 hover:bg-black/90 text-white rounded transition-colors backdrop-blur-sm"
+    >
+      🗖
+    </button>
+  </div>
+  {{#if title}}
+  <div class="p-6">
+    <h3 class="font-bold text-lg mb-2">{{title}}</h3>
+    {{#if description}}
+    <p class="{{muted}} text-sm leading-relaxed">{{description}}</p>
+    {{/if}}
+  </div>
+  {{/if}}
+</div>
+
+<style>
+  .ls-embed-maximized {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 9999 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  .ls-embed-maximized .aspect-video {
+    aspect-ratio: unset !important;
+    height: 100vh !important;
+  }
+</style>

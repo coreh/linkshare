@@ -1,0 +1,16 @@
+<div class="{{card_static}} ls-card-static rounded-lg border-2 overflow-hidden">
+  <video controls class="w-full" preload="metadata">
+    <source src="{{file_url}}">
+    Your browser doesn't support video playback.
+  </video>
+  {{#if title}}
+  <div class="p-4">
+    <h3 class="text-xl font-bold {{dc "text-orange-300" "text-orange-700"}} flex items-center gap-2">
+      🎬 {{title}}
+    </h3>
+    {{#if description}}
+    <p class="{{muted}} mt-2">{{description}}</p>
+    {{/if}}
+  </div>
+  {{/if}}
+</div>

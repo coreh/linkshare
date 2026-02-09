@@ -1,0 +1,9 @@
+title = "Cooking"
+description = "Warm and inviting"
+theme = "cooking"
+color = "red"
+
+[[items]]
+title = "Recipe Collection"
+type = "text"
+content = "The Cooking theme brings the warmth of a home kitchen with recipe-card styling and appetizing colors. Perfect for sharing recipes, food blogs, and culinary resources."

@@ -1,0 +1,49 @@
+{{#if parent}}
+<nav class="mb-8">
+  <a href="{{parent.path}}" class="{{muted}} {{hover_text}} transition-all">← Back</a>
+</nav>
+{{/if}}
+
+<div class="{{card_static}} border rounded-lg p-8 backdrop-blur-sm">
+  <div class="text-center mb-8">
+    <div class="text-6xl mb-4">🔒</div>
+    <h1 class="text-3xl font-bold mb-2 bg-gradient-to-r from-accent-400 to-cyan-400 bg-clip-text text-transparent" style="letter-spacing: 0.2em;">
+      A C C E S S
+    </h1>
+    <p class="{{muted}}">Password required for</p>
+    <p class="text-xl font-semibold mt-1">{{title}}</p>
+  </div>
+
+  <form method="POST" action="{{path}}" class="space-y-6">
+    <div>
+      <label for="password" class="block text-sm font-medium mb-2 {{muted}}">Enter Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        autofocus
+        class="{{input}} w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
+        placeholder="••••••••"
+      >
+    </div>
+
+    {{#if error}}
+    <div class="bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3 rounded-lg text-sm">
+      {{error}}
+    </div>
+    {{/if}}
+
+    <button
+      type="submit"
+      class="w-full bg-gradient-to-r from-accent-600 to-cyan-600 {{dc "hover:from-accent-500 hover:to-cyan-500" "hover:from-accent-700 hover:to-cyan-700"}} text-white font-semibold py-3 px-6 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-cyan-400"
+      style="letter-spacing: 0.15em;"
+    >
+      E N T E R
+    </button>
+  </form>
+</div>
+
+<p class="text-center {{muted}} text-sm mt-6">
+  This section is password-protected
+</p>

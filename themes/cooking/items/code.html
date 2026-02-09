@@ -1,0 +1,29 @@
+<div class="{{dc "bg-gray-900" "bg-gray-50"}} border-2 {{dc "border-accent-800/30" "border-accent-200"}} rounded-lg overflow-hidden ls-card ls-code">
+  <div class="flex items-center justify-between px-4 py-2 {{dc "bg-gray-800" "bg-gray-100"}} border-b {{dc "border-accent-800/30" "border-accent-200"}}">
+    {{#if title}}
+    <span class="text-sm font-semibold {{dc "text-accent-300" "text-accent-700"}} flex items-center gap-2">
+      <span>💻</span>
+      <span>{{title}}</span>
+    </span>
+    {{else}}
+    <span class="text-sm font-semibold {{dc "text-accent-300" "text-accent-700"}} flex items-center gap-2">
+      <span>💻</span>
+      <span>Code</span>
+    </span>
+    {{/if}}
+    <button
+      onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})"
+      class="px-3 py-1 text-xs {{dc "bg-accent-800 hover:bg-accent-700 text-accent-200" "bg-accent-100 hover:bg-accent-200 text-accent-700"}} rounded transition-all ls-button"
+    >
+      Copy
+    </button>
+  </div>
+  {{#if description}}
+  <div class="px-4 py-2 {{dc "bg-gray-800/50" "bg-gray-100/50"}} border-b {{dc "border-accent-800/30" "border-accent-200"}}">
+    <p class="text-sm {{muted}}">{{description}}</p>
+  </div>
+  {{/if}}
+  <div class="overflow-x-auto">
+    <pre class="!m-0 !p-4 !bg-transparent"><code class="language-{{language}} !bg-transparent">{{code}}</code></pre>
+  </div>
+</div>

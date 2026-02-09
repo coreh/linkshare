@@ -1,0 +1,23 @@
+name = "Halloween"
+
+[defaults]
+font = "Creepster"
+color = "orange"
+dark = "auto"
+background_color = "#1a0a00"
+background_color_dark = "#1a0a00"
+background_color_light = "#fff7ed"
+
+[vars.dark]
+muted = "text-orange-300/50"
+card = "bg-orange-950/40 border-orange-500/20 hover:border-orange-400 hover:bg-orange-900/30"
+card_static = "bg-orange-950/40 border-orange-500/20"
+input = "bg-orange-950/60 border-orange-500/30 text-orange-200 placeholder-orange-700"
+hover_text = "hover:text-orange-300"
+
+[vars.light]
+muted = "text-orange-600/60"
+card = "bg-orange-50/80 border-orange-200 hover:border-orange-400 hover:bg-orange-100/80"
+card_static = "bg-orange-50/80 border-orange-200"
+input = "bg-white border-orange-300 text-orange-900 placeholder-orange-400"
+hover_text = "hover:text-orange-700"

@@ -1,0 +1,53 @@
+title = "Windows 95"
+description = "Retro computing nostalgia"
+theme = "win95"
+color = "sky"
+
+[[items]]
+title = "Welcome to Windows"
+type = "text"
+content = "The Windows 95 theme recreates the classic desktop experience with authentic window frames, title bars, and that unmistakable teal background. A nostalgic trip back to 1995."
+
+[[items]]
+title = "System Information"
+type = "text"
+content = """Microsoft Windows 95
+Version 4.00.950
+Copyright © Microsoft Corp 1981-1995
+
+This computer is licensed to:
+LinkShare User
+Your Organization
+
+Physical Memory Available: 16384 KB
+"""
+
+[[items]]
+title = "Microsoft Homepage"
+type = "link"
+url = "https://www.microsoft.com"
+description = "Visit the official Microsoft website"
+icon = "🪟"
+
+[[items]]
+title = "98.css Framework"
+type = "link"
+url = "https://jdan.github.io/98.css/"
+description = "The CSS framework that powers this theme"
+icon = "🎨"
+
+[[items]]
+title = "Sample Code"
+type = "code"
+language = "javascript"
+content = """// Classic Windows 95 startup
+function bootWindows95() {
+  console.log('Starting Windows 95...');
+  playSound('startup.wav');
+  showDesktop();
+  loadPrograms();
+  console.log('Welcome to Windows 95!');
+}
+
+bootWindows95();
+"""

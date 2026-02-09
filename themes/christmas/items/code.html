@@ -1,0 +1,21 @@
+<div class="{{card_static}} rounded-lg border overflow-hidden ls-code">
+  {{#if title}}
+  <div class="px-6 pt-4 pb-2 flex items-center justify-between border-b {{dc "border-red-500/20" "border-red-200"}}">
+    <h3 class="text-lg font-semibold">{{title}}</h3>
+    <button
+      onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})"
+      class="text-sm px-3 py-1 rounded {{dc "bg-red-900/50 hover:bg-red-800/50" "bg-red-100 hover:bg-red-200"}} transition-colors"
+    >
+      Copy
+    </button>
+  </div>
+  {{/if}}
+  <div class="p-6 overflow-x-auto {{dc "bg-red-950/60" "bg-red-50"}}">
+    <pre><code class="{{language_class}}">{{{content}}}</code></pre>
+  </div>
+</div>
+<script>
+  document.querySelectorAll('.ls-code pre code').forEach((block) => {
+    hljs.highlightElement(block);
+  });
+</script>

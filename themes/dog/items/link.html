@@ -1,0 +1,24 @@
+<a href="{{url}}" target="_blank" rel="noopener noreferrer" class="{{card}} ls-dog-card block rounded-2xl border-2 p-6 transition-all shadow-sm hover:shadow-md">
+  <div class="flex items-start gap-4">
+    {{#if icon}}
+    <div class="flex-shrink-0">
+      <img src="{{icon}}" alt="" class="w-12 h-12 rounded-lg object-cover">
+    </div>
+    {{else}}
+    <div class="flex-shrink-0 text-3xl">🔗</div>
+    {{/if}}
+
+    <div class="flex-1 min-w-0">
+      <h3 class="font-bold text-lg mb-1 truncate">{{title}}</h3>
+      {{#if description}}
+      <p class="{{muted}} text-sm line-clamp-2 mb-2">{{description}}</p>
+      {{/if}}
+      <p class="{{muted}} text-xs truncate flex items-center gap-1">
+        <span>🦴</span>
+        <span>{{url}}</span>
+      </p>
+    </div>
+
+    <span class="flex-shrink-0 text-xl">🐾</span>
+  </div>
+</a>

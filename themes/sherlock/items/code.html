@@ -1,0 +1,23 @@
+<div class="{{card_static}} border-2 rounded-lg overflow-hidden ls-card ls-code">
+  {{#if title}}
+    <div class="px-6 pt-4 pb-2 flex items-center justify-between {{dc "bg-emerald-950/50" "bg-emerald-100/50"}}">
+      <h3 class="text-lg font-bold ls-title">{{title}}</h3>
+      <button
+        onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})"
+        class="text-xs px-3 py-1 {{dc "bg-emerald-800 hover:bg-emerald-700" "bg-emerald-200 hover:bg-emerald-300"}} rounded transition-colors"
+      >
+        Copy
+      </button>
+    </div>
+  {{else}}
+    <div class="px-6 pt-4 pb-2 flex justify-end {{dc "bg-emerald-950/50" "bg-emerald-100/50"}}">
+      <button
+        onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})"
+        class="text-xs px-3 py-1 {{dc "bg-emerald-800 hover:bg-emerald-700" "bg-emerald-200 hover:bg-emerald-300"}} rounded transition-colors"
+      >
+        Copy
+      </button>
+    </div>
+  {{/if}}
+  <pre class="!mt-0 !mb-0"><code class="language-{{language}}">{{{code}}}</code></pre>
+</div>

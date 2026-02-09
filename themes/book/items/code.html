@@ -1,0 +1,18 @@
+<div class="ls-card ls-code {{card_static}} border rounded-xl overflow-hidden">
+  <div class="flex items-center justify-between px-6 py-3 border-b {{dc "border-amber-700/20 bg-amber-950/50" "border-amber-200 bg-amber-100/50"}}">
+    {{#if title}}
+    <h3 class="font-bold text-sm">{{title}}</h3>
+    {{else}}
+    <span class="{{muted}} text-sm">Code</span>
+    {{/if}}
+    <button
+      onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})"
+      class="px-3 py-1 text-xs font-medium {{dc "bg-amber-800 hover:bg-amber-700" "bg-amber-200 hover:bg-amber-300"}} rounded transition-colors"
+    >
+      Copy
+    </button>
+  </div>
+  <div class="overflow-x-auto">
+    <pre class="!m-0 !bg-transparent"><code class="{{language}}">{{{code}}}</code></pre>
+  </div>
+</div>

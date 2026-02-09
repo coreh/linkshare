@@ -1,0 +1,17 @@
+<a href="{{url}}" target="_blank" rel="noopener noreferrer" class="block p-6 rounded-lg border-2 {{card}} transition-all ls-item">
+  <div class="flex items-start gap-4">
+    {{#if icon}}
+      <img src="{{icon}}" alt="" class="w-12 h-12 rounded-lg flex-shrink-0 bg-accent-900/30 p-2">
+    {{else}}
+      <div class="text-3xl flex-shrink-0">🔗</div>
+    {{/if}}
+    <div class="flex-1 min-w-0">
+      <h3 class="text-xl font-bold text-accent-200 mb-1 truncate">{{title}}</h3>
+      {{#if description}}
+        <p class="{{muted}} text-sm line-clamp-2 mb-2">{{description}}</p>
+      {{/if}}
+      <p class="text-xs {{muted}} truncate">{{url}}</p>
+    </div>
+    <div class="text-accent-400 flex-shrink-0">→</div>
+  </div>
+</a>

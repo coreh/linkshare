@@ -1,0 +1,11 @@
+<div class="{{card_static}} border rounded-xl overflow-hidden ls-carnival-card">
+    <img src="{{file_url}}" alt="{{title}}" class="w-full h-auto">
+    {{#if title}}
+    <div class="p-6">
+        <h3 class="text-xl font-bold mb-2 {{dc "text-purple-100" "text-purple-800"}}">🖼️ {{title}}</h3>
+        {{#if description}}
+        <p class="{{muted}}">{{description}}</p>
+        {{/if}}
+    </div>
+    {{/if}}
+</div>

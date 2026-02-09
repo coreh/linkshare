@@ -1,0 +1,8 @@
+<div class="p-6 rounded-lg border-2 {{card_static}} bg-accent-950/20 ls-item">
+  {{#if title}}
+    <h3 class="text-xl font-bold text-accent-200 mb-3">{{title}}</h3>
+  {{/if}}
+  <div class="prose prose-invert max-w-none {{muted}} [&>p]:mb-3 [&>ul]:mb-3 [&>ol]:mb-3 [&>h1]:text-accent-200 [&>h2]:text-accent-300 [&>h3]:text-accent-300">
+    {{{content}}}
+  </div>
+</div>

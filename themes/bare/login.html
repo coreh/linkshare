@@ -1,0 +1,21 @@
+{{#if parent}}
+<a href="{{parent.path}}" class="inline-block mb-6 text-sm {{muted}} {{hover_text}} transition-colors">&larr; Back</a>
+{{/if}}
+
+<div class="text-center mb-8">
+  <h1 class="text-xl font-semibold mb-1">{{title}}</h1>
+  <p class="{{muted}} text-sm">This section is password protected.</p>
+</div>
+
+<form method="POST" action="{{path}}" class="border p-6 {{card_static}}">
+  {{#if error}}
+  <div class="mb-4 text-red-600 text-sm text-center border border-red-300 p-2">{{error}}</div>
+  {{/if}}
+  <label class="block mb-2 text-sm font-medium" for="password">Password</label>
+  <input type="password" name="password" id="password" required autofocus
+         class="w-full px-3 py-2 border focus:outline-none focus:ring-1 focus:ring-zinc-400 mb-4 {{input}}"
+         placeholder="Enter password">
+  <button type="submit" class="w-full py-2 px-4 font-medium text-white bg-zinc-800 hover:bg-zinc-700 transition-colors">
+    Unlock
+  </button>
+</form>

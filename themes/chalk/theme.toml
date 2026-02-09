@@ -1,0 +1,23 @@
+name = "Chalk"
+
+[defaults]
+font = "Patrick Hand"
+color = "green"
+dark = "auto"
+background_color = "#1a2e1a"
+background_color_dark = "#1a2e1a"
+background_color_light = "#f0fdf4"
+
+[vars.dark]
+muted = "text-green-300/40"
+card = "border-dashed border-green-400/30 hover:border-green-300/60 hover:bg-green-900/20"
+card_static = "border-dashed border-green-400/30"
+input = "bg-green-950/60 border-dashed border-green-400/30 text-green-200 placeholder-green-600"
+hover_text = "hover:text-green-200"
+
+[vars.light]
+muted = "text-green-600/50"
+card = "border-dashed border-green-400/40 hover:border-green-600 hover:bg-green-50/60"
+card_static = "border-dashed border-green-400/40"
+input = "bg-white/80 border-dashed border-green-400/40 text-green-900 placeholder-green-500"
+hover_text = "hover:text-green-800"

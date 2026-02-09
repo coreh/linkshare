@@ -1,0 +1,14 @@
+<a href="{{url}}" target="_blank" rel="noopener noreferrer" class="ls-card block {{card}} border rounded-xl p-6 transition-all">
+  <div class="flex items-start justify-between gap-4">
+    <div class="flex-1 min-w-0">
+      <h3 class="font-bold text-lg mb-2 truncate">{{title}}</h3>
+      {{#if description}}
+      <p class="{{muted}} text-sm leading-relaxed">{{description}}</p>
+      {{/if}}
+      <p class="{{muted}} text-xs mt-3 truncate font-mono">{{url}}</p>
+    </div>
+    <div class="flex-shrink-0 text-2xl">
+      {{#if icon}}{{icon}}{{else}}🔗{{/if}}
+    </div>
+  </div>
+</a>

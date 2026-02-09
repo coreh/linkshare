@@ -1,0 +1,144 @@
+/* Sherlock Theme - Victorian Detective Aesthetic */
+
+/* Paper grain texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  z-index: -1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Fog effect at page edges */
+.ls-page {
+  position: relative;
+}
+
+.ls-page::before,
+.ls-page::after {
+  content: '';
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 200px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.4;
+}
+
+.ls-page::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--bg-color), transparent);
+}
+
+.ls-page::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--bg-color), transparent);
+}
+
+/* Victorian ornamental divider */
+.ls-divider {
+  position: relative;
+  text-align: center;
+  margin: 2rem 0;
+  opacity: 0.3;
+}
+
+.ls-divider::before {
+  content: '◆';
+  display: inline-block;
+  font-size: 0.75rem;
+  color: currentColor;
+}
+
+/* Magnifying glass motif for headers */
+.ls-header-accent::before {
+  content: '🔍';
+  display: inline-block;
+  margin-right: 0.5rem;
+  opacity: 0.7;
+}
+
+/* Case file card styling */
+.ls-card {
+  position: relative;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.ls-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+  opacity: 0.1;
+}
+
+/* Gold accent shimmer on hover */
+.ls-card:hover {
+  box-shadow: 0 0 20px rgba(234, 179, 8, 0.1);
+}
+
+/* Victorian serif emphasis */
+.ls-title {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Detective quote styling */
+.ls-quote {
+  font-style: italic;
+  opacity: 0.6;
+  border-left: 2px solid currentColor;
+  padding-left: 1rem;
+  margin: 1rem 0;
+}
+
+/* Mysterious shadow text */
+.ls-shadow-text {
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Code block case file styling */
+.ls-code {
+  border-left: 3px solid rgb(var(--c-500));
+}
+html.dark .ls-code {
+  background: rgba(0, 0, 0, 0.2) !important;
+}
+html:not(.dark) .ls-code {
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Embed maximize button detective style */
+.ls-embed-maximize {
+  transition: all 0.2s ease;
+}
+
+.ls-embed-maximize:hover {
+  transform: scale(1.1);
+  color: rgb(var(--c-400));
+}
+
+/* Input field case notes styling */
+input[type="password"],
+input[type="text"] {
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.05em;
+}
+
+/* Lock icon for protected sections */
+.ls-protected::before {
+  content: '🔒';
+  display: inline-block;
+  margin-right: 0.5rem;
+  opacity: 0.5;
+}

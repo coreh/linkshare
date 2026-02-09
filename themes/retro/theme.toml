@@ -1,0 +1,27 @@
+name = "Retro"
+
+[defaults]
+font = "JetBrains Mono"
+color = "green"
+dark = "auto"
+background_color = "#000000"
+background_color_dark = "#000000"
+background_color_light = "#f0fdf4"
+
+[options]
+body_class = "retro-scanlines"
+
+# CSS class variables available in all templates.
+# The system picks [vars.dark] or [vars.light] based on the section's dark mode setting.
+
+[vars.dark]
+muted = "text-white/40"
+card = "bg-black/40 border-accent-500/20 hover:border-accent-400 hover:bg-accent-500/10"
+card_static = "bg-black/40 border-accent-500/20"
+input = "bg-black/60 border-accent-500/30 text-accent-300 placeholder-accent-800"
+
+[vars.light]
+muted = "text-gray-500"
+card = "bg-white/80 border-accent-600/20 hover:border-accent-500 hover:bg-accent-500/10"
+card_static = "bg-white/80 border-accent-600/20"
+input = "bg-white border-accent-600/30 text-accent-800 placeholder-accent-400"

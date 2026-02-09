@@ -1,0 +1,11 @@
+<a href="{{path}}" class="block border p-3 transition-colors {{card}}">
+  <div class="flex items-center gap-3">
+    <div class="flex-1 min-w-0">
+      <div class="font-medium truncate">{{#if has_password}}&#128274; {{/if}}{{title}}</div>
+      {{#if description}}
+      <div class="text-sm {{muted}} truncate">{{description}}</div>
+      {{/if}}
+    </div>
+    <span class="{{muted}} shrink-0">&rsaquo;</span>
+  </div>
+</a>

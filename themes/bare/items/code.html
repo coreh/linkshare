@@ -1,0 +1,12 @@
+<div class="border {{card_static}}">
+  <div class="flex items-center justify-between px-3 py-2 border-b {{card_static}}">
+    <span class="text-sm font-medium">{{title}}</span>
+    <button onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})"
+            class="text-xs {{muted}} {{hover_text}} transition-colors">
+      Copy
+    </button>
+  </div>
+  <div class="ls-code">
+    <pre class="p-3 overflow-x-auto text-sm"><code class="{{language_class}}">{{content}}</code></pre>
+  </div>
+</div>

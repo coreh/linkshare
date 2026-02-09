@@ -1,0 +1,31 @@
+{{#if parent}}
+<a href="{{parent.path}}" class="inline-flex items-center gap-1.5 mb-6 text-sm {{muted}} {{hover_text}} transition-colors">
+  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+  </svg>
+  Back
+</a>
+{{/if}}
+
+<div class="text-center mb-8">
+  <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 bg-accent-500/20">
+    <svg class="w-8 h-8 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+    </svg>
+  </div>
+  <h1 class="text-2xl font-bold mb-2">{{title}}</h1>
+  <p class="{{muted}}">This section is password protected</p>
+</div>
+
+<form method="POST" action="{{path}}" class="backdrop-blur-sm border rounded-xl p-6 {{card_static}}">
+  {{#if error}}
+  <div class="mb-4 text-red-400 text-sm text-center bg-red-500/10 border border-red-500/20 rounded-lg p-3">{{error}}</div>
+  {{/if}}
+  <label class="block mb-2 text-sm font-medium" for="password">Password</label>
+  <input type="password" name="password" id="password" required autofocus
+         class="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-accent-500 mb-4 {{input}}"
+         placeholder="Enter password">
+  <button type="submit" class="w-full py-3 px-4 rounded-lg font-semibold text-white transition-all hover:opacity-90 active:scale-[0.98] bg-accent-500">
+    Unlock
+  </button>
+</form>

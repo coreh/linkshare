@@ -1,0 +1,29 @@
+<div class="{{card_static}} ls-card-static rounded-lg border-2 overflow-hidden" data-embed-container>
+  {{#if title}}
+  <div class="{{dc "bg-orange-950/60 border-b border-orange-500/20" "bg-orange-50 border-b border-orange-200"}} px-6 py-3 flex items-center justify-between">
+    <div>
+      <h3 class="text-lg font-bold {{dc "text-orange-300" "text-orange-700"}} flex items-center gap-2">
+        🕸️ {{title}}
+      </h3>
+      {{#if description}}
+      <p class="{{muted}} text-sm mt-1">{{description}}</p>
+      {{/if}}
+    </div>
+    <button
+      onclick="toggleMaximize(this)"
+      class="ls-embed-maximize px-3 py-1 text-sm {{dc "bg-orange-900/50 hover:bg-orange-800/50 text-orange-300" "bg-orange-100 hover:bg-orange-200 text-orange-700"}} rounded transition-colors"
+    >
+      Maximize
+    </button>
+  </div>
+  {{/if}}
+  <div class="relative">
+    <iframe
+      src="{{url}}"
+      class="w-full border-0"
+      style="height: {{height}}px;"
+      loading="lazy"
+      sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+    ></iframe>
+  </div>
+</div>

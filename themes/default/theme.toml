@@ -1,0 +1,26 @@
+name = "Default"
+
+[defaults]
+font = "Inter"
+color = "indigo"
+dark = "auto"
+background_color = "#0f172a"
+background_color_dark = "#0f172a"
+background_color_light = "#f8fafc"
+
+# CSS class variables available in all templates.
+# The system picks [vars.dark] or [vars.light] based on the section's dark mode setting.
+
+[vars.dark]
+muted = "text-white/60"
+card = "bg-white/10 hover:bg-white/[0.15] border-white/10"
+card_static = "bg-white/10 border-white/10"
+input = "bg-white/10 border-white/20 text-white placeholder-white/40"
+hover_text = "hover:text-white"
+
+[vars.light]
+muted = "text-gray-500"
+card = "bg-white/80 hover:bg-white/90 border-gray-200"
+card_static = "bg-white/80 border-gray-200"
+input = "bg-white border-gray-300 text-gray-900 placeholder-gray-400"
+hover_text = "hover:text-gray-900"

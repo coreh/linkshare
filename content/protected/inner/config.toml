@@ -1,0 +1,7 @@
+title = "Inner Secret"
+description = "This nested section should inherit protection from the parent"
+
+[[items]]
+title = "Deeply Nested Secret"
+type = "text"
+content = "If you can see this, the parent password was accepted and auth propagated to this child section."

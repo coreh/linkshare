@@ -1,0 +1,14 @@
+title = "Halloween"
+description = "Spooky and festive"
+theme = "halloween"
+color = "orange"
+
+[[items]]
+title = "Creepy Pasta"
+url = "https://creepypasta.com"
+description = "Scary stories from the internet"
+
+[[items]]
+title = "Trick or Treat"
+type = "text"
+content = "The Halloween theme brings a spooky, festive atmosphere with haunted styling and eerie accents. Perfect for seasonal pages and horror-themed content."

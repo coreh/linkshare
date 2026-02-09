@@ -1,0 +1,14 @@
+title = "Christmas"
+description = "Festive and jolly"
+theme = "christmas"
+color = "red"
+
+[[items]]
+title = "NORAD Santa Tracker"
+url = "https://www.noradsanta.org"
+description = "Track Santa around the world"
+
+[[items]]
+title = "Holiday Cheer"
+type = "text"
+content = "The Christmas theme brings holiday magic with falling snowflakes, festive colors, and seasonal charm. Perfect for holiday greetings and seasonal content."

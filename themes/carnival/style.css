@@ -1,0 +1,46 @@
+/* Carnival Theme - Confetti & Celebration */
+
+/* Festive gradient border at top */
+.ls-carnival-border {
+  background: linear-gradient(to right, #7c3aed, #fbbf24, #10b981, #ec4899, #7c3aed);
+  background-size: 200% 100%;
+  height: 6px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  animation: ls-carnival-shimmer 4s linear infinite;
+}
+
+@keyframes ls-carnival-shimmer {
+  0% { background-position: 0% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Confetti canvas */
+.ls-confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* Mask emoji decoration */
+.ls-carnival-mask {
+  display: inline-block;
+  animation: ls-carnival-sway 2s ease-in-out infinite;
+}
+
+@keyframes ls-carnival-sway {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+/* Festive text shadow */
+.ls-carnival-title {
+  text-shadow: 2px 2px 4px rgba(124, 58, 237, 0.3);
+}

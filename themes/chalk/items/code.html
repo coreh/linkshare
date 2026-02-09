@@ -1,0 +1,25 @@
+<div class="rounded-lg border-2 border-dashed border-accent-400/30 overflow-hidden bg-accent-950/20 ls-item ls-code">
+  {{#if title}}
+    <div class="px-4 py-3 border-b-2 border-dashed border-accent-400/30 bg-accent-900/20">
+      <div class="flex items-center justify-between gap-4">
+        <h3 class="text-lg font-bold text-accent-200">{{title}}</h3>
+        <button
+          onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})"
+          class="px-3 py-1 text-sm bg-accent-700 hover:bg-accent-600 text-accent-100 rounded border border-dashed border-accent-400/40 transition-colors"
+        >
+          Copy
+        </button>
+      </div>
+    </div>
+  {{else}}
+    <div class="px-4 py-2 border-b-2 border-dashed border-accent-400/30 bg-accent-900/20 flex justify-end">
+      <button
+        onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})"
+        class="px-3 py-1 text-sm bg-accent-700 hover:bg-accent-600 text-accent-100 rounded border border-dashed border-accent-400/40 transition-colors"
+      >
+        Copy
+      </button>
+    </div>
+  {{/if}}
+  <pre class="!m-0 !bg-transparent !border-0"><code class="language-{{dc "{{language}}" "{{language}}"}}">{{{code}}}</code></pre>
+</div>

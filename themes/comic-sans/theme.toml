@@ -1,0 +1,23 @@
+name = "Comic Sans"
+
+[defaults]
+font = "Comic Neue"
+color = "fuchsia"
+dark = "auto"
+background_color = "#2d004d"
+background_color_dark = "#2d004d"
+background_color_light = "#fffbeb"
+
+[vars.dark]
+muted = "text-fuchsia-300/60"
+card = "bg-fuchsia-950/40 border-fuchsia-400/30 hover:border-lime-400 hover:bg-fuchsia-900/40"
+card_static = "bg-fuchsia-950/40 border-fuchsia-400/30"
+input = "bg-fuchsia-950/60 border-fuchsia-400/40 text-fuchsia-200 placeholder-fuchsia-600"
+hover_text = "hover:text-lime-300"
+
+[vars.light]
+muted = "text-fuchsia-500/60"
+card = "bg-yellow-50/80 border-fuchsia-300 hover:border-lime-500 hover:bg-lime-50/60"
+card_static = "bg-yellow-50/80 border-fuchsia-300"
+input = "bg-white border-fuchsia-400 text-fuchsia-900 placeholder-fuchsia-400"
+hover_text = "hover:text-fuchsia-700"

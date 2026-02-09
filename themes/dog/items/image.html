@@ -1,0 +1,17 @@
+<div class="{{card_static}} rounded-2xl border-2 p-4 shadow-sm overflow-hidden">
+  <div class="rounded-xl overflow-hidden mb-3">
+    <img src="{{file_url}}" alt="{{title}}" class="w-full h-auto">
+  </div>
+  {{#if title}}
+  <h3 class="font-bold text-lg mb-1 px-2 flex items-center gap-2">
+    <span>🖼️</span>
+    {{title}}
+  </h3>
+  {{/if}}
+  {{#if description}}
+  <p class="{{muted}} text-sm px-2">{{description}}</p>
+  {{/if}}
+  <div class="mt-2 px-2 {{muted}} text-xs flex items-center gap-1">
+    <span class="ls-dog-paw">🐾</span>
+  </div>
+</div>

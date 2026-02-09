@@ -1,0 +1,17 @@
+<div data-embed-container class="border border-accent-500/20 rounded-sm overflow-hidden {{card_static}}">
+  <div class="{{dc "text-accent-600" "text-accent-700"}} text-xs px-3 py-1 select-none font-mono">$ curl {{url}}</div>
+  <div class="relative">
+    <iframe src="{{url}}" class="w-full border-0" height="{{height}}" loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    <button onclick="toggleMaximize(this)" class="ls-embed-maximize {{dc "bg-black/70 text-accent-400" "bg-white/70 text-accent-700"}} font-mono text-xs border border-accent-500/30 rounded-sm {{dc "hover:bg-black/90" "hover:bg-white/90"}}" title="Maximize">[+]</button>
+  </div>
+  {{#if title}}
+  <div class="px-3 py-2 font-mono">
+    <div class="{{dc "text-accent-400" "text-accent-700"}} text-sm">{{title}}</div>
+    {{#if description}}
+    <div class="text-xs {{muted}} mt-1"># {{description}}</div>
+    {{/if}}
+  </div>
+  {{/if}}
+</div>

@@ -1,0 +1,24 @@
+title = "Bare"
+description = "Minimal and content-focused"
+theme = "bare"
+color = "zinc"
+
+[[items]]
+title = "Wikipedia"
+url = "https://wikipedia.org"
+description = "The free encyclopedia"
+
+[[items]]
+title = "About This Theme"
+type = "text"
+content = "The bare theme strips away decoration to focus on content. No blur effects, no shadows, no rounded corners — just clean typography and subtle borders. Ideal for documentation and reference pages."
+
+[[items]]
+title = "Minimal Config"
+type = "code"
+language = "toml"
+content = """
+title = "Docs"
+theme = "bare"
+color = "zinc"
+"""

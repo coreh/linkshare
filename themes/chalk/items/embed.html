@@ -1,0 +1,55 @@
+<div class="rounded-lg border-2 {{card_static}} overflow-hidden bg-accent-950/20 ls-item" data-embed-container>
+  {{#if title}}
+    <div class="px-4 py-3 border-b-2 border-dashed border-accent-400/30 bg-accent-900/20">
+      <div class="flex items-center justify-between gap-4">
+        <div class="flex-1 min-w-0">
+          <h3 class="text-lg font-bold text-accent-200 mb-1">{{title}}</h3>
+          {{#if description}}
+            <p class="{{muted}} text-sm">{{description}}</p>
+          {{/if}}
+        </div>
+        <button
+          onclick="toggleMaximize(this)"
+          class="ls-embed-maximize px-3 py-1 text-sm bg-accent-700 hover:bg-accent-600 text-accent-100 rounded border border-dashed border-accent-400/40 transition-colors flex-shrink-0"
+        >
+          ⛶
+        </button>
+      </div>
+    </div>
+  {{else}}
+    <div class="px-4 py-2 border-b-2 border-dashed border-accent-400/30 bg-accent-900/20 flex justify-end">
+      <button
+        onclick="toggleMaximize(this)"
+        class="ls-embed-maximize px-3 py-1 text-sm bg-accent-700 hover:bg-accent-600 text-accent-100 rounded border border-dashed border-accent-400/40 transition-colors"
+      >
+        ⛶
+      </button>
+    </div>
+  {{/if}}
+  <div class="relative" style="padding-bottom: 56.25%; height: 0; overflow: hidden;">
+    <iframe
+      src="{{url}}"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      class="absolute top-0 left-0 w-full h-full"
+    ></iframe>
+  </div>
+</div>
+
+<style>
+  .ls-embed-maximized {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 9999 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+  .ls-embed-maximized > div:last-child {
+    padding-bottom: 100% !important;
+    height: 100vh !important;
+  }
+</style>

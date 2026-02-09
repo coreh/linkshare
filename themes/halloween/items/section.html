@@ -1,0 +1,16 @@
+<a href="{{path}}" class="{{card}} ls-card block rounded-lg border-2 p-6 transition-all transform hover:scale-105">
+  <div class="flex items-start justify-between">
+    <div class="flex-1">
+      <h3 class="text-xl font-bold mb-2 {{dc "text-orange-300" "text-orange-700"}}">
+        🕸️ {{title}}
+      </h3>
+      {{#if description}}
+      <p class="{{muted}}">{{description}}</p>
+      {{/if}}
+    </div>
+    <div class="ml-4 text-2xl flex items-center gap-2">
+      {{#if has_password}}🔒{{/if}}
+      <span class="{{dc "text-orange-400" "text-orange-600"}}">→</span>
+    </div>
+  </div>
+</a>

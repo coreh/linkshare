@@ -1,0 +1,9 @@
+title = "Book"
+description = "Elegant and literary"
+theme = "book"
+color = "amber"
+
+[[items]]
+title = "Chapter One"
+type = "text"
+content = "The Book theme evokes the warmth of a well-loved library with classic serif typography and parchment-inspired tones. Ideal for reading lists, book clubs, and literary collections."

@@ -1,0 +1,9 @@
+title = "Chalk"
+description = "Blackboard and chalk dust"
+theme = "chalk"
+color = "green"
+
+[[items]]
+title = "Today's Lesson"
+type = "text"
+content = "The Chalk theme recreates the nostalgic feeling of a classroom blackboard with handwritten-style text and dashed chalk-line borders. Perfect for educational content and study resources."

@@ -1,0 +1,13 @@
+<div class="window" style="width: 100%; margin-bottom: 4px;">
+  <div class="title-bar">
+    <div class="title-bar-text">{{#if title}}{{title}}{{else}}Image{{/if}}</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body" style="margin: 0; padding: 0;">
+    <img src="{{file_url}}" alt="{{title}}" style="max-width: 100%; display: block;">
+  </div>
+</div>

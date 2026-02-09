@@ -1,0 +1,9 @@
+title = "Easter"
+description = "Pastel and springtime"
+theme = "easter"
+color = "violet"
+
+[[items]]
+title = "Spring Has Sprung"
+type = "text"
+content = "The Easter theme features soft pastels, playful emoji accents, and a cheerful springtime vibe. Great for seasonal pages and light-hearted content."

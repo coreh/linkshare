@@ -1,0 +1,12 @@
+<div class="border border-accent-500/20 rounded-sm overflow-hidden {{card_static}}">
+  <div class="flex items-center justify-between px-3 py-1.5 border-b border-accent-500/20">
+    <span class="{{dc "text-accent-600" "text-accent-700"}} text-xs font-mono select-none">$ cat {{title}}</span>
+    <button onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})"
+            class="text-xs {{dc "text-accent-700 hover:text-accent-400" "text-accent-600 hover:text-accent-800"}} transition-colors px-2 py-0.5 rounded-sm font-mono">
+      Copy
+    </button>
+  </div>
+  <div class="ls-code">
+    <pre class="p-3 overflow-x-auto text-sm {{dc "bg-black/30" "bg-accent-50/50"}}"><code class="{{language_class}}">{{content}}</code></pre>
+  </div>
+</div>

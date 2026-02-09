@@ -1,0 +1,15 @@
+<div class="{{card_static}} border-2 rounded-lg p-5 ls-card">
+  {{#if title}}
+  <h3 class="text-lg font-semibold text-accent-700 dark:text-accent-300 mb-3 flex items-center gap-2">
+    <span>🎵</span>
+    <span>{{title}}</span>
+  </h3>
+  {{/if}}
+  {{#if description}}
+  <p class="{{muted}} text-sm mb-4">{{description}}</p>
+  {{/if}}
+  <audio controls class="w-full">
+    <source src="{{file_url}}">
+    Your browser does not support the audio tag.
+  </audio>
+</div>

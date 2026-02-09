@@ -1,0 +1,12 @@
+<a href="{{path}}"
+   class="group flex items-center gap-2 border border-accent-500/20 rounded-sm px-3 py-2 transition-all duration-150 hover:border-accent-400 hover:bg-accent-500/10">
+  <span class="{{dc "text-accent-700" "text-accent-800"}} select-none">drwxr-xr-x</span>
+  <span class="{{dc "text-accent-500" "text-accent-600"}} select-none">./</span>
+  <span class="{{dc "text-accent-300 group-hover:text-accent-200" "text-accent-800 group-hover:text-accent-600"}} flex-1 truncate">{{title}}</span>
+  {{#if description}}
+  <span class="text-xs {{dc "text-white/30" "text-gray-500"}} truncate hidden sm:inline"># {{description}}</span>
+  {{/if}}
+  {{#if has_password}}
+  <span class="{{dc "text-accent-700" "text-accent-800"}} text-xs select-none">[locked]</span>
+  {{/if}}
+</a>

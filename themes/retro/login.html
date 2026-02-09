@@ -1,0 +1,46 @@
+{{!-- Back button: $ cd .. --}}
+{{#if parent}}
+<a href="{{parent.path}}"
+   class="inline-flex items-center gap-2 {{dc "text-accent-600 hover:text-accent-400" "text-accent-700 hover:text-accent-500"}} transition-colors mb-4 font-mono text-sm group">
+  <span class="select-none">$</span>
+  <span>cd ..</span>
+  <span class="retro-blink select-none">&block;</span>
+</a>
+{{/if}}
+
+{{!-- SSH login header --}}
+<div class="mb-8 font-mono">
+  <div class="{{dc "text-accent-600" "text-accent-700"}} text-xs mb-2 select-none">~{{path}}</div>
+  <div class="flex items-center gap-2 mb-1">
+    <span class="{{dc "text-accent-700" "text-accent-800"}} select-none">$</span>
+    <span class="{{dc "text-accent-500" "text-accent-700"}} select-none">ssh</span>
+    <h1 class="text-xl font-bold {{dc "text-accent-400" "text-accent-700"}}">{{title}}</h1>
+  </div>
+  <p class="text-sm {{dc "text-white/50" "text-gray-600"}} pl-4 border-l border-accent-500/20">Permission denied. Authentication required.</p>
+</div>
+
+{{!-- Authentication form --}}
+<div class="border border-accent-500/30 rounded-sm p-4 font-mono {{dc "bg-black/40" "bg-white/60"}}">
+  <div class="{{dc "text-accent-600" "text-accent-700"}} text-xs mb-3 select-none">$ sudo authenticate --section="{{title}}"</div>
+  <form method="POST" action="{{path}}" class="space-y-4">
+    <div>
+      <label class="block text-xs {{dc "text-accent-600" "text-accent-700"}} mb-1 select-none">Password:</label>
+      <div class="flex items-center border border-accent-500/30 rounded-sm {{dc "bg-black/60" "bg-white"}} focus-within:border-accent-400 transition-colors">
+        <span class="{{dc "text-accent-700" "text-accent-800"}} pl-3 select-none">&gt;</span>
+        <input type="password" name="password" required autocomplete="current-password"
+               class="flex-1 bg-transparent border-0 px-2 py-2 text-sm {{dc "text-accent-300" "text-accent-800"}} focus:outline-none {{dc "placeholder-accent-800" "placeholder-accent-400"}}"
+               placeholder="********">
+        <span class="{{dc "text-accent-700" "text-accent-700"}} pr-3 retro-blink select-none">&block;</span>
+      </div>
+    </div>
+    <button type="submit"
+            class="w-full border border-accent-500/40 rounded-sm px-4 py-2 text-sm {{dc "text-accent-400" "text-accent-700"}} transition-all duration-150 hover:bg-accent-500/20 hover:border-accent-400 {{dc "hover:text-accent-300" "hover:text-accent-600"}}">
+      [ENTER] Submit
+    </button>
+    {{#if error}}
+    <div class="font-mono text-red-500 text-sm mt-3 p-2 border border-red-500/30 rounded-sm bg-red-500/10">
+      <span class="select-none">stderr: </span>{{error}}
+    </div>
+    {{/if}}
+  </form>
+</div>

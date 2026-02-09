@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" class="{{dc "dark" ""}}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  {{#if description}}<meta name="description" content="{{description}}">{{/if}}
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/{{dc "tokyo-night-dark" "tokyo-night-light"}}.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            accent: {
+              50: 'rgb(var(--c-50) / <alpha-value>)',
+              100: 'rgb(var(--c-100) / <alpha-value>)',
+              200: 'rgb(var(--c-200) / <alpha-value>)',
+              300: 'rgb(var(--c-300) / <alpha-value>)',
+              400: 'rgb(var(--c-400) / <alpha-value>)',
+              500: 'rgb(var(--c-500) / <alpha-value>)',
+              600: 'rgb(var(--c-600) / <alpha-value>)',
+              700: 'rgb(var(--c-700) / <alpha-value>)',
+              800: 'rgb(var(--c-800) / <alpha-value>)',
+              900: 'rgb(var(--c-900) / <alpha-value>)',
+              950: 'rgb(var(--c-950) / <alpha-value>)'
+            }
+          },
+          fontFamily: {
+            'display': ['{{{font}}}', 'Comic Sans MS', 'cursive'],
+            'body': ['{{{font}}}', 'Comic Sans MS', 'cursive']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family={{{font}}}:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/theme.css">
+  <style>
+    :root {
+      --c-50: {{{c50}}};
+      --c-100: {{{c100}}};
+      --c-200: {{{c200}}};
+      --c-300: {{{c300}}};
+      --c-400: {{{c400}}};
+      --c-500: {{{c500}}};
+      --c-600: {{{c600}}};
+      --c-700: {{{c700}}};
+      --c-800: {{{c800}}};
+      --c-900: {{{c900}}};
+      --c-950: {{{c950}}};
+    }
+  </style>
+  {{#if auto_dark}}
+  <script>
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  {{/if}}
+  <script>
+    function toggleMaximize(btn) {
+      const container = btn.closest('[data-embed-container]');
+      const isMax = container.classList.contains('ls-embed-maximized');
+      if (isMax) {
+        container.classList.remove('ls-embed-maximized', 'fixed', 'inset-0', 'z-50', 'bg-black/95', 'p-4');
+        btn.textContent = '⛶';
+      } else {
+        container.classList.add('ls-embed-maximized', 'fixed', 'inset-0', 'z-50', 'bg-black/95', 'p-4');
+        btn.textContent = '✕';
+      }
+    }
+  </script>
+</head>
+<body class="font-body min-h-screen {{dc "bg-[#2d004d] text-fuchsia-100" "bg-[#fffbeb] text-fuchsia-900"}}" style="{{#if background_color}}background-color: {{{background_color}}};{{/if}}">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    {{#if show_nav}}
+    <nav class="mb-8 {{muted}} ls-wobble">
+      <a href="{{#if parent}}{{parent.path}}{{else}}/{{/if}}" class="{{hover_text}} text-sm transition-colors">
+        ← BACK TO {{#if parent}}{{parent.title}}{{else}}HOME{{/if}}
+      </a>
+    </nav>
+    {{/if}}
+
+    <header class="mb-12 text-center">
+      {{#if logo}}
+      <div class="mb-6">
+        <img src="{{logo}}" alt="{{title}}" class="mx-auto max-w-xs h-auto ls-logo">
+      </div>
+      {{/if}}
+      <h1 class="text-5xl font-bold mb-4 ls-title-star ls-fun-shadow {{dc "text-fuchsia-200" "text-fuchsia-700"}}">{{title}}</h1>
+      {{#if description}}
+      <p class="text-xl {{muted}} max-w-2xl mx-auto">{{description}}</p>
+      {{/if}}
+      {{#if is_protected}}
+      <div class="mt-4 inline-block px-4 py-2 bg-lime-500/20 border-2 border-lime-400 rounded-full text-lime-300 text-sm">
+        🔒 PROTECTED ZONE
+      </div>
+      {{/if}}
+    </header>
+
+    {{#if children_html}}
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-6 {{dc "text-cyan-300" "text-fuchsia-600"}} ls-fun-shadow">
+        <span class="ls-star">✨</span>SECTIONS<span class="ls-star">✨</span>
+      </h2>
+      <div class="space-y-4">
+        {{{children_html}}}
+      </div>
+    </section>
+    {{/if}}
+
+    {{#if items_html}}
+    <section>
+      <h2 class="text-3xl font-bold mb-6 {{dc "text-lime-300" "text-fuchsia-600"}} ls-fun-shadow">
+        <span class="ls-star">⭐</span>ITEMS<span class="ls-star">⭐</span>
+      </h2>
+      <div class="space-y-6">
+        {{{items_html}}}
+      </div>
+    </section>
+    {{/if}}
+
+    <footer class="mt-16 pt-8 border-t-4 border-dashed {{dc "border-fuchsia-800" "border-fuchsia-300"}} text-center">
+      <p class="text-sm ls-rainbow font-bold">
+        ★ POWERED BY COMIC SANS ★
+      </p>
+      <p class="text-xs {{muted}} mt-2">
+        Made with LinkShare
+      </p>
+    </footer>
+  </div>
+
+  <script>hljs.highlightAll();</script>
+</body>
+</html>

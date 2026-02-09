@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" class="{{dc "dark" ""}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    {{#if description}}<meta name="description" content="{{description}}">{{/if}}
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{theme_url}}/style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        accent: {
+                            50: 'rgb(var(--c-50) / <alpha-value>)',
+                            100: 'rgb(var(--c-100) / <alpha-value>)',
+                            200: 'rgb(var(--c-200) / <alpha-value>)',
+                            300: 'rgb(var(--c-300) / <alpha-value>)',
+                            400: 'rgb(var(--c-400) / <alpha-value>)',
+                            500: 'rgb(var(--c-500) / <alpha-value>)',
+                            600: 'rgb(var(--c-600) / <alpha-value>)',
+                            700: 'rgb(var(--c-700) / <alpha-value>)',
+                            800: 'rgb(var(--c-800) / <alpha-value>)',
+                            900: 'rgb(var(--c-900) / <alpha-value>)',
+                            950: 'rgb(var(--c-950) / <alpha-value>)',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Pacifico', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        {{{color_vars}}}
+        body { background-color: {{dc background_color_dark background_color_light}}; }
+    </style>
+    {{#if auto_dark}}
+    <script>
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+    {{/if}}
+    <script>
+        function toggleMaximize(button) {
+            const container = button.closest('[data-embed-container]');
+            container.classList.toggle('ls-embed-maximized');
+            button.textContent = container.classList.contains('ls-embed-maximized') ? '✕' : '⛶';
+        }
+    </script>
+</head>
+<body class="{{dc "text-purple-100" "text-purple-900"}} min-h-screen transition-colors duration-300">
+    <!-- Festive top border -->
+    <div class="ls-carnival-border"></div>
+
+    <canvas class="ls-confetti-canvas" id="confettiCanvas"></canvas>
+
+    <div class="container mx-auto px-4 py-16 max-w-4xl">
+        <!-- Navigation -->
+        {{#if show_nav}}
+        <nav class="mb-8 {{muted}}">
+            <a href="/" class="{{hover_text}} transition-colors">🏠 Home</a>
+            {{#if parent.path}}
+            <span class="mx-2">/</span>
+            <a href="{{parent.path}}" class="{{hover_text}} transition-colors">↑ Back</a>
+            {{/if}}
+        </nav>
+        {{/if}}
+
+        <!-- Header -->
+        <header class="text-center mb-12">
+            {{#if logo}}
+            <div class="mb-6">
+                <img src="{{logo}}" alt="{{title}}" class="mx-auto h-24 w-24 object-contain rounded-full border-4 {{dc "border-yellow-400" "border-purple-500"}}">
+            </div>
+            {{/if}}
+            <h1 class="text-5xl font-bold mb-4 ls-carnival-title {{dc "text-yellow-300" "text-purple-800"}}">
+                <span class="ls-carnival-mask">🎭</span> {{title}} <span class="ls-carnival-mask">🎭</span>
+            </h1>
+            {{#if description}}
+            <p class="text-xl {{muted}} max-w-2xl mx-auto">{{description}}</p>
+            {{/if}}
+            {{#if is_protected}}
+            <div class="mt-4 inline-block px-4 py-2 {{dc "bg-yellow-500/20 text-yellow-300" "bg-purple-200 text-purple-800"}} rounded-full text-sm">
+                🔒 Protected Section
+            </div>
+            {{/if}}
+        </header>
+
+        <!-- Child Sections -->
+        {{#if children_html}}
+        <div class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 {{dc "text-purple-200" "text-purple-700"}}">Sections</h2>
+            <div class="grid gap-4">
+                {{{children_html}}}
+            </div>
+        </div>
+        {{/if}}
+
+        <!-- Items -->
+        {{#if items_html}}
+        <div class="grid gap-6">
+            {{{items_html}}}
+        </div>
+        {{/if}}
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 {{muted}}">
+        <p>🎪 Powered by LinkShare 🎪</p>
+    </footer>
+
+    <script>
+    (function() {
+      var canvas = document.getElementById('confettiCanvas');
+      var ctx = canvas.getContext('2d');
+      var W, H, N = 60, PR = 8, MP = 25;
+      var colors = ['#7c3aed','#fbbf24','#10b981','#ec4899','#f97316','#06b6d4'];
+      var pieces = [], surfs = [], landed = [], maxLanded = 350, fc = 0, seeded = false;
+
+      function sz() { W = canvas.width = innerWidth; H = canvas.height = innerHeight; }
+      sz();
+      addEventListener('resize', function() { sz(); scan(); });
+
+      // Only land on card-like elements with visible borders
+      function scan() {
+        var sy = scrollY, old = surfs;
+        surfs = [];
+        var els = document.querySelectorAll(
+          '[class*="rounded"][class*="border"],[class*="border"][class*="rounded"],[data-embed-container]'
+        );
+        for (var i = 0; i < els.length; i++) {
+          if (els[i] === canvas) continue;
+          var r = els[i].getBoundingClientRect();
+          if (r.width < 40 || r.height < 15) continue;
+          var dt = Math.round(r.top + sy), l = Math.round(r.left), ri = Math.round(r.right);
+          var cols = Math.ceil((ri - l) / PR), pile = null;
+          for (var j = 0; j < old.length; j++) {
+            if (Math.abs(old[j].t - dt) < 8 && Math.abs(old[j].l - l) < 8 && old[j].p.length === cols) {
+              pile = old[j].p; old.splice(j, 1); break;
+            }
+          }
+          if (!pile) pile = new Float32Array(cols);
+          surfs.push({ l: l, r: ri, t: dt, p: pile });
+        }
+        // Pre-seed piles with initial confetti
+        if (!seeded && surfs.length > 0) {
+          seeded = true;
+          for (var si = 0; si < surfs.length; si++) {
+            var sp = surfs[si].p;
+            for (var k = 0; k < sp.length; k++) {
+              var edge = Math.min(k, sp.length - 1 - k);
+              sp[k] = Math.min(1, edge / 3) * (2 + Math.random() * 4);
+            }
+            // Pre-generate some landed pieces
+            var sl = surfs[si];
+            for (var k = 0; k < 25; k++) {
+              var lx = sl.l + Math.random() * (sl.r - sl.l);
+              var col = Math.floor((lx - sl.l) / PR);
+              var isStrip = Math.random() < 0.33;
+              landed.push({
+                dx: lx, dy: sl.t - (sp[col] || 0) * Math.random(),
+                w: isStrip ? Math.random() * 2 + 1 : Math.random() * 6 + 4,
+                h: isStrip ? Math.random() * 10 + 8 : Math.random() * 6 + 4,
+                c: colors[Math.floor(Math.random() * 6)],
+                ic: !isStrip && Math.random() < 0.33,
+                rot: Math.random() * 6.28, fl: Math.random() * 6.28,
+                o: 0.5 + Math.random() * 0.3
+              });
+            }
+          }
+        }
+      }
+
+      function mk(full) {
+        var isStrip = Math.random() < 0.33;
+        return {
+          x: Math.random() * W, y: full ? Math.random() * H : -Math.random() * 30 - 10,
+          w: isStrip ? Math.random() * 2 + 1 : Math.random() * 6 + 4,
+          h: isStrip ? Math.random() * 10 + 8 : Math.random() * 6 + 4,
+          c: colors[Math.floor(Math.random() * 6)],
+          ic: !isStrip && Math.random() < 0.33,
+          rot: Math.random() * 6.28, rs: (Math.random() - 0.5) * 0.08,
+          vx: (Math.random() - 0.5) * 0.8, vy: Math.random() * 1.2 + 0.4,
+          wb: Math.random() * 6.28, wbs: Math.random() * 0.04 + 0.01,
+          o: Math.random() * 0.4 + 0.6,
+          fl: Math.random() * 6.28, fls: Math.random() * 0.05 + 0.02
+        };
+      }
+
+      function drawShape(x, y, p) {
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate(p.rot);
+        ctx.scale(Math.cos(p.fl), 1);
+        ctx.globalAlpha = p.o;
+        ctx.fillStyle = p.c;
+        if (p.ic) {
+          ctx.beginPath(); ctx.arc(0, 0, p.w / 2, 0, 6.28); ctx.fill();
+        } else {
+          ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        }
+        ctx.restore();
+      }
+
+      for (var i = 0; i < N; i++) pieces.push(mk(true));
+      scan();
+
+      function frame() {
+        ctx.clearRect(0, 0, W, H);
+        var sy = scrollY;
+        if (++fc % 120 === 0) scan();
+
+        // Draw landed pieces (scroll-adjusted)
+        for (var i = 0; i < landed.length; i++) {
+          var lp = landed[i];
+          var vy = lp.dy - sy;
+          if (vy < -30 || vy > H + 30) continue;
+          drawShape(lp.dx, vy, lp);
+        }
+
+        // Update falling pieces
+        for (var i = 0; i < N; i++) {
+          var p = pieces[i];
+          p.wb += p.wbs; p.fl += p.fls; p.rot += p.rs;
+          p.x += Math.sin(p.wb) * 0.8 + p.vx;
+          p.y += p.vy;
+          var dy = p.y + sy, hit = false;
+
+          // Check surface collisions
+          for (var j = 0; j < surfs.length; j++) {
+            var s = surfs[j];
+            if (p.x >= s.l && p.x < s.r) {
+              var col = Math.floor((p.x - s.l) / PR);
+              if (col >= 0 && col < s.p.length && dy >= s.t - s.p[col] - 2) {
+                // Land on this surface's pile
+                if (s.p[col] < MP) {
+                  s.p[col] += 1.2 + Math.random() * 0.8;
+                  if (col > 0) s.p[col - 1] = Math.min(MP, s.p[col - 1] + 0.4);
+                  if (col < s.p.length - 1) s.p[col + 1] = Math.min(MP, s.p[col + 1] + 0.4);
+                }
+                if (landed.length >= maxLanded) landed.shift();
+                landed.push({
+                  dx: p.x + (Math.random() - 0.5) * 3,
+                  dy: s.t - s.p[col] + Math.random() * 2,
+                  w: p.w, h: p.h, c: p.c, ic: p.ic,
+                  rot: p.rot, fl: p.fl, o: p.o * 0.85
+                });
+                hit = true; break;
+              }
+            }
+          }
+
+          if (hit || p.y > H + 20) { pieces[i] = mk(false); continue; }
+          drawShape(p.x, p.y, p);
+        }
+
+        requestAnimationFrame(frame);
+      }
+      frame();
+    })();
+    </script>
+</body>
+</html>

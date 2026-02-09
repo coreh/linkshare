@@ -1,0 +1,40 @@
+<div class="{{card_static}} rounded-lg border overflow-hidden" data-embed-container>
+  {{#if title}}
+  <div class="px-6 pt-4 pb-2 border-b {{dc "border-red-500/20" "border-red-200"}}">
+    <h3 class="text-lg font-semibold">{{title}}</h3>
+    {{#if description}}
+    <p class="{{muted}} text-sm mt-1">{{description}}</p>
+    {{/if}}
+  </div>
+  {{/if}}
+  <div class="relative">
+    <iframe
+      src="{{url}}"
+      class="w-full border-0"
+      style="height: {{height}}px;"
+      allowfullscreen
+    ></iframe>
+    <button
+      onclick="toggleMaximize(this)"
+      class="ls-embed-maximize absolute top-2 right-2 {{dc "bg-red-900/80 hover:bg-red-800" "bg-white/80 hover:bg-white"}} text-sm px-3 py-1 rounded shadow-lg transition-colors"
+    >
+      ⛶
+    </button>
+  </div>
+</div>
+<style>
+  .ls-embed-maximized {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 9998 !important;
+    margin: 0 !important;
+    max-width: none !important;
+    border-radius: 0 !important;
+  }
+  .ls-embed-maximized iframe {
+    height: 100vh !important;
+  }
+</style>

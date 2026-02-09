@@ -1,0 +1,46 @@
+{{!-- Navigation bar: back button + logout --}}
+{{#if show_nav}}
+<div class="flex items-center justify-between mb-6">
+  {{#if parent}}
+  <a href="{{parent.path}}" class="inline-flex items-center gap-2 text-sm {{muted}} {{hover_text}} transition-colors group">
+    <span class="group-hover:-translate-x-1 transition-transform">&larr;</span>
+    <span>go back</span>
+  </a>
+  {{else}}
+  <div></div>
+  {{/if}}
+  {{#if is_protected}}
+  <form method="POST" action="{{path}}" class="inline">
+    <input type="hidden" name="action" value="logout">
+    <button type="submit" class="inline-flex items-center gap-1 text-xs {{muted}} hover:opacity-80 transition-opacity">
+      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+      </svg>
+      Logout
+    </button>
+  </form>
+  {{/if}}
+</div>
+{{/if}}
+
+{{!-- Header --}}
+<div class="text-center mb-8">
+  {{#if logo}}
+  <img src="{{logo}}" alt="" class="w-20 h-20 rounded-full mx-auto mb-4 shadow-lg border-4 border-accent-200/50 object-cover">
+  {{/if}}
+  <h1 class="text-3xl font-bold {{dc "text-white" "text-accent-800"}}">&#10024; {{title}} &#10024;</h1>
+  {{#if description}}
+  <p class="mt-2 text-sm {{dc "text-white/60" "text-accent-600/70"}}">{{description}}</p>
+  {{/if}}
+</div>
+
+{{!-- Content: child sections + items --}}
+<div class="space-y-3">
+  {{{children_html}}}
+  {{{items_html}}}
+</div>
+
+{{!-- Footer --}}
+<div class="text-center mt-10 text-xs {{dc "text-white/30" "text-accent-400/50"}}">
+  made with &#128150; and &#10024; sparkles
+</div>

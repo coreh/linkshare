@@ -1,0 +1,8 @@
+<div class="ls-card {{card_static}} border rounded-xl p-8">
+  {{#if title}}
+  <h3 class="font-bold text-xl mb-4">{{title}}</h3>
+  {{/if}}
+  <div class="ls-text-content prose prose-lg {{dc "prose-invert" ""}} max-w-none prose-headings:font-bold prose-a:text-accent-500 prose-a:no-underline hover:prose-a:underline">
+    {{{content}}}
+  </div>
+</div>

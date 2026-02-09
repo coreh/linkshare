@@ -1,0 +1,20 @@
+title = "Regular Session"
+description = "A regular session, that may contain subitems"
+
+[[items]]
+title = "Quick Start"
+type = "code"
+language = "bash"
+content = """
+git clone https://github.com/you/linkshare
+cd linkshare
+bun install
+bun dev
+"""
+
+[[items]]
+title = "Example Embed"
+type = "embed"
+url = "https://www.youtube.com/embed/dQw4w9WgXcQ"
+description = "YouTube embeds work too"
+height = 315

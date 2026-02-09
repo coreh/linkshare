@@ -1,0 +1,14 @@
+<div class="{{card_static}} ls-card-static rounded-lg border-2 p-6">
+  {{#if title}}
+  <h3 class="text-xl font-bold mb-4 {{dc "text-orange-300" "text-orange-700"}} flex items-center gap-2">
+    🎵 {{title}}
+  </h3>
+  {{/if}}
+  {{#if description}}
+  <p class="{{muted}} mb-4">{{description}}</p>
+  {{/if}}
+  <audio controls class="w-full" preload="metadata">
+    <source src="{{file_url}}">
+    Your browser doesn't support audio playback.
+  </audio>
+</div>

@@ -1,0 +1,28 @@
+<div data-embed-container class="{{card_static}} ls-card ls-embed-container p-6">
+  {{#if title}}
+  <div class="flex items-center justify-between mb-4">
+    <h3 class="text-xl font-bold ls-fun-shadow">
+      🌐 {{title}}
+    </h3>
+    <button
+      onclick="toggleMaximize(this)"
+      class="ls-button ls-embed-maximize px-3 py-1 text-sm font-bold {{dc "bg-cyan-500 text-fuchsia-950 hover:bg-cyan-400" "bg-fuchsia-600 text-white hover:bg-fuchsia-700"}} transition-all"
+    >
+      ⛶
+    </button>
+  </div>
+  {{/if}}
+  <div class="relative">
+    <div class="relative overflow-hidden rounded-lg border-2 border-cyan-400" style="padding-bottom: {{height}};">
+      <iframe
+        src="{{url}}"
+        class="absolute top-0 left-0 w-full h-full"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+  {{#if description}}
+  <p class="{{muted}} mt-4">{{description}}</p>
+  {{/if}}
+</div>

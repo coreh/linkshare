@@ -1,0 +1,180 @@
+/* Vaporwave A E S T H E T I C */
+
+/* Animated grid floor background */
+body::before {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50vh;
+  background:
+    linear-gradient(0deg, transparent 24%, rgba(255, 0, 255, 0.1) 25%, rgba(255, 0, 255, 0.1) 26%, transparent 27%, transparent 74%, rgba(0, 255, 255, 0.1) 75%, rgba(0, 255, 255, 0.1) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, rgba(255, 0, 255, 0.1) 25%, rgba(255, 0, 255, 0.1) 26%, transparent 27%, transparent 74%, rgba(0, 255, 255, 0.1) 75%, rgba(0, 255, 255, 0.1) 76%, transparent 77%, transparent);
+  background-size: 50px 50px;
+  transform: perspective(500px) rotateX(60deg);
+  transform-origin: bottom;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+/* Sunset gradient overlay */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center top,
+    rgba(255, 0, 255, 0.15) 0%,
+    rgba(138, 0, 230, 0.1) 25%,
+    rgba(0, 255, 255, 0.08) 50%,
+    transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure content is above background effects */
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Neon glow effect on headings */
+h1, h2, h3 {
+  text-shadow:
+    0 0 10px rgba(255, 0, 255, 0.5),
+    0 0 20px rgba(255, 0, 255, 0.3),
+    0 0 30px rgba(0, 255, 255, 0.2);
+  letter-spacing: 0.1em;
+}
+
+/* A E S T H E T I C title spacing */
+.ls-page-title {
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Pulsing neon animation */
+@keyframes neon-pulse {
+  0%, 100% {
+    text-shadow:
+      0 0 10px rgba(255, 0, 255, 0.5),
+      0 0 20px rgba(255, 0, 255, 0.3),
+      0 0 30px rgba(0, 255, 255, 0.2);
+  }
+  50% {
+    text-shadow:
+      0 0 20px rgba(255, 0, 255, 0.8),
+      0 0 30px rgba(255, 0, 255, 0.5),
+      0 0 40px rgba(0, 255, 255, 0.4),
+      0 0 50px rgba(0, 255, 255, 0.2);
+  }
+}
+
+h1 {
+  animation: neon-pulse 3s ease-in-out infinite;
+}
+
+/* Card glow on hover */
+.ls-card {
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0px rgba(255, 0, 255, 0);
+}
+
+.ls-card:hover {
+  box-shadow:
+    0 0 20px rgba(0, 255, 255, 0.3),
+    0 0 40px rgba(255, 0, 255, 0.2),
+    inset 0 0 20px rgba(0, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+/* Glowing borders */
+.ls-card {
+  border-width: 1px;
+  border-style: solid;
+}
+
+/* Input glow focus effect */
+input:focus, button:focus {
+  outline: none;
+  box-shadow:
+    0 0 15px rgba(0, 255, 255, 0.4),
+    0 0 30px rgba(255, 0, 255, 0.2);
+}
+
+/* Button neon effect */
+button {
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px rgba(255, 0, 255, 0.3);
+}
+
+button:hover {
+  text-shadow:
+    0 0 10px rgba(0, 255, 255, 0.6),
+    0 0 20px rgba(255, 0, 255, 0.4);
+  box-shadow:
+    0 0 15px rgba(0, 255, 255, 0.3),
+    0 0 30px rgba(255, 0, 255, 0.2);
+}
+
+/* Link glow */
+a {
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+/* Scanline effect (subtle) */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Logo glow */
+img[src*="logo"], .ls-logo {
+  filter: drop-shadow(0 0 10px rgba(255, 0, 255, 0.4))
+          drop-shadow(0 0 20px rgba(0, 255, 255, 0.3));
+}
+
+/* Code blocks with neon accents */
+.ls-code {
+  border-left: 3px solid rgba(255, 0, 255, 0.5);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+}
+
+/* Video/embed containers */
+.ls-embed-container, video {
+  box-shadow:
+    0 0 20px rgba(255, 0, 255, 0.2),
+    0 0 40px rgba(0, 255, 255, 0.1);
+}
+
+/* Scrollbar styling for dark mode */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(10, 0, 21, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(255, 0, 255, 0.5), rgba(0, 255, 255, 0.5));
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(255, 0, 255, 0.8), rgba(0, 255, 255, 0.8));
+}

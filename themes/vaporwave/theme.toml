@@ -1,0 +1,23 @@
+name = "Vaporwave"
+
+[defaults]
+font = "Rajdhani"
+color = "fuchsia"
+dark = "auto"
+background_color = "#0a0015"
+background_color_dark = "#0a0015"
+background_color_light = "#fdf4ff"
+
+[vars.dark]
+muted = "text-accent-400/50"
+card = "bg-accent-950/30 border-accent-500/20 hover:border-cyan-400 hover:bg-accent-900/20"
+card_static = "bg-accent-950/30 border-accent-500/20"
+input = "bg-accent-950/60 border-accent-500/30 text-cyan-200 placeholder-accent-600"
+hover_text = "hover:text-cyan-300"
+
+[vars.light]
+muted = "text-accent-500/60"
+card = "bg-white/80 border-accent-200 hover:border-cyan-400 hover:bg-accent-50/80"
+card_static = "bg-white/80 border-accent-200"
+input = "bg-white border-accent-300 text-accent-900 placeholder-accent-400"
+hover_text = "hover:text-accent-700"

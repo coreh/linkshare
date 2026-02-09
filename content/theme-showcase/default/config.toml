@@ -1,0 +1,14 @@
+title = "Default"
+description = "A clean, modern look"
+theme = "default"
+color = "indigo"
+
+[[items]]
+title = "GitHub"
+url = "https://github.com"
+description = "Where the world builds software"
+
+[[items]]
+title = "Welcome Note"
+type = "text"
+content = "The default theme features a clean, modern design with subtle backdrop blur effects and rounded corners. It works great for personal link pages, portfolios, and project hubs."

@@ -1,0 +1,17 @@
+<a href="{{path}}" class="win95-section-link">
+  <div class="window" style="width: 100%;">
+    <div class="title-bar">
+      <div class="title-bar-text">{{#if has_password}}🔒 {{/if}}{{title}}</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
+      </div>
+    </div>
+    {{#if description}}
+    <div class="window-body" style="margin: 0;">
+      <p style="margin: 0; font-size: 11px; color: #444;">{{description}}</p>
+    </div>
+    {{/if}}
+  </div>
+</a>

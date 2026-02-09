@@ -1,0 +1,13 @@
+<a href="{{path}}"
+   class="group block border-2 rounded-3xl p-4 transition-all duration-300 ease-out hover:scale-[1.05] hover:shadow-xl {{dc "hover:shadow-accent-500/20" "hover:shadow-accent-300/40"}} {{card}}">
+  <div class="flex items-center gap-3">
+    <div class="text-2xl shrink-0 group-hover:animate-bounce">{{#if has_password}}&#128274;{{else}}&#128194;{{/if}}</div>
+    <div class="flex-1 min-w-0">
+      <div class="font-semibold truncate">{{title}}</div>
+      {{#if description}}
+      <div class="text-sm {{dc "text-white/60" "text-accent-600/70"}} truncate">{{description}}</div>
+      {{/if}}
+    </div>
+    <div class="text-accent-400 group-hover:translate-x-1 transition-transform duration-200 shrink-0">&rarr;</div>
+  </div>
+</a>

@@ -1,0 +1,9 @@
+title = "Vaporwave"
+description = "A E S T H E T I C"
+theme = "vaporwave"
+color = "fuchsia"
+
+[[items]]
+title = "Welcome to the Grid"
+type = "text"
+content = "The Vaporwave theme captures retro-futuristic aesthetics with neon glows, sunset gradients, and that unmistakable 90s digital nostalgia. It is now safe to turn off your computer."

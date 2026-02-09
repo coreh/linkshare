@@ -1,0 +1,12 @@
+<div class="border-2 rounded-3xl overflow-hidden {{card_static}}">
+  <img src="{{file_url}}" alt="{{title}}" class="w-full aspect-video object-cover">
+  <div class="p-4">
+    <div class="flex items-center gap-2">
+      <span class="text-lg">&#128444;&#65039;</span>
+      <div class="font-semibold">{{title}}</div>
+    </div>
+    {{#if description}}
+    <div class="text-sm {{muted}} mt-1">{{description}}</div>
+    {{/if}}
+  </div>
+</div>

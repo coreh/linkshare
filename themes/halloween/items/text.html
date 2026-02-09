@@ -1,0 +1,10 @@
+<div class="{{card_static}} ls-card-static rounded-lg border-2 p-6">
+  {{#if title}}
+  <h3 class="text-2xl font-bold mb-4 {{dc "text-orange-300" "text-orange-700"}} flex items-center gap-2">
+    👻 {{title}}
+  </h3>
+  {{/if}}
+  <div class="prose {{dc "prose-invert prose-orange" "prose-orange"}} max-w-none {{dc "text-orange-100" "text-orange-900"}}">
+    {{{content}}}
+  </div>
+</div>

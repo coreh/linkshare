@@ -1,0 +1,27 @@
+title = "Retro"
+description = "Terminal-inspired hacker aesthetic"
+theme = "retro"
+color = "green"
+
+[[items]]
+title = "Hacker News"
+url = "https://news.ycombinator.com"
+description = "Social news for the tech crowd"
+
+[[items]]
+title = "System Info"
+type = "text"
+content = "The retro theme emulates a terminal interface with monospaced fonts, scanline effects, and a green-on-black color scheme. Great for developer portfolios and tech-focused pages."
+
+[[items]]
+title = "Hello World"
+type = "code"
+language = "python"
+content = """
+#!/usr/bin/env python3
+def main():
+    print("Hello, World!")
+
+if __name__ == "__main__":
+    main()
+"""

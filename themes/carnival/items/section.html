@@ -1,0 +1,18 @@
+<a href="{{path}}" class="{{card}} border rounded-xl p-6 block transition-all ls-carnival-card">
+    <div class="flex items-start justify-between">
+        <div class="flex-1">
+            <h3 class="text-xl font-bold mb-2 {{dc "text-purple-100" "text-purple-800"}}">
+                📁 {{title}}
+            </h3>
+            {{#if description}}
+            <p class="{{muted}}">{{description}}</p>
+            {{/if}}
+        </div>
+        <div class="ml-4 flex items-center gap-2">
+            {{#if has_password}}
+            <span class="{{dc "text-yellow-400" "text-purple-600"}}" title="Protected">🔒</span>
+            {{/if}}
+            <span class="{{dc "text-yellow-400" "text-purple-600"}}">→</span>
+        </div>
+    </div>
+</a>

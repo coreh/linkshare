@@ -1,0 +1,9 @@
+title = "Carnival"
+description = "Vibrant and celebratory"
+theme = "carnival"
+color = "purple"
+
+[[items]]
+title = "Let the Party Begin"
+type = "text"
+content = "The Carnival theme bursts with color and energy, featuring bold purple and gold accents with a confetti-filled atmosphere. Perfect for celebrations and events."

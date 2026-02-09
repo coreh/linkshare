@@ -1,0 +1,33 @@
+title = "Kawaii"
+description = "Cute and playful"
+theme = "kawaii"
+color = "pink"
+
+[[items]]
+title = "Elysia"
+url = "https://elysiajs.com"
+description = "Ergonomic Framework for Humans"
+
+[[items]]
+title = "Bun"
+url = "https://bun.sh"
+description = "Incredibly fast JavaScript runtime"
+
+[[items]]
+title = "A Quick Note"
+type = "text"
+content = "The kawaii theme is playful and fun, with bouncy hover animations, rounded cards, and emoji accents. Perfect for personal pages and creative projects."
+
+[[items]]
+title = "Example Config"
+type = "code"
+language = "toml"
+content = """
+title = "My Links"
+theme = "kawaii"
+color = "pink"
+
+[[items]]
+title = "A Link"
+url = "https://example.com"
+"""

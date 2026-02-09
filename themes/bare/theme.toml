@@ -1,0 +1,26 @@
+name = "Bare"
+
+[defaults]
+font = "system-ui"
+color = "zinc"
+dark = "auto"
+background_color = "#ffffff"
+background_color_dark = "#09090b"
+background_color_light = "#ffffff"
+
+# CSS class variables available in all templates.
+# The system picks [vars.dark] or [vars.light] based on the section's dark mode setting.
+
+[vars.dark]
+muted = "text-white/50"
+card = "border-zinc-700 hover:border-zinc-500"
+card_static = "border-zinc-700"
+input = "bg-zinc-800 border-zinc-600 text-white placeholder-zinc-500"
+hover_text = "hover:text-white"
+
+[vars.light]
+muted = "text-zinc-400"
+card = "border-zinc-200 hover:border-zinc-400"
+card_static = "border-zinc-200"
+input = "bg-white border-zinc-300 text-zinc-900 placeholder-zinc-400"
+hover_text = "hover:text-zinc-900"

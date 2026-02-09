@@ -1,0 +1,23 @@
+<a href="{{url}}" target="_blank" rel="noopener noreferrer" class="{{card}} ls-card block p-6 transition-all group">
+  <div class="flex items-start gap-4">
+    {{#if icon}}
+    <div class="flex-shrink-0 w-12 h-12 rounded-full overflow-hidden border-3 border-fuchsia-400 ls-wobble">
+      <img src="{{icon}}" alt="" class="w-full h-full object-cover">
+    </div>
+    {{else}}
+    <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center text-2xl ls-wobble">
+      🔗
+    </div>
+    {{/if}}
+    <div class="flex-1 min-w-0">
+      <h3 class="text-lg font-bold mb-1 group-hover:text-lime-300 transition-colors ls-fun-shadow">
+        {{title}}
+      </h3>
+      {{#if description}}
+      <p class="{{muted}} text-sm mb-2">{{description}}</p>
+      {{/if}}
+      <p class="text-xs {{muted}} truncate">{{url}}</p>
+    </div>
+    <div class="flex-shrink-0 text-xl ls-star">→</div>
+  </div>
+</a>

@@ -1,0 +1,23 @@
+name = "Dog"
+
+[defaults]
+font = "Nunito"
+color = "amber"
+dark = "auto"
+background_color = "#1a1000"
+background_color_dark = "#1a1000"
+background_color_light = "#fffbeb"
+
+[vars.dark]
+muted = "text-amber-400/50"
+card = "bg-amber-950/30 border-amber-600/20 hover:border-amber-400 hover:bg-amber-900/30"
+card_static = "bg-amber-950/30 border-amber-600/20"
+input = "bg-amber-950/60 border-amber-600/30 text-amber-200 placeholder-amber-700"
+hover_text = "hover:text-amber-300"
+
+[vars.light]
+muted = "text-amber-600/60"
+card = "bg-amber-50/80 border-amber-200 hover:border-amber-400 hover:bg-amber-100/80"
+card_static = "bg-amber-50/80 border-amber-200"
+input = "bg-white border-amber-300 text-amber-900 placeholder-amber-500"
+hover_text = "hover:text-amber-700"

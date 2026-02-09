@@ -1,0 +1,38 @@
+.retro-scanlines::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.08) 2px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.retro-blink {
+  opacity: 0;
+}
+
+:hover > .retro-blink,
+.group:hover .retro-blink,
+:focus-within > .retro-blink {
+  animation: blink 1s step-end infinite;
+  opacity: 1;
+}
+
+::selection {
+  background: rgb(var(--c-500));
+  color: black;
+}

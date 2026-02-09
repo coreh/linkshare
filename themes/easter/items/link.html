@@ -1,0 +1,23 @@
+<a href="{{url}}" target="_blank" rel="noopener noreferrer" class="{{card}} border rounded-2xl p-6 block transition-all hover:scale-[1.02]">
+  <div class="flex items-start gap-4">
+    {{#if icon}}
+    <div class="flex-shrink-0 w-12 h-12 rounded-xl overflow-hidden {{dc "bg-violet-900/50" "bg-violet-100"}} flex items-center justify-center">
+      <img src="{{icon}}" alt="" class="w-8 h-8 object-contain">
+    </div>
+    {{else}}
+    <div class="flex-shrink-0 w-12 h-12 rounded-xl {{dc "bg-violet-900/50" "bg-violet-100"}} flex items-center justify-center text-2xl">
+      🔗
+    </div>
+    {{/if}}
+    <div class="flex-1 min-w-0">
+      <h3 class="text-xl font-semibold mb-1 truncate">{{title}}</h3>
+      {{#if description}}
+      <p class="{{muted}} line-clamp-2 mb-2">{{description}}</p>
+      {{/if}}
+      <p class="{{muted}} text-sm truncate">{{url}}</p>
+    </div>
+    <svg class="w-5 h-5 {{muted}} flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+    </svg>
+  </div>
+</a>

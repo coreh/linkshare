@@ -1,0 +1,12 @@
+<div class="backdrop-blur-sm border rounded-xl overflow-hidden {{card_static}}">
+  <div class="flex items-center justify-between px-4 py-2 border-b {{dc "border-white/10" "border-gray-200"}}">
+    <span class="font-semibold text-sm">{{title}}</span>
+    <button onclick="navigator.clipboard.writeText(this.closest('.ls-code').querySelector('code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})"
+            class="text-xs {{dc "text-white/50 hover:text-white/80" "text-gray-400 hover:text-gray-600"}} transition-colors px-2 py-1 rounded">
+      Copy
+    </button>
+  </div>
+  <div class="ls-code">
+    <pre class="p-4 overflow-x-auto text-sm {{dc "bg-black/30" "bg-gray-100"}}"><code class="{{language_class}}">{{content}}</code></pre>
+  </div>
+</div>

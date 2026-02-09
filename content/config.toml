@@ -1,0 +1,22 @@
+title = "LinkShare"
+description = "Your links, organized and shared"
+
+# Appearance (these are the defaults)
+# theme = "default"             # "default", "kawaii", "retro", "bare"
+# dark = "auto"                 # true, false, or "auto" (system preference)
+# color = "indigo"              # Any Tailwind color name
+# font = "Inter"                # Any Google Font
+# background_color = "#0f172a"  # CSS color
+# background = "background.jpg" # Local file or URL
+# logo = "logo.png"             # Local file or URL
+# accent_color = "#6366f1"      # Explicit accent hex override
+
+[[items]]
+title = "GitHub"
+url = "https://github.com"
+description = "Where the world builds software"
+
+[[items]]
+title = "Welcome Note"
+type = "text"
+content = "Welcome to LinkShare! Edit the files in the content/ directory to customize this page. Browse the themes section to see the built-in themes, and try the password-protected section (password: demo)."

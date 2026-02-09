@@ -1,0 +1,121 @@
+/* Cooking Theme - Recipe Card Aesthetic */
+
+/* Subtle checkered pattern background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 35px,
+      rgb(var(--c-500) / 0.02) 35px,
+      rgb(var(--c-500) / 0.02) 70px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Recipe card styling with slight texture */
+.ls-card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ls-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgb(var(--c-500) / 0.01) 2px,
+      rgb(var(--c-500) / 0.01) 4px
+    );
+  pointer-events: none;
+}
+
+.ls-card:hover {
+  box-shadow: 0 4px 16px rgb(var(--c-500) / 0.2);
+  transform: translateY(-2px);
+}
+
+/* Kitchen utensil decorative elements */
+.ls-header::before {
+  content: '👨‍🍳';
+  font-size: 2rem;
+  margin-right: 0.5rem;
+  display: inline-block;
+}
+
+/* Recipe card corner accent */
+.ls-card::after {
+  content: '🍴';
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 0.875rem;
+  opacity: 0.3;
+}
+
+/* Navigation breadcrumb with spice accent */
+.ls-nav a {
+  position: relative;
+}
+
+.ls-nav a:not(:last-child)::after {
+  content: '🌶️';
+  margin: 0 0.5rem;
+  opacity: 0.5;
+  font-size: 0.75rem;
+}
+
+/* Code blocks with kitchen aesthetic */
+.ls-code {
+  border-left: 4px solid rgb(var(--c-600));
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styling - recipe card inspired */
+button, .ls-button {
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover, .ls-button:hover {
+  box-shadow: 0 4px 8px rgb(var(--c-500) / 0.2);
+  transform: translateY(-1px);
+}
+
+/* Input fields with recipe card texture */
+input[type="password"] {
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Video and embed containers */
+.ls-embed-container {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+/* Image styling */
+.ls-image {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.ls-image:hover {
+  transform: scale(1.02);
+}

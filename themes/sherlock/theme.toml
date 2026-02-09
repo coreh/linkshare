@@ -1,0 +1,23 @@
+name = "Sherlock"
+
+[defaults]
+font = "Playfair Display"
+color = "emerald"
+dark = "auto"
+background_color = "#0a1a10"
+background_color_dark = "#0a1a10"
+background_color_light = "#ecfdf5"
+
+[vars.dark]
+muted = "text-emerald-400/40"
+card = "bg-emerald-950/30 border-emerald-700/20 hover:border-emerald-400 hover:bg-emerald-900/20"
+card_static = "bg-emerald-950/30 border-emerald-700/20"
+input = "bg-emerald-950/60 border-emerald-600/30 text-emerald-200 placeholder-emerald-700"
+hover_text = "hover:text-emerald-300"
+
+[vars.light]
+muted = "text-emerald-600/50"
+card = "bg-emerald-50/60 border-emerald-200 hover:border-emerald-400 hover:bg-emerald-100/60"
+card_static = "bg-emerald-50/60 border-emerald-200"
+input = "bg-white border-emerald-300 text-emerald-900 placeholder-emerald-500"
+hover_text = "hover:text-emerald-800"

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" class="{{dc "dark" ""}}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  {{#if description}}<meta name="description" content="{{description}}">{{/if}}
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  {{#if auto_dark}}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.min.css" media="(prefers-color-scheme: light)">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" media="(prefers-color-scheme: dark)">
+  {{else}}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/{{#if dark}}atom-one-dark{{else}}atom-one-light{{/if}}.min.css">
+  {{/if}}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/theme.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            accent: {
+              50: 'var(--c-50)', 100: 'var(--c-100)', 200: 'var(--c-200)', 300: 'var(--c-300)',
+              400: 'var(--c-400)', 500: 'var(--c-500)', 600: 'var(--c-600)', 700: 'var(--c-700)',
+              800: 'var(--c-800)', 900: 'var(--c-900)', 950: 'var(--c-950)'
+            }
+          },
+          fontFamily: { display: ['{{{font}}}', 'serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    {{#if auto_dark}}
+    html:not(.dark) { --bg-color: {{background_color_light}}; }
+    html.dark { --bg-color: {{background_color_dark}}; }
+    {{else}}
+    :root { --bg-color: {{#if dark}}{{background_color_dark}}{{else}}{{background_color_light}}{{/if}}; }
+    {{/if}}
+    body { font-family: 'Playfair Display', serif; }
+  </style>
+  {{#if auto_dark}}<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>{{/if}}
+</head>
+<body class="{{dc "bg-[#0a1a10] text-emerald-100" "bg-emerald-50 text-emerald-900"}} min-h-screen transition-colors ls-page">
+  <div class="max-w-4xl mx-auto px-6 py-12">
+
+    <!-- Header - Case File -->
+    <header class="mb-12 text-center">
+      {{#if logo}}
+        <img src="{{logo}}" alt="{{title}}" class="w-24 h-24 mx-auto mb-6 rounded-full border-2 {{dc "border-emerald-700" "border-emerald-300"}}">
+      {{/if}}
+      <h1 class="text-5xl font-bold mb-3 ls-title ls-header-accent ls-shadow-text">{{title}}</h1>
+      {{#if description}}
+        <p class="text-lg {{muted}} max-w-2xl mx-auto">{{description}}</p>
+      {{/if}}
+      <div class="ls-divider mt-6"></div>
+    </header>
+
+    <!-- Navigation -->
+    {{#if show_nav}}
+    <nav class="mb-8 flex items-center justify-center gap-4 text-sm">
+      {{#if parent.path}}
+        <a href="{{parent.path}}" class="{{hover_text}} transition-colors flex items-center gap-1">
+          ← Back
+        </a>
+      {{/if}}
+      <a href="/" class="{{hover_text}} transition-colors">Home</a>
+    </nav>
+    {{/if}}
+
+    <!-- Child Sections -->
+    {{#if children_html}}
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-6 {{dc "text-emerald-300" "text-emerald-800"}} ls-title">Case Files</h2>
+      <div class="grid gap-4">
+        {{{children_html}}}
+      </div>
+    </section>
+    {{/if}}
+
+    <!-- Items -->
+    {{#if items_html}}
+    <section class="space-y-6">
+      {{{items_html}}}
+    </section>
+    {{/if}}
+
+    <!-- Footer - Sherlock Quote -->
+    <footer class="mt-16 pt-8 border-t {{dc "border-emerald-800/30" "border-emerald-200/50"}} text-center">
+      <div class="ls-quote {{muted}} max-w-2xl mx-auto">
+        "The world is full of obvious things which nobody by any chance ever observes."
+      </div>
+      <p class="mt-4 text-xs {{muted}}">— Sherlock Holmes</p>
+    </footer>
+
+  </div>
+
+  <script>
+    hljs.highlightAll();
+    function toggleMaximize(btn) {
+      const container = btn.closest('[data-embed-container]');
+      if (container.classList.contains('ls-maximized')) {
+        container.classList.remove('ls-maximized', 'fixed', 'inset-0', 'z-50', 'bg-black/95', 'p-8');
+        container.querySelector('.relative').classList.remove('h-full');
+        btn.textContent = 'Maximize';
+      } else {
+        container.classList.add('ls-maximized', 'fixed', 'inset-0', 'z-50', 'bg-black/95', 'p-8');
+        container.querySelector('.relative').classList.add('h-full');
+        btn.textContent = 'Close';
+      }
+    }
+  </script>
+</body>
+</html>

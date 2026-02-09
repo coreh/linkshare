@@ -1,0 +1,13 @@
+<a href="{{path}}" class="block p-6 rounded-lg border-2 {{card}} transition-all ls-item">
+  <div class="flex items-start justify-between gap-4">
+    <div class="flex-1 min-w-0">
+      <h3 class="text-xl font-bold text-accent-200 mb-1 truncate">
+        {{title}}{{#if has_password}} 🔒{{/if}}
+      </h3>
+      {{#if description}}
+        <p class="{{muted}} text-sm line-clamp-2">{{description}}</p>
+      {{/if}}
+    </div>
+    <div class="text-2xl text-accent-300 flex-shrink-0">📁</div>
+  </div>
+</a>

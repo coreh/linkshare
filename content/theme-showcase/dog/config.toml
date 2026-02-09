@@ -1,0 +1,9 @@
+title = "Dog"
+description = "Who's a good theme?"
+theme = "dog"
+color = "amber"
+
+[[items]]
+title = "Good Boy Alert"
+type = "text"
+content = "The Dog theme is warm, friendly, and full of tail-wagging energy. With golden tones and playful paw-print accents, it is the goodest theme of them all."

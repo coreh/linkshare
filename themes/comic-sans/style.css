@@ -1,0 +1,141 @@
+/* Comic Sans Theme - Gloriously Unhinged */
+
+@keyframes spin-star {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rainbow {
+  0% { color: #ff0080; }
+  16% { color: #ff8000; }
+  33% { color: #ffff00; }
+  50% { color: #00ff80; }
+  66% { color: #0080ff; }
+  83% { color: #8000ff; }
+  100% { color: #ff0080; }
+}
+
+@keyframes wobble {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+/* Fun wavy borders */
+.ls-comic-border {
+  border-style: dashed !important;
+  border-width: 3px !important;
+  border-radius: 20px 5px 15px 10px !important;
+  position: relative;
+}
+
+/* Star decoration */
+.ls-star {
+  display: inline-block;
+  animation: spin-star 4s linear infinite;
+  font-size: 1.5em;
+  margin: 0 0.25rem;
+}
+
+/* Rainbow text */
+.ls-rainbow {
+  animation: rainbow 3s linear infinite;
+  font-weight: bold;
+}
+
+/* Wobble animation */
+.ls-wobble {
+  animation: wobble 2s ease-in-out infinite;
+}
+
+/* Fun shadow effects */
+.ls-fun-shadow {
+  text-shadow: 3px 3px 0px rgba(255, 0, 255, 0.3),
+               -2px -2px 0px rgba(0, 255, 255, 0.3);
+}
+
+/* Card enhancements */
+.ls-card {
+  border-radius: 15px 5px 20px 8px !important;
+  border-style: solid !important;
+  border-width: 3px !important;
+  box-shadow: 5px 5px 0px rgba(255, 0, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.ls-card:hover {
+  box-shadow: 8px 8px 0px rgba(0, 255, 0, 0.3);
+  transform: translate(-2px, -2px) rotate(-1deg);
+}
+
+/* Button styling */
+.ls-button {
+  border-radius: 12px 3px 15px 5px !important;
+  border: 3px solid currentColor !important;
+  box-shadow: 3px 3px 0px currentColor;
+  transition: all 0.2s;
+}
+
+.ls-button:active {
+  box-shadow: 1px 1px 0px currentColor;
+  transform: translate(2px, 2px);
+}
+
+/* Footer rainbow */
+.ls-footer {
+  animation: rainbow 5s linear infinite;
+}
+
+/* Input fields */
+.ls-input {
+  border-radius: 10px 5px 8px 6px !important;
+  border-width: 3px !important;
+  border-style: solid !important;
+}
+
+/* Speech bubble effect for descriptions */
+.ls-bubble {
+  position: relative;
+  background: inherit;
+  border-radius: 15px 15px 15px 2px;
+}
+
+.ls-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid currentColor;
+  opacity: 0.3;
+}
+
+/* Code blocks get the comic treatment */
+.ls-code {
+  border-radius: 12px 5px 15px 8px !important;
+  border: 3px dashed rgba(255, 0, 255, 0.3) !important;
+}
+
+/* Embed containers */
+.ls-embed-container {
+  border-radius: 15px 5px 20px 8px !important;
+  border: 3px solid rgba(0, 255, 255, 0.3) !important;
+}
+
+/* Title decorations */
+.ls-title-star::before,
+.ls-title-star::after {
+  content: '★';
+  display: inline-block;
+  animation: spin-star 3s linear infinite;
+  margin: 0 0.5rem;
+  color: #ff00ff;
+}
+
+/* Logo bounce */
+.ls-logo {
+  animation: wobble 3s ease-in-out infinite;
+  display: inline-block;
+}

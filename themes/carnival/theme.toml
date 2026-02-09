@@ -1,0 +1,23 @@
+name = "Carnival"
+
+[defaults]
+font = "Pacifico"
+color = "purple"
+dark = "auto"
+background_color = "#1a0033"
+background_color_dark = "#1a0033"
+background_color_light = "#faf5ff"
+
+[vars.dark]
+muted = "text-purple-300/50"
+card = "bg-purple-950/40 border-purple-500/20 hover:border-yellow-400 hover:bg-purple-900/30"
+card_static = "bg-purple-950/40 border-purple-500/20"
+input = "bg-purple-950/60 border-purple-500/30 text-purple-200 placeholder-purple-700"
+hover_text = "hover:text-yellow-300"
+
+[vars.light]
+muted = "text-purple-500/60"
+card = "bg-white/80 border-purple-200 hover:border-yellow-500 hover:bg-purple-50/80"
+card_static = "bg-white/80 border-purple-200"
+input = "bg-white border-purple-300 text-purple-900 placeholder-purple-400"
+hover_text = "hover:text-purple-700"

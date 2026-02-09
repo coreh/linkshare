@@ -1,0 +1,58 @@
+{{!-- Back button: $ cd .. --}}
+{{#if parent}}
+<a href="{{parent.path}}"
+   class="inline-flex items-center gap-2 {{dc "text-accent-600 hover:text-accent-400" "text-accent-700 hover:text-accent-500"}} transition-colors mb-4 font-mono text-sm group">
+  <span class="select-none">$</span>
+  <span>cd ..</span>
+  <span class="retro-blink select-none">&block;</span>
+</a>
+{{/if}}
+
+{{!-- Header: terminal prompt style --}}
+<div class="mb-8 font-mono">
+  {{#if logo}}
+  <img src="{{logo}}" alt="" class="w-16 h-16 rounded-sm mx-auto mb-4 border border-accent-500/30 object-cover" style="image-rendering: pixelated;">
+  {{/if}}
+  <div class="{{dc "text-accent-600" "text-accent-700"}} text-xs mb-1 select-none">~{{path}}</div>
+  <div class="flex items-center gap-2 mb-1">
+    <span class="{{dc "text-accent-700" "text-accent-800"}} select-none">$</span>
+    <span class="{{dc "text-accent-500" "text-accent-700"}} select-none">cat</span>
+    <h1 class="text-xl font-bold {{dc "text-accent-400" "text-accent-700"}}">{{title}}</h1>
+    <span class="retro-blink {{dc "text-accent-500" "text-accent-600"}} select-none">&block;</span>
+  </div>
+  {{#if description}}
+  <p class="text-sm {{dc "text-white/50" "text-gray-600"}} pl-4 border-l border-accent-500/20">{{description}}</p>
+  {{/if}}
+  {{#if is_protected}}
+  <div class="mt-2 pl-4">
+    <form method="POST" action="{{path}}" class="inline">
+      <input type="hidden" name="action" value="logout">
+      <button type="submit" class="inline-flex items-center gap-1 text-xs {{muted}} hover:opacity-80 transition-opacity font-mono">
+        <span class="select-none">$</span> logout
+      </button>
+    </form>
+  </div>
+  {{/if}}
+</div>
+
+{{!-- Child sections: directory listing --}}
+{{#if children_html}}
+<div class="mb-6 font-mono">
+  <div class="{{dc "text-accent-600" "text-accent-700"}} text-xs mb-2 select-none">$ ls -la ~{{path}}/</div>
+  <div class="space-y-1">
+    {{{children_html}}}
+  </div>
+</div>
+{{/if}}
+
+{{!-- Items --}}
+{{#if items_html}}
+<div class="space-y-2 font-mono">
+  {{{items_html}}}
+</div>
+{{/if}}
+
+{{!-- Footer --}}
+<div class="text-center mt-10 font-mono text-xs {{dc "text-accent-800/60" "text-accent-700/60"}} select-none">
+  <span class="{{dc "text-accent-700" "text-accent-800"}}">[</span>Process exited with code <span class="{{dc "text-accent-500" "text-accent-600"}}">0</span><span class="{{dc "text-accent-700" "text-accent-800"}}">]</span>
+</div>

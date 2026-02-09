@@ -1,0 +1,15 @@
+<div class="window" style="width: 100%; margin-bottom: 4px;">
+  <div class="title-bar">
+    <div class="title-bar-text">{{#if title}}{{title}} - Media Player{{else}}Media Player{{/if}}</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body" style="margin: 0; padding: 2px;">
+    <audio controls style="width: 100%;">
+      <source src="{{file_url}}">
+    </audio>
+  </div>
+</div>

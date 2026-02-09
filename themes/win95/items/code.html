@@ -1,0 +1,13 @@
+<div class="window ls-code" style="width: 100%; margin-bottom: 4px;">
+  <div class="title-bar">
+    <div class="title-bar-text">{{#if title}}{{title}}{{#if language}} ({{language}}){{/if}}{{else}}Code{{/if}}</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body" style="margin: 0; padding: 0;">
+    <pre style="margin: 0; background: #fff; border: none; padding: 4px; overflow-x: auto;"><code class="language-{{language}}" style="font-size: 11px;">{{content}}</code></pre>
+  </div>
+</div>

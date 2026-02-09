@@ -1,0 +1,14 @@
+<div class="border-2 rounded-3xl overflow-hidden {{card_static}}">
+  <video controls preload="metadata" class="w-full">
+    <source src="{{file_url}}">
+  </video>
+  <div class="p-4">
+    <div class="flex items-center gap-2">
+      <span class="text-lg">&#127916;</span>
+      <div class="font-semibold">{{title}}</div>
+    </div>
+    {{#if description}}
+    <div class="text-sm {{muted}} mt-1">{{description}}</div>
+    {{/if}}
+  </div>
+</div>

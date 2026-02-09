@@ -1,0 +1,13 @@
+title = "Protected Section"
+description = "This section requires a password"
+password = "demo"
+
+[[items]]
+title = "Secret Link"
+url = "https://example.com"
+description = "This link is only visible after authentication"
+
+[[items]]
+title = "Confidential Note"
+type = "text"
+content = "If you can see this, you've entered the correct password! The password protection is server-side — the content is never sent to the browser until you authenticate."

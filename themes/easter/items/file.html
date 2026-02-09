@@ -1,0 +1,17 @@
+<a href="{{file_url}}" download="{{filename}}" class="{{card}} border rounded-2xl p-6 block transition-all hover:scale-[1.02]">
+  <div class="flex items-start gap-4">
+    <div class="flex-shrink-0 w-12 h-12 rounded-xl {{dc "bg-violet-900/50" "bg-violet-100"}} flex items-center justify-center text-2xl">
+      📎
+    </div>
+    <div class="flex-1 min-w-0">
+      <h3 class="text-xl font-semibold mb-1 truncate">{{title}}</h3>
+      {{#if description}}
+      <p class="{{muted}} line-clamp-2 mb-2">{{description}}</p>
+      {{/if}}
+      <p class="{{muted}} text-sm truncate">{{filename}}</p>
+    </div>
+    <svg class="w-5 h-5 {{muted}} flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+    </svg>
+  </div>
+</a>

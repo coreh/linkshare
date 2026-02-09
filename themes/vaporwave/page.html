@@ -1,0 +1,46 @@
+{{!-- Navigation --}}
+{{#if show_nav}}
+<nav class="mb-8 flex items-center gap-3 {{muted}}">
+  {{#if parent}}
+  <a href="{{parent.path}}" class="{{hover_text}} transition-all">← Back</a>
+  {{else}}
+  <a href="/" class="{{hover_text}} transition-all">← Home</a>
+  {{/if}}
+  {{#if is_protected}}
+  <span class="text-xs px-2 py-0.5 rounded border border-accent-500/30 bg-accent-500/10">🔒 Protected</span>
+  {{/if}}
+</nav>
+{{/if}}
+
+{{!-- Header --}}
+<header class="mb-12 text-center">
+  {{#if logo}}
+  <img src="{{logo}}" alt="{{title}}" class="ls-logo w-24 h-24 mx-auto mb-6 rounded-lg object-cover">
+  {{/if}}
+  <h1 class="ls-page-title text-5xl font-bold mb-4 bg-gradient-to-r from-accent-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+    {{title}}
+  </h1>
+  {{#if description}}
+  <p class="text-xl {{muted}} max-w-2xl mx-auto">{{description}}</p>
+  {{/if}}
+</header>
+
+{{!-- Sections --}}
+{{#if children_html}}
+<section class="mb-12">
+  <h2 class="text-2xl font-semibold mb-6 {{dc "text-cyan-300" "text-cyan-600"}}" style="letter-spacing: 0.3em;">S E C T I O N S</h2>
+  <div class="grid gap-4 sm:grid-cols-2">
+    {{{children_html}}}
+  </div>
+</section>
+{{/if}}
+
+{{!-- Items --}}
+{{#if items_html}}
+<section>
+  <h2 class="text-2xl font-semibold mb-6 {{dc "text-pink-300" "text-pink-600"}}" style="letter-spacing: 0.3em;">I T E M S</h2>
+  <div class="space-y-4">
+    {{{items_html}}}
+  </div>
+</section>
+{{/if}}

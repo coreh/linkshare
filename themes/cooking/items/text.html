@@ -1,0 +1,11 @@
+<div class="{{card_static}} border-2 rounded-lg p-6 ls-card">
+  {{#if title}}
+  <h3 class="text-xl font-semibold text-accent-700 dark:text-accent-300 mb-4 flex items-center gap-2">
+    <span>📝</span>
+    <span>{{title}}</span>
+  </h3>
+  {{/if}}
+  <div class="prose prose-sm dark:prose-invert max-w-none {{muted}}">
+    {{{content}}}
+  </div>
+</div>

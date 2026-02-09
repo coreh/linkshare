@@ -1,0 +1,10 @@
+<div class="border border-accent-500/20 rounded-sm overflow-hidden {{card_static}}">
+  <div class="{{dc "text-accent-600" "text-accent-700"}} text-xs px-3 py-1 select-none font-mono">$ display {{title}}</div>
+  <img src="{{file_url}}" alt="{{title}}" class="w-full aspect-video object-cover" style="image-rendering: auto;">
+  <div class="px-3 py-2 font-mono">
+    <div class="{{dc "text-accent-400" "text-accent-700"}} text-sm">{{title}}</div>
+    {{#if description}}
+    <div class="text-xs {{muted}} mt-1"># {{description}}</div>
+    {{/if}}
+  </div>
+</div>

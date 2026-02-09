@@ -1,0 +1,13 @@
+<div class="border border-accent-500/20 rounded-sm p-3 font-mono">
+  <div class="{{dc "text-accent-600" "text-accent-700"}} text-xs mb-1 select-none">$ cat &lt;&lt;EOF</div>
+  <div class="pl-2 border-l-2 border-accent-500/20">
+    <div class="{{dc "text-accent-400" "text-accent-700"}} text-sm font-bold mb-1">{{title}}</div>
+    {{#if description}}
+    <div class="text-xs {{dc "text-white/40" "text-gray-500"}} mb-2"># {{description}}</div>
+    {{/if}}
+    {{#if content}}
+    <div class="text-sm {{dc "text-white/70" "text-gray-700"}} whitespace-pre-wrap leading-relaxed">{{content}}</div>
+    {{/if}}
+  </div>
+  <div class="{{dc "text-accent-600" "text-accent-700"}} text-xs mt-1 select-none">EOF</div>
+</div>

@@ -1,0 +1,14 @@
+<div class="{{card_static}} border-2 rounded-lg overflow-hidden ls-card">
+  <img src="{{file_url}}" alt="{{title}}" class="w-full h-auto ls-image">
+  {{#if title}}
+  <div class="p-4">
+    <h3 class="text-lg font-semibold text-accent-700 dark:text-accent-300 mb-1 flex items-center gap-2">
+      <span>🖼️</span>
+      <span>{{title}}</span>
+    </h3>
+    {{#if description}}
+    <p class="{{muted}} text-sm">{{description}}</p>
+    {{/if}}
+  </div>
+  {{/if}}
+</div>

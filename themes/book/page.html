@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" class="{{dc "dark" ""}}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  {{#if description}}<meta name="description" content="{{description}}">{{/if}}
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/{{dc "tokyo-night-dark" "github"}}.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/themes/book/style.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Libre Baskerville', 'serif']
+          },
+          colors: {
+            accent: {
+              50: 'var(--c-50)', 100: 'var(--c-100)', 200: 'var(--c-200)', 300: 'var(--c-300)',
+              400: 'var(--c-400)', 500: 'var(--c-500)', 600: 'var(--c-600)', 700: 'var(--c-700)',
+              800: 'var(--c-800)', 900: 'var(--c-900)', 950: 'var(--c-950)'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --c-50: rgb(255 251 235); --c-100: rgb(254 243 199); --c-200: rgb(253 230 138);
+      --c-300: rgb(252 211 77); --c-400: rgb(251 191 36); --c-500: rgb(245 158 11);
+      --c-600: rgb(217 119 6); --c-700: rgb(180 83 9); --c-800: rgb(146 64 14);
+      --c-900: rgb(120 53 15); --c-950: rgb(69 26 3);
+    }
+  </style>
+  {{#if auto_dark}}
+  <script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  {{/if}}
+</head>
+<body class="min-h-screen {{dc "bg-[#1c1208] text-amber-100" "bg-[#fefce8] text-amber-900"}} font-sans transition-colors duration-200">
+  <div class="ls-content max-w-4xl mx-auto px-6 py-12">
+    <!-- Header -->
+    <header class="mb-12 text-center">
+      {{#if show_nav}}
+      <nav class="mb-8">
+        <a href="{{parent.path}}" class="{{muted}} {{hover_text}} text-sm transition-colors">
+          ← Back to {{parent.title}}
+        </a>
+      </nav>
+      {{/if}}
+
+      {{#if logo}}
+      <div class="flex items-center justify-center gap-4 mb-4">
+        <span class="text-5xl">{{logo}}</span>
+      </div>
+      {{/if}}
+
+      <h1 class="text-4xl font-bold mb-4 tracking-tight">{{title}}</h1>
+
+      {{#if description}}
+      <p class="{{muted}} text-lg max-w-2xl mx-auto leading-relaxed">{{description}}</p>
+      {{/if}}
+
+      {{#if is_protected}}
+      <div class="mt-6 inline-flex items-center gap-2 px-4 py-2 {{card_static}} border rounded-lg text-sm {{muted}}">
+        <span>🔒</span>
+        <span>Protected Section</span>
+      </div>
+      {{/if}}
+    </header>
+
+    <!-- Decorative divider -->
+    <div class="ls-section-divider mb-12"></div>
+
+    <!-- Subsections -->
+    {{#if children_html}}
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold mb-8 text-center {{muted}}">Chapters</h2>
+      <div class="grid gap-6 md:grid-cols-2">
+        {{{children_html}}}
+      </div>
+    </section>
+    {{/if}}
+
+    <!-- Items -->
+    {{#if items_html}}
+    <section>
+      <div class="space-y-6">
+        {{{items_html}}}
+      </div>
+    </section>
+    {{/if}}
+  </div>
+
+  <script>
+    hljs.highlightAll();
+
+    function toggleMaximize(btn) {
+      const container = btn.closest('[data-embed-container]');
+      container.classList.toggle('ls-embed-maximized');
+      if (container.classList.contains('ls-embed-maximized')) {
+        btn.textContent = '🗗';
+        document.body.style.overflow = 'hidden';
+      } else {
+        btn.textContent = '🗖';
+        document.body.style.overflow = '';
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const maximized = document.querySelector('.ls-embed-maximized');
+        if (maximized) {
+          const btn = maximized.querySelector('.ls-embed-maximize');
+          if (btn) toggleMaximize(btn);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

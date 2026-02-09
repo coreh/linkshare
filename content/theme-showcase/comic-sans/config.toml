@@ -1,0 +1,9 @@
+title = "Comic Sans"
+description = "Gloriously unhinged"
+theme = "comic-sans"
+color = "fuchsia"
+
+[[items]]
+title = "The Best Font"
+type = "text"
+content = "Comic Sans MS is the most beloved font in the world and this theme pays homage to its timeless beauty. Every pixel radiates joy and professionalism."

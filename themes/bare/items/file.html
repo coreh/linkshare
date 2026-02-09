@@ -1,0 +1,13 @@
+<a href="{{file_url}}" {{#if filename}}download="{{filename}}"{{else}}download{{/if}} class="block border p-3 transition-colors {{card}}">
+  <div class="flex items-center gap-3">
+    <div class="flex-1 min-w-0">
+      <div class="font-medium truncate">{{title}}</div>
+      {{#if description}}
+      <div class="text-sm {{muted}} truncate">{{description}}</div>
+      {{else}}
+      <div class="text-sm {{muted}} truncate">{{filename}}</div>
+      {{/if}}
+    </div>
+    <span class="text-sm {{muted}} shrink-0">&darr;</span>
+  </div>
+</a>

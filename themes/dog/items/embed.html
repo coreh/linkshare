@@ -1,0 +1,59 @@
+<div class="{{card_static}} rounded-2xl border-2 p-6 shadow-sm" data-embed-container>
+  <div class="flex items-start justify-between gap-4 mb-4">
+    <div class="flex-1 min-w-0">
+      {{#if title}}
+      <h3 class="font-bold text-lg mb-1 flex items-center gap-2">
+        <span>🌐</span>
+        {{title}}
+      </h3>
+      {{/if}}
+      {{#if description}}
+      <p class="{{muted}} text-sm">{{description}}</p>
+      {{/if}}
+    </div>
+    <button
+      onclick="toggleMaximize(this)"
+      class="ls-embed-maximize flex-shrink-0 {{dc "bg-amber-700/50 hover:bg-amber-600/50 text-amber-200" "bg-amber-200 hover:bg-amber-300 text-amber-900"}} px-3 py-1.5 rounded-lg text-xs font-semibold transition"
+    >
+      Maximize
+    </button>
+  </div>
+
+  <div class="relative rounded-xl overflow-hidden {{dc "bg-amber-950/60" "bg-white"}} border {{dc "border-amber-600/20" "border-amber-200"}}">
+    <div style="padding-top: 56.25%;">
+      <iframe
+        src="{{url}}"
+        class="absolute inset-0 w-full h-full"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+
+  <div class="mt-3 {{muted}} text-xs flex items-center gap-1">
+    <span class="ls-dog-paw">🐾</span>
+  </div>
+</div>
+
+<script>
+function toggleMaximize(btn) {
+  const container = btn.closest('[data-embed-container]');
+  const iframe = container.querySelector('iframe');
+
+  if (document.fullscreenElement) {
+    document.exitFullscreen();
+    btn.textContent = 'Maximize';
+  } else {
+    iframe.parentElement.requestFullscreen().catch(err => {
+      alert('Could not enter fullscreen mode: ' + err.message);
+    });
+    btn.textContent = 'Minimize';
+  }
+}
+
+document.addEventListener('fullscreenchange', () => {
+  document.querySelectorAll('.ls-embed-maximize').forEach(btn => {
+    btn.textContent = document.fullscreenElement ? 'Minimize' : 'Maximize';
+  });
+});
+</script>
