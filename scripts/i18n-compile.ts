@@ -2,10 +2,14 @@
  * Compile .po files into JSON catalogs for runtime use.
  * Reads locales/<locale>/linkshare.po, writes locales/compiled/<locale>.json.
  * English doesn't need compilation (runtime falls back to msgid).
+ *
+ * Context-qualified strings are keyed as "msgctxt\x04msgid" in the JSON.
  */
 import { readdir } from "fs/promises";
 import { join, resolve } from "path";
 import gettextParser from "gettext-parser";
+
+const CONTEXT_SEP = "\x04";
 
 const ROOT = resolve(import.meta.dir, "..");
 const LOCALES_DIR = join(ROOT, "locales");
@@ -26,18 +30,23 @@ for (const entry of entries) {
   const parsed = gettextParser.po.parse(await poFile.text());
   const catalog: Record<string, string> = {};
 
-  const translations = parsed.translations[""] || {};
-  for (const [msgid, entry] of Object.entries(translations)) {
-    if (!msgid) continue; // skip metadata entry
-    const msgstr = entry.msgstr?.[0];
-    if (msgstr) {
-      catalog[msgid] = msgstr;
+  // Iterate all contexts (empty string = no context, others = msgctxt value)
+  for (const [ctx, translations] of Object.entries(parsed.translations)) {
+    for (const [msgid, translationEntry] of Object.entries(translations)) {
+      if (!msgid) continue; // skip metadata entry
+      const msgstr = translationEntry.msgstr?.[0];
+      if (msgstr) {
+        const key = ctx ? `${ctx}${CONTEXT_SEP}${msgid}` : msgid;
+        catalog[key] = msgstr;
+      }
     }
   }
 
   const jsonPath = join(COMPILED_DIR, `${locale}.json`);
   await Bun.write(jsonPath, JSON.stringify(catalog, null, 2));
-  console.log(`Compiled ${locale}: ${Object.keys(catalog).length} translations → ${jsonPath}`);
+  console.log(
+    `Compiled ${locale}: ${Object.keys(catalog).length} translations → ${jsonPath}`,
+  );
   compiled++;
 }
 

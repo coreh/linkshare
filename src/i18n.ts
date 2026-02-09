@@ -3,9 +3,12 @@ import { join, basename } from "path";
 
 export const DEFAULT_LOCALE = "en";
 
+/** Separator used to key context-qualified strings: msgctxt + SEP + msgid */
+export const CONTEXT_SEP = "\x04";
+
 export type Catalog = Map<string, string>;
 export type Catalogs = Map<string, Catalog>;
-export type Translator = (msgid: string) => string;
+export type Translator = (msgid: string, msgctxt?: string) => string;
 
 export async function loadCatalogs(localesDir: string): Promise<Catalogs> {
   const catalogs: Catalogs = new Map();
@@ -29,16 +32,23 @@ export async function loadCatalogs(localesDir: string): Promise<Catalogs> {
   return catalogs;
 }
 
-export function t(catalogs: Catalogs, locale: string, msgid: string): string {
+export function t(
+  catalogs: Catalogs,
+  locale: string,
+  msgid: string,
+  msgctxt?: string,
+): string {
   if (locale === DEFAULT_LOCALE) return msgid;
   const catalog = catalogs.get(locale);
   if (!catalog) return msgid;
-  return catalog.get(msgid) || msgid;
+  const key = msgctxt ? `${msgctxt}${CONTEXT_SEP}${msgid}` : msgid;
+  return catalog.get(key) || msgid;
 }
 
 export function createTranslator(
   catalogs: Catalogs,
   locale: string,
 ): Translator {
-  return (msgid: string) => t(catalogs, locale, msgid);
+  return (msgid: string, msgctxt?: string) =>
+    t(catalogs, locale, msgid, msgctxt);
 }

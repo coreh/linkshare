@@ -16,24 +16,45 @@ const POT_PATH = join(LOCALES_DIR, "linkshare.pot");
 
 interface ExtractedString {
   msgid: string;
+  msgctxt?: string;
   references: string[];
 }
 
+/** Map key is "msgctxt\x04msgid" (with context) or just "msgid" (without) */
 const strings = new Map<string, ExtractedString>();
 
-function addString(msgid: string, file: string, line?: number) {
+const MSG_PLACEHOLDER_PATTERN = /\{msg\w*\}/;
+let warnings = 0;
+
+function addString(
+  msgid: string,
+  file: string,
+  line?: number,
+  msgctxt?: string,
+) {
+  // Warn about {msg*} placeholders in msgid — these are reserved
+  if (MSG_PLACEHOLDER_PATTERN.test(msgid)) {
+    const ref = line ? `${file}:${line}` : file;
+    console.warn(
+      `WARNING: ${ref} — msgid "${msgid}" contains a {msg*} placeholder. All msg* names are reserved for gettext fields.`,
+    );
+    warnings++;
+  }
+
+  const key = msgctxt ? `${msgctxt}\x04${msgid}` : msgid;
+  const existing = strings.get(key);
   const ref = line ? `${file}:${line}` : file;
-  const existing = strings.get(msgid);
   if (existing) {
     existing.references.push(ref);
   } else {
-    strings.set(msgid, { msgid, references: [ref] });
+    strings.set(key, { msgid, msgctxt, references: [ref] });
   }
 }
 
 // Extract from Handlebars templates: {{t "..."}} and {{{t "..."}}}
-// Also handles {{t "..." key=value}} with hash args
-const HBS_PATTERN = /\{\{\{?\s*t\s+"([^"]+)"/g;
+// Captures the full helper invocation to parse msgctxt hash arg
+const HBS_PATTERN = /\{\{\{?\s*t\s+"([^"]+)"([^}]*)\}\}\}?/g;
+const MSGCTXT_PATTERN = /msgctxt="([^"]+)"/;
 
 async function extractFromTemplates() {
   const themes = await readdir(THEMES_DIR, { withFileTypes: true });
@@ -57,15 +78,18 @@ async function scanDir(dir: string) {
         let match;
         HBS_PATTERN.lastIndex = 0;
         while ((match = HBS_PATTERN.exec(lines[i])) !== null) {
-          addString(match[1], relPath, i + 1);
+          const msgid = match[1];
+          const rest = match[2] || "";
+          const ctxMatch = MSGCTXT_PATTERN.exec(rest);
+          addString(msgid, relPath, i + 1, ctxMatch?.[1]);
         }
       }
     }
   }
 }
 
-// Extract from TypeScript source: __t("...")
-const TS_PATTERN = /__t\(\s*"([^"]+)"\s*\)/g;
+// Extract from TypeScript source: __t("...") or __t("...", "context")
+const TS_PATTERN = /__t\(\s*"([^"]+)"(?:\s*,\s*"([^"]+)")?\s*\)/g;
 
 async function extractFromSource() {
   const entries = await readdir(SRC_DIR, { withFileTypes: true });
@@ -79,7 +103,7 @@ async function extractFromSource() {
       let match;
       TS_PATTERN.lastIndex = 0;
       while ((match = TS_PATTERN.exec(lines[i])) !== null) {
-        addString(match[1], relPath, i + 1);
+        addString(match[1], relPath, i + 1, match[2]);
       }
     }
   }
@@ -92,6 +116,7 @@ function buildPot(): Buffer {
       string,
       {
         msgid: string;
+        msgctxt?: string;
         msgstr: string[];
         comments?: { reference: string };
       }
@@ -109,9 +134,12 @@ function buildPot(): Buffer {
     },
   };
 
-  for (const [msgid, entry] of strings) {
-    translations[""][msgid] = {
-      msgid,
+  for (const [, entry] of strings) {
+    const ctx = entry.msgctxt || "";
+    if (!translations[ctx]) translations[ctx] = {};
+    translations[ctx][entry.msgid] = {
+      msgid: entry.msgid,
+      ...(entry.msgctxt ? { msgctxt: entry.msgctxt } : {}),
       msgstr: [""],
       comments: {
         reference: entry.references.join("\n"),
@@ -135,13 +163,17 @@ async function mergePo(poPath: string, pot: Map<string, ExtractedString>) {
   if (!(await file.exists())) return;
 
   const existing = gettextParser.po.parse(await file.text());
-  const ctx = existing.translations[""] || {};
 
   // Add new strings not yet in the .po
-  for (const [msgid, entry] of pot) {
-    if (!ctx[msgid]) {
-      ctx[msgid] = {
-        msgid,
+  for (const [, entry] of pot) {
+    const ctx = entry.msgctxt || "";
+    if (!existing.translations[ctx]) existing.translations[ctx] = {};
+    const bucket = existing.translations[ctx];
+
+    if (!bucket[entry.msgid]) {
+      bucket[entry.msgid] = {
+        msgid: entry.msgid,
+        ...(entry.msgctxt ? { msgctxt: entry.msgctxt } : {}),
         msgstr: [""],
         comments: {
           reference: entry.references.join("\n"),
@@ -149,14 +181,13 @@ async function mergePo(poPath: string, pot: Map<string, ExtractedString>) {
       };
     } else {
       // Update references
-      ctx[msgid].comments = {
-        ...ctx[msgid].comments,
+      bucket[entry.msgid].comments = {
+        ...bucket[entry.msgid].comments,
         reference: entry.references.join("\n"),
       };
     }
   }
 
-  existing.translations[""] = ctx;
   await Bun.write(poPath, gettextParser.po.compile(existing));
 }
 
@@ -165,6 +196,9 @@ await extractFromTemplates();
 await extractFromSource();
 
 console.log(`Extracted ${strings.size} translatable strings`);
+if (warnings > 0) {
+  console.warn(`${warnings} warning(s) — see above`);
+}
 
 // Write .pot
 await Bun.write(POT_PATH, buildPot());

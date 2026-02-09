@@ -532,15 +532,20 @@ Handlebars.registerHelper(
 );
 
 // {{t "Some string"}} or {{t "Back to {title}" title=parent.title}}
-// Reads the bound translator from options.data.root.__t
+// {{t "Copy" msgctxt="verb"}} for disambiguation context
+// All msg* hash args are reserved for gettext and not used as placeholders.
+// Using {msg*} placeholders in msgid is an error.
 Handlebars.registerHelper(
   "t",
   function (msgid: string, options: Handlebars.HelperOptions) {
     const translator: Translator | undefined = options.data?.root?.__t;
-    let translated = translator ? translator(msgid) : msgid;
+    const msgctxt: string | undefined = options.hash?.msgctxt;
+    let translated = translator ? translator(msgid, msgctxt) : msgid;
     // Replace {key} placeholders with hash arguments
     if (options.hash) {
       for (const [key, value] of Object.entries(options.hash)) {
+        // Reserve all msg* keys for gettext fields
+        if (key.startsWith("msg")) continue;
         translated = translated.replace(
           new RegExp(`\\{${key}\\}`, "g"),
           String(value),

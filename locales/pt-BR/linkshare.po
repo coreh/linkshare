@@ -531,18 +531,18 @@ msgstr "🚀 ENTRAR!"
 msgid "★ AUTHORIZED PERSONNEL ONLY ★"
 msgstr "★ SOMENTE PESSOAL AUTORIZADO ★"
 
-#: src/theme-engine.ts:1002
+#: src/theme-engine.ts:1007
 msgid "Not Found"
 msgstr "Não Encontrado"
 
-#: src/theme-engine.ts:1010
+#: src/theme-engine.ts:1015
 msgid "Page Not Found"
 msgstr "Página Não Encontrada"
 
-#: src/theme-engine.ts:1011
+#: src/theme-engine.ts:1016
 msgid "The page you're looking for doesn't exist."
 msgstr "A página que você procura não existe."
 
-#: src/theme-engine.ts:1014
+#: src/theme-engine.ts:1019
 msgid "Go home"
 msgstr "Ir para o início"
