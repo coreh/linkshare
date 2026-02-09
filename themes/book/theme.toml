@@ -21,3 +21,6 @@ card = "bg-amber-50/80 border-amber-200 hover:border-amber-400 hover:bg-amber-10
 card_static = "bg-amber-50/80 border-amber-200"
 input = "bg-white border-amber-300 text-amber-900 placeholder-amber-500"
 hover_text = "hover:text-amber-800"
+
+[options]
+container_class = "min-h-screen"

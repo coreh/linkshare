@@ -21,3 +21,6 @@ card = "border-dashed border-green-400/40 hover:border-green-600 hover:bg-green-
 card_static = "border-dashed border-green-400/40"
 input = "bg-white/80 border-dashed border-green-400/40 text-green-900 placeholder-green-500"
 hover_text = "hover:text-green-800"
+
+[options]
+container_class = "min-h-screen"

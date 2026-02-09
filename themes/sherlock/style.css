@@ -109,7 +109,7 @@ body::before {
 
 /* Code block case file styling */
 .ls-code {
-  border-left: 3px solid rgb(var(--c-500));
+  border-left: 3px solid var(--color-accent-500);
 }
 html.dark .ls-code {
   background: rgba(0, 0, 0, 0.2) !important;
@@ -125,7 +125,7 @@ html:not(.dark) .ls-code {
 
 .ls-embed-maximize:hover {
   transform: scale(1.1);
-  color: rgb(var(--c-400));
+  color: var(--color-accent-400);
 }
 
 /* Input field case notes styling */

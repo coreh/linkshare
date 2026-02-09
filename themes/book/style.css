@@ -53,7 +53,7 @@ body {
 
 /* Code blocks with book aesthetic */
 .ls-code {
-  border-left: 4px solid rgb(var(--c-700));
+  border-left: 4px solid var(--color-accent-700);
   font-family: 'Courier New', monospace;
 }
 
@@ -69,14 +69,14 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgb(var(--c-950));
+  background: var(--color-accent-950);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(var(--c-700));
+  background: var(--color-accent-700);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(var(--c-600));
+  background: var(--color-accent-600);
 }

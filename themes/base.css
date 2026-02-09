@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+
+/* Dark mode uses class-based toggling for "auto" support */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Source: scan the shared layout shell and helpers */
+@source "../src";
+
+@theme {
+  /* Accent color palette — placeholder values, overridden at runtime per-section */
+  --color-accent-50: oklch(0.5 0 0);
+  --color-accent-100: oklch(0.5 0 0);
+  --color-accent-200: oklch(0.5 0 0);
+  --color-accent-300: oklch(0.5 0 0);
+  --color-accent-400: oklch(0.5 0 0);
+  --color-accent-500: oklch(0.5 0 0);
+  --color-accent-600: oklch(0.5 0 0);
+  --color-accent-700: oklch(0.5 0 0);
+  --color-accent-800: oklch(0.5 0 0);
+  --color-accent-900: oklch(0.5 0 0);
+  --color-accent-950: oklch(0.5 0 0);
+}

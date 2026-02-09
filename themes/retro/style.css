@@ -33,6 +33,6 @@
 }
 
 ::selection {
-  background: rgb(var(--c-500));
+  background: var(--color-accent-500);
   color: black;
 }

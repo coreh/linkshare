@@ -5,3 +5,4 @@ dist
 .vercel
 *.log
 locales/compiled
+themes/*/assets/tailwind.css

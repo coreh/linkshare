@@ -21,3 +21,7 @@ card = "bg-emerald-50/60 border-emerald-200 hover:border-emerald-400 hover:bg-em
 card_static = "bg-emerald-50/60 border-emerald-200"
 input = "bg-white border-emerald-300 text-emerald-900 placeholder-emerald-500"
 hover_text = "hover:text-emerald-800"
+
+[options]
+container_class = "min-h-screen"
+body_class = "ls-page"

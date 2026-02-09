@@ -1,102 +1,53 @@
-<!DOCTYPE html>
-<html lang="{{locale}}" dir="{{dir}}" class="{{dc "dark" ""}}">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{title}} - Enter Password</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/themes/book/style.css">
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Libre Baskerville', 'serif']
-          },
-          colors: {
-            accent: {
-              50: 'var(--c-50)', 100: 'var(--c-100)', 200: 'var(--c-200)', 300: 'var(--c-300)',
-              400: 'var(--c-400)', 500: 'var(--c-500)', 600: 'var(--c-600)', 700: 'var(--c-700)',
-              800: 'var(--c-800)', 900: 'var(--c-900)', 950: 'var(--c-950)'
-            }
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    :root {
-      --c-50: rgb(255 251 235); --c-100: rgb(254 243 199); --c-200: rgb(253 230 138);
-      --c-300: rgb(252 211 77); --c-400: rgb(251 191 36); --c-500: rgb(245 158 11);
-      --c-600: rgb(217 119 6); --c-700: rgb(180 83 9); --c-800: rgb(146 64 14);
-      --c-900: rgb(120 53 15); --c-950: rgb(69 26 3);
-    }
-  </style>
-  {{#if auto_dark}}
-  <script>
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.classList.add('dark');
-    }
-  </script>
-  {{/if}}
-</head>
-<body class="min-h-screen {{dc "bg-[#1c1208] text-amber-100" "bg-[#fefce8] text-amber-900"}} font-sans flex items-center justify-center p-6">
-  <div class="ls-content w-full max-w-md">
-    <div class="{{card_static}} border rounded-2xl p-8 shadow-xl">
-      <!-- Library card header -->
-      <div class="text-center mb-8">
-        <div class="text-6xl mb-4">🔖</div>
-        <h1 class="text-2xl font-bold mb-2">{{t "Library Access"}}</h1>
-        <p class="{{muted}} text-sm">{{t "This chapter is protected"}}</p>
-      </div>
+<div class="ls-content w-full max-w-md mx-auto py-12 px-6">
+  <div class="{{card_static}} border rounded-2xl p-8 shadow-xl">
+    <!-- Library card header -->
+    <div class="text-center mb-8">
+      <div class="text-6xl mb-4">🔖</div>
+      <h1 class="text-2xl font-bold mb-2">{{t "Library Access"}}</h1>
+      <p class="{{muted}} text-sm">{{t "This chapter is protected"}}</p>
+    </div>
 
-      <!-- Navigation -->
-      <nav class="mb-6 text-center">
-        <a href="{{parent.path}}" class="{{muted}} {{hover_text}} text-sm transition-colors">
-          {{t "← Return to {title}" title=parent.title}}
-        </a>
-      </nav>
+    <!-- Navigation -->
+    <nav class="mb-6 text-center">
+      <a href="{{parent.path}}" class="{{muted}} {{hover_text}} text-sm transition-colors">
+        {{t "← Return to {title}" title=parent.title}}
+      </a>
+    </nav>
 
-      <!-- Password form -->
-      <form method="POST" action="{{path}}" class="space-y-6">
-        <div>
-          <label for="password" class="block text-sm font-medium mb-2 {{muted}}">
-            {{t "Password"}}
-          </label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            required
-            autofocus
-            class="w-full px-4 py-3 rounded-lg border {{input}} focus:outline-none focus:ring-2 focus:ring-accent-500 transition-all"
-            placeholder="{{t "Enter the library code"}}"
-          >
-        </div>
-
-        {{#if error}}
-        <div class="bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3 rounded-lg text-sm">
-          {{error}}
-        </div>
-        {{/if}}
-
-        <button
-          type="submit"
-          class="w-full bg-accent-600 hover:bg-accent-700 text-white font-medium py-3 px-6 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 {{dc "focus:ring-offset-[#1c1208]" "focus:ring-offset-[#fefce8]"}}"
+    <!-- Password form -->
+    <form method="POST" action="{{path}}" class="space-y-6">
+      <div>
+        <label for="password" class="block text-sm font-medium mb-2 {{muted}}">
+          {{t "Password"}}
+        </label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          autofocus
+          class="w-full px-4 py-3 rounded-lg border {{input}} focus:outline-none focus:ring-2 focus:ring-accent-500 transition-all"
+          placeholder="{{t "Enter the library code"}}"
         >
-          {{t "Enter Library"}}
-        </button>
-      </form>
-
-      <!-- Decorative footer -->
-      <div class="mt-8 pt-6 border-t {{dc "border-amber-700/20" "border-amber-200"}} text-center">
-        <p class="{{muted}} text-xs">{{t "📚 Protected Content"}}</p>
       </div>
+
+      {{#if error}}
+      <div class="bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3 rounded-lg text-sm">
+        {{error}}
+      </div>
+      {{/if}}
+
+      <button
+        type="submit"
+        class="w-full bg-accent-600 hover:bg-accent-700 text-white font-medium py-3 px-6 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2"
+      >
+        {{t "Enter Library"}}
+      </button>
+    </form>
+
+    <!-- Decorative footer -->
+    <div class="mt-8 pt-6 border-t {{dc "border-amber-700/20" "border-amber-200"}} text-center">
+      <p class="{{muted}} text-xs">{{t "📚 Protected Content"}}</p>
     </div>
   </div>
-</body>
-</html>
+</div>

@@ -35,6 +35,7 @@ interface ThemeConfig {
   };
   options?: {
     body_class?: string;
+    container_class?: string;
   };
 }
 
@@ -380,19 +381,10 @@ export const COLOR_500: Record<string, string> = {
   rose: "#f43f5e",
 };
 
-function hexToRgbChannels(hex: string): string {
-  const r = parseInt(hex.slice(1, 3), 16);
-  const g = parseInt(hex.slice(3, 5), 16);
-  const b = parseInt(hex.slice(5, 7), 16);
-  return `${r} ${g} ${b}`;
-}
-
 function colorCssVars(color: string): string {
   const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
   const palette = PALETTES[color] ?? PALETTES.indigo!;
-  return shades
-    .map((s, i) => `--c-${s}: ${hexToRgbChannels(palette[i])}`)
-    .join("; ");
+  return shades.map((s, i) => `--color-accent-${s}: ${palette[i]}`).join("; ");
 }
 
 /* ==================== Theme Loading ==================== */
@@ -458,9 +450,14 @@ async function loadTheme(
         (rawDefaults.background_color_light as string) || undefined,
     },
     vars: rawVars.dark || rawVars.light ? rawVars : undefined,
-    options: rawOptions.body_class
-      ? { body_class: rawOptions.body_class as string }
-      : undefined,
+    options:
+      rawOptions.body_class || rawOptions.container_class
+        ? {
+            body_class: (rawOptions.body_class as string) || undefined,
+            container_class:
+              (rawOptions.container_class as string) || undefined,
+          }
+        : undefined,
   };
 
   const page = await compileFile(join(dir, "page.html"));
@@ -670,10 +667,12 @@ export function renderPage(
       title: config.title,
       style,
       sectionPath: path,
+      themeAssets: theme_assets,
       hasCode,
       hasEmbed,
       extraStyles: theme.css,
       bodyClass: theme.config.options?.body_class,
+      containerClass: theme.config.options?.container_class,
       locale: style.locale,
     },
     body,
@@ -725,8 +724,10 @@ export function renderLogin(
       title: `${config.title} - Protected`,
       style,
       sectionPath: path,
+      themeAssets: theme_assets,
       extraStyles: theme.css,
       bodyClass: theme.config.options?.body_class,
+      containerClass: theme.config.options?.container_class,
       locale: style.locale,
     },
     body,
@@ -848,15 +849,25 @@ interface ShellOpts {
   title: string;
   style: ResolvedStyle;
   sectionPath: string;
+  themeAssets: string;
   hasCode?: boolean;
   hasEmbed?: boolean;
   extraStyles?: string;
   bodyClass?: string;
+  containerClass?: string;
   locale?: string;
 }
 
 function layoutShell(opts: ShellOpts, body: string): string {
-  const { title, style, sectionPath, hasCode, hasEmbed, extraStyles } = opts;
+  const {
+    title,
+    style,
+    sectionPath,
+    themeAssets,
+    hasCode,
+    hasEmbed,
+    extraStyles,
+  } = opts;
   const { font, dark, color, background, background_color } = style;
   const isAuto = dark === "auto";
 
@@ -889,42 +900,12 @@ function layoutShell(opts: ShellOpts, body: string): string {
   let highlightLink = "";
   if (hasCode) {
     if (isAuto) {
-      // Load both themes, toggle visibility via media query
       highlightLink = `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css" media="(prefers-color-scheme: light)"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css" media="(prefers-color-scheme: dark)">`;
     } else {
       const highlightTheme = dark ? "github-dark" : "github";
       highlightLink = `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/${highlightTheme}.min.css">`;
     }
   }
-
-  // Tailwind config — add darkMode:'class' when auto
-  // Colors use rgb(var(--c-X) / <alpha-value>) for Tailwind opacity modifier support
-  const accentColors = `{
-              50: 'rgb(var(--c-50) / <alpha-value>)', 100: 'rgb(var(--c-100) / <alpha-value>)', 200: 'rgb(var(--c-200) / <alpha-value>)',
-              300: 'rgb(var(--c-300) / <alpha-value>)', 400: 'rgb(var(--c-400) / <alpha-value>)', 500: 'rgb(var(--c-500) / <alpha-value>)',
-              600: 'rgb(var(--c-600) / <alpha-value>)', 700: 'rgb(var(--c-700) / <alpha-value>)', 800: 'rgb(var(--c-800) / <alpha-value>)',
-              900: 'rgb(var(--c-900) / <alpha-value>)', 950: 'rgb(var(--c-950) / <alpha-value>)',
-            }`;
-  const twConfig = isAuto
-    ? `{
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            accent: ${accentColors}
-          }
-        }
-      }
-    }`
-    : `{
-      theme: {
-        extend: {
-          colors: {
-            accent: ${accentColors}
-          }
-        }
-      }
-    }`;
 
   // Auto dark mode head script (runs before body to prevent flash)
   const autoDarkScript = isAuto
@@ -947,8 +928,7 @@ function layoutShell(opts: ShellOpts, body: string): string {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${e(title)}</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config = ${twConfig}</script>
+  <link rel="stylesheet" href="${themeAssets}/tailwind.css">
   ${autoDarkScript}
   ${font !== "system-ui" ? `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=${encodeURIComponent(font)}:wght@300;400;500;600;700&display=swap" rel="stylesheet">` : ""}
   ${highlightLink}
@@ -971,10 +951,8 @@ function layoutShell(opts: ShellOpts, body: string): string {
 </head>
 <body${bgStyle ? ` style="${bgStyle}"` : ""} class="${bodyClass} antialiased">
   ${background ? '<div class="fixed inset-0 bg-black/30 -z-10"></div>' : ""}
-  <div class="min-h-screen flex flex-col items-center px-4 py-8 sm:py-12">
-    <div class="w-full max-w-xl">
-      ${body}
-    </div>
+  <div class="${opts.containerClass || "min-h-screen flex flex-col items-center px-4 py-8 sm:py-12"}">
+    ${opts.containerClass ? body : `<div class="w-full max-w-xl">${body}</div>`}
   </div>
   ${extraStyles ? `<style>${extraStyles}</style>` : ""}
   ${hasCode ? `<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script><script>hljs.highlightAll();</script>` : ""}
@@ -1028,6 +1006,7 @@ function fallback404(catalogs?: Catalogs, locale?: string): string {
       title: __t("Not Found"),
       style,
       sectionPath: "/",
+      themeAssets: `/assets/${style.theme}`,
       locale: locale || DEFAULT_LOCALE,
     },
     `

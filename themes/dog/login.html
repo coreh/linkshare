@@ -1,50 +1,5 @@
-<!DOCTYPE html>
-<html lang="{{locale}}" dir="{{dir}}" class="{{dc "dark" ""}}">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Password Required - {{title}}</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            accent: {
-              50: 'var(--c-50)', 100: 'var(--c-100)', 200: 'var(--c-200)',
-              300: 'var(--c-300)', 400: 'var(--c-400)', 500: 'var(--c-500)',
-              600: 'var(--c-600)', 700: 'var(--c-700)', 800: 'var(--c-800)',
-              900: 'var(--c-900)', 950: 'var(--c-950)'
-            }
-          }
-        }
-      }
-    }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/themes/dog/style.css">
-  <style>
-    :root {
-      --c-50: #fffbeb; --c-100: #fef3c7; --c-200: #fde68a;
-      --c-300: #fcd34d; --c-400: #fbbf24; --c-500: #f59e0b;
-      --c-600: #d97706; --c-700: #b45309; --c-800: #92400e;
-      --c-900: #78350f; --c-950: #451a03;
-    }
-    body { font-family: 'Nunito', sans-serif; }
-  </style>
-  {{#if auto_dark}}
-  <script>
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.classList.add('dark');
-    }
-  </script>
-  {{/if}}
-</head>
-<body class="{{dc "bg-[#1a1000] text-amber-100" "bg-[#fffbeb] text-amber-950"}} min-h-screen flex items-center justify-center transition-colors">
-  <div class="max-w-md w-full mx-auto px-4">
+<div class="flex items-center justify-center min-h-screen px-4">
+  <div class="max-w-md w-full mx-auto">
     <!-- Guard dog protecting the content -->
     <div class="text-center mb-8">
       <div class="text-8xl mb-4 ls-dog-wag">🐕</div>
@@ -83,7 +38,7 @@
 
         <button
           type="submit"
-          class="w-full {{dc "bg-amber-600 hover:bg-amber-500 text-amber-50" "bg-amber-500 hover:bg-amber-600 text-white"}} font-bold py-3 px-6 rounded-xl transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+          class="w-full {{dc "bg-amber-600 hover:bg-amber-500 text-amber-50" "bg-amber-500 hover:bg-amber-600 text-white"}} font-bold py-3 px-6 rounded-xl transition shadow-lg hover:shadow-xl scale-100 hover:-translate-y-0.5"
         >
           {{t "🦴 Let Me In!"}}
         </button>
@@ -105,5 +60,4 @@
       <span class="ls-dog-paw" style="animation-delay: 0.6s;">🐾</span>
     </div>
   </div>
-</body>
-</html>
+</div>

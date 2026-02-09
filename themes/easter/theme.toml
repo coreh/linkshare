@@ -21,3 +21,7 @@ card = "bg-white/80 border-violet-200 hover:border-violet-400 hover:bg-violet-50
 card_static = "bg-white/80 border-violet-200"
 input = "bg-white border-violet-300 text-violet-900 placeholder-violet-400"
 hover_text = "hover:text-violet-700"
+
+[options]
+container_class = "min-h-screen"
+body_class = "ls-page"

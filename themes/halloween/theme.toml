@@ -21,3 +21,6 @@ card = "bg-orange-50/80 border-orange-200 hover:border-orange-400 hover:bg-orang
 card_static = "bg-orange-50/80 border-orange-200"
 input = "bg-white border-orange-300 text-orange-900 placeholder-orange-400"
 hover_text = "hover:text-orange-700"
+
+[options]
+container_class = "min-h-screen"

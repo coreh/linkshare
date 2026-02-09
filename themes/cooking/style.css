@@ -13,8 +13,8 @@ body::before {
       45deg,
       transparent,
       transparent 35px,
-      rgb(var(--c-500) / 0.02) 35px,
-      rgb(var(--c-500) / 0.02) 70px
+      color-mix(in srgb, var(--color-accent-500) 2%, transparent) 35px,
+      color-mix(in srgb, var(--color-accent-500) 2%, transparent) 70px
     );
   pointer-events: none;
   z-index: 0;
@@ -40,14 +40,14 @@ body::before {
       0deg,
       transparent,
       transparent 2px,
-      rgb(var(--c-500) / 0.01) 2px,
-      rgb(var(--c-500) / 0.01) 4px
+      color-mix(in srgb, var(--color-accent-500) 1%, transparent) 2px,
+      color-mix(in srgb, var(--color-accent-500) 1%, transparent) 4px
     );
   pointer-events: none;
 }
 
 .ls-card:hover {
-  box-shadow: 0 4px 16px rgb(var(--c-500) / 0.2);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--color-accent-500) 20%, transparent);
   transform: translateY(-2px);
 }
 
@@ -83,7 +83,7 @@ body::before {
 
 /* Code blocks with kitchen aesthetic */
 .ls-code {
-  border-left: 4px solid rgb(var(--c-600));
+  border-left: 4px solid var(--color-accent-600);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -94,7 +94,7 @@ button, .ls-button {
 }
 
 button:hover, .ls-button:hover {
-  box-shadow: 0 4px 8px rgb(var(--c-500) / 0.2);
+  box-shadow: 0 4px 8px color-mix(in srgb, var(--color-accent-500) 20%, transparent);
   transform: translateY(-1px);
 }
 

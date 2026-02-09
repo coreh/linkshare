@@ -21,3 +21,6 @@ card = "bg-yellow-50/80 border-fuchsia-300 hover:border-lime-500 hover:bg-lime-5
 card_static = "bg-yellow-50/80 border-fuchsia-300"
 input = "bg-white border-fuchsia-400 text-fuchsia-900 placeholder-fuchsia-400"
 hover_text = "hover:text-fuchsia-700"
+
+[options]
+container_class = "min-h-screen"
