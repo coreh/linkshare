@@ -1,5 +1,8 @@
 {
   "bunVersion": "1.x",
+  "framework": null,
+  "buildCommand": "bun run build",
+  "outputDirectory": ".",
   "functions": {
     "api/index.ts": {
       "includeFiles": "{content,themes,locales}/**/*"
