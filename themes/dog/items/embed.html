@@ -35,26 +35,3 @@
     <span class="ls-dog-paw">🐾</span>
   </div>
 </div>
-
-<script>
-function toggleMaximize(btn) {
-  const container = btn.closest('[data-embed-container]');
-  const iframe = container.querySelector('iframe');
-
-  if (document.fullscreenElement) {
-    document.exitFullscreen();
-    btn.textContent = btn.dataset.maximizeLabel;
-  } else {
-    iframe.parentElement.requestFullscreen().catch(err => {
-      alert('Could not enter fullscreen mode: ' + err.message);
-    });
-    btn.textContent = btn.dataset.minimizeLabel;
-  }
-}
-
-document.addEventListener('fullscreenchange', () => {
-  document.querySelectorAll('.ls-embed-maximize').forEach(btn => {
-    btn.textContent = document.fullscreenElement ? btn.dataset.minimizeLabel : btn.dataset.maximizeLabel;
-  });
-});
-</script>

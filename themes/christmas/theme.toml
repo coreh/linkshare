@@ -24,3 +24,6 @@ hover_text = "hover:text-red-700"
 
 [options]
 container_class = "min-h-screen"
+
+[assets]
+js = ["snow.js"]

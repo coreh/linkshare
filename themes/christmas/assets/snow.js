@@ -1,0 +1,143 @@
+(function() {
+  var canvas = document.getElementById('snowCanvas');
+  var ctx = canvas.getContext('2d');
+  var W, H, N = 180, PR = 6, MP = 28, TAPER = 8;
+  var flakes = [], surfs = [], wind = 0, wt = 0, fc = 0, seeded = false;
+
+  function sz() { W = canvas.width = innerWidth; H = canvas.height = innerHeight; }
+  sz();
+  addEventListener('resize', function() { sz(); scan(); });
+
+  function taperAt(col, len) {
+    var edge = Math.min(col, len - 1 - col);
+    return Math.min(1, edge / TAPER);
+  }
+
+  function scan() {
+    var sy = scrollY, old = surfs;
+    surfs = [];
+    var els = document.querySelectorAll(
+      '[class*="rounded"][class*="border"],[class*="border"][class*="rounded"],[data-embed-container]'
+    );
+    for (var i = 0; i < els.length; i++) {
+      var r = els[i].getBoundingClientRect();
+      if (r.width < 40 || r.height < 15) continue;
+      var dt = Math.round(r.top + sy), l = Math.round(r.left), ri = Math.round(r.right);
+      var cols = Math.ceil((ri - l) / PR), pile = null;
+      for (var j = 0; j < old.length; j++) {
+        if (Math.abs(old[j].t - dt) < 8 && Math.abs(old[j].l - l) < 8 && old[j].p.length === cols) {
+          pile = old[j].p; old.splice(j, 1); break;
+        }
+      }
+      if (!pile) pile = new Float32Array(cols);
+      surfs.push({ l: l, r: ri, t: dt, p: pile });
+    }
+    if (!seeded && surfs.length > 0) {
+      seeded = true;
+      for (var j = 0; j < surfs.length; j++) {
+        var p = surfs[j].p;
+        for (var k = 0; k < p.length; k++)
+          p[k] = (1 + Math.random() * 2 + Math.sin(k * 0.3)) * taperAt(k, p.length);
+        for (var pass = 0; pass < 3; pass++)
+          for (var k = 1; k < p.length - 1; k++)
+            p[k] = (p[k - 1] + p[k] * 2 + p[k + 1]) / 4;
+      }
+    }
+  }
+
+  function mk(full) {
+    return {
+      x: Math.random() * W, y: full ? Math.random() * H : -Math.random() * 40 - 5,
+      r: Math.random() * 2.5 + 0.8, sp: Math.random() * 1.2 + 0.4,
+      wb: Math.random() * 6.28, ws: Math.random() * 0.02 + 0.005,
+      o: Math.random() * 0.5 + 0.3
+    };
+  }
+
+  for (var i = 0; i < N; i++) flakes.push(mk(true));
+  scan();
+
+  function frame() {
+    ctx.clearRect(0, 0, W, H);
+    var sy = scrollY;
+    if (++fc % 120 === 0) scan();
+
+    wt += (Math.random() - 0.5) * 0.02;
+    wt = Math.max(-0.4, Math.min(0.4, wt));
+    wind += (wt - wind) * 0.01;
+
+    for (var i = 0; i < N; i++) {
+      var f = flakes[i];
+      f.wb += f.ws;
+      f.x += Math.sin(f.wb) * 0.5 + wind;
+      f.y += f.sp;
+      var dy = f.y + sy, hit = false;
+
+      for (var j = 0; j < surfs.length; j++) {
+        var s = surfs[j];
+        if (f.x >= s.l && f.x < s.r) {
+          var col = Math.floor((f.x - s.l) / PR);
+          if (col >= 0 && col < s.p.length) {
+            var tp = taperAt(col, s.p.length);
+            var cap = MP * tp;
+            if (dy >= s.t - s.p[col] && s.p[col] < cap) {
+              var a = (0.4 + Math.random() * 0.3) * tp;
+              s.p[col] = Math.min(cap, s.p[col] + a);
+              if (col > 0) s.p[col - 1] = Math.min(MP * taperAt(col - 1, s.p.length), s.p[col - 1] + a * 0.3);
+              if (col < s.p.length - 1) s.p[col + 1] = Math.min(MP * taperAt(col + 1, s.p.length), s.p[col + 1] + a * 0.3);
+              hit = true; break;
+            }
+          }
+        }
+      }
+
+      if (hit || f.y > H + 5) { flakes[i] = mk(false); continue; }
+      if (f.x > W + 5) f.x = -5;
+      if (f.x < -5) f.x = W + 5;
+
+      ctx.beginPath();
+      ctx.arc(f.x, f.y, f.r, 0, 6.28);
+      ctx.fillStyle = 'rgba(255,255,255,' + f.o + ')';
+      ctx.fill();
+    }
+
+    // Settle piles
+    for (var j = 0; j < surfs.length; j++) {
+      var p = surfs[j].p;
+      for (var k = 1; k < p.length - 1; k++)
+        p[k] += ((p[k - 1] + p[k + 1]) / 2 - p[k]) * 0.03;
+    }
+
+    // Draw piles
+    for (var j = 0; j < surfs.length; j++) {
+      var s = surfs[j], by = s.t - sy;
+      if (by < -MP - 5 || by > H + 5) continue;
+      var any = false;
+      for (var k = 0; k < s.p.length; k++) { if (s.p[k] > 0.3) { any = true; break; } }
+      if (!any) continue;
+
+      ctx.beginPath();
+      ctx.moveTo(s.l, by);
+      for (var k = 0; k < s.p.length; k++) {
+        var px = s.l + (k + 0.5) * PR, py = by - s.p[k];
+        if (k === 0) ctx.lineTo(px, py);
+        else {
+          var ox = s.l + (k - 0.5) * PR, oy = by - s.p[k - 1];
+          ctx.quadraticCurveTo(ox, oy, (ox + px) / 2, (oy + py) / 2);
+        }
+      }
+      ctx.lineTo(s.l + (s.p.length - 0.5) * PR, by - s.p[s.p.length - 1]);
+      ctx.lineTo(s.r, by);
+      ctx.closePath();
+
+      ctx.fillStyle = 'rgba(255,255,255,0.85)';
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(200,220,255,0.25)';
+      ctx.lineWidth = 0.5;
+      ctx.stroke();
+    }
+
+    requestAnimationFrame(frame);
+  }
+  frame();
+})();
