@@ -1,19 +1,19 @@
-title = "Windows 95"
+title = "Win98"
 description = "Retro computing nostalgia"
-theme = "win95"
+theme = "win98"
 color = "sky"
 
 [[items]]
 title = "Welcome to Windows"
 type = "text"
-content = "The Windows 95 theme recreates the classic desktop experience with authentic window frames, title bars, and that unmistakable teal background. A nostalgic trip back to 1995."
+content = "The Win98 theme recreates the classic desktop experience with authentic window frames, gradient title bars, and that unmistakable teal background. A nostalgic trip back to the late 90s."
 
 [[items]]
 title = "System Information"
 type = "text"
-content = """Microsoft Windows 95
-Version 4.00.950
-Copyright © Microsoft Corp 1981-1995
+content = """Microsoft Windows 98
+Version 4.10.1998
+Copyright © Microsoft Corp 1981-1998
 
 This computer is licensed to:
 LinkShare User
@@ -40,14 +40,14 @@ icon = "🎨"
 title = "Sample Code"
 type = "code"
 language = "javascript"
-content = """// Classic Windows 95 startup
-function bootWindows95() {
-  console.log('Starting Windows 95...');
+content = """// Classic Windows 98 startup
+function bootWindows98() {
+  console.log('Starting Windows 98...');
   playSound('startup.wav');
   showDesktop();
   loadPrograms();
-  console.log('Welcome to Windows 95!');
+  console.log('Welcome to Windows 98!');
 }
 
-bootWindows95();
+bootWindows98();
 """

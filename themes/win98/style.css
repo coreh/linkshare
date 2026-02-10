@@ -1,14 +1,14 @@
-/* Win95 theme custom styles — 98.css loaded via vendor-98.css */
+/* Win98 theme custom styles — 98.css loaded via [assets] */
 
 /* Desktop icon grid */
-.win95-desktop-icons {
+.win98-desktop-icons {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 16px;
 }
 
-.win95-desktop-icon {
+.win98-desktop-icon {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,20 +19,20 @@
   min-width: 64px;
 }
 
-.win95-desktop-icon:hover .win95-desktop-icon-label,
-.win95-desktop-icon:focus .win95-desktop-icon-label {
+.win98-desktop-icon:hover .win98-desktop-icon-label,
+.win98-desktop-icon:focus .win98-desktop-icon-label {
   background: #000080;
   color: #fff;
   outline: 1px dotted #fff;
   outline-offset: -1px;
 }
 
-.win95-desktop-icon-img {
+.win98-desktop-icon-img {
   font-size: 32px;
   filter: drop-shadow(1px 1px 0 #000);
 }
 
-.win95-desktop-icon-label {
+.win98-desktop-icon-label {
   font-size: 11px;
   text-align: center;
   text-shadow: 1px 1px #000;
@@ -40,7 +40,7 @@
 }
 
 /* Page title */
-.win95-page-title {
+.win98-page-title {
   font-size: 16px;
   font-weight: bold;
   color: #fff;
@@ -49,7 +49,7 @@
 }
 
 /* Section link (clickable window) */
-.win95-section-link {
+.win98-section-link {
   display: block;
   text-decoration: none;
   color: inherit;
@@ -57,13 +57,13 @@
   transition: transform 0.1s;
 }
 
-.win95-section-link:hover {
+.win98-section-link:hover {
   transform: translate(-1px, -1px);
   filter: brightness(1.02);
 }
 
 /* File list item — classic Windows explorer selection */
-.win95-file-item {
+.win98-file-item {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -74,21 +74,21 @@
   font-size: 11px;
 }
 
-.win95-file-item:hover,
-.win95-file-item:focus {
+.win98-file-item:hover,
+.win98-file-item:focus {
   background: #000080;
   color: #fff;
   outline: 1px dotted #fff;
   outline-offset: -1px;
 }
 
-.win95-file-item:hover *,
-.win95-file-item:focus * {
+.win98-file-item:hover *,
+.win98-file-item:focus * {
   color: #fff !important;
 }
 
 /* Sunken panel */
-.win95-sunken {
+.win98-sunken {
   border: 2px solid;
   border-color: #808080 #fff #fff #808080;
   background: #fff;
@@ -96,7 +96,7 @@
 }
 
 /* Notepad-style text area */
-.win95-notepad-content {
+.win98-notepad-content {
   font-family: 'Courier New', monospace !important;
   font-size: 13px !important;
   font-weight: 600 !important;
@@ -108,7 +108,7 @@
 }
 
 /* Content item label */
-.win95-item-label {
+.win98-item-label {
   font-size: 11px;
   font-weight: bold;
   color: #000;
@@ -118,18 +118,18 @@
   gap: 4px;
 }
 
-.win95-item-label:first-child {
+.win98-item-label:first-child {
   margin-top: 0;
 }
 
 /* Items area — desktop icon grid for links/files, stacked for windows */
-.win95-items-area {
+.win98-items-area {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
 }
 
-.win95-items-area > .window {
+.win98-items-area > .window {
   width: 100%;
   flex-basis: 100%;
 }

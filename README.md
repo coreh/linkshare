@@ -121,7 +121,7 @@ url = "https://www.google.com/maps/embed?..."
 
 ## Themes
 
-LinkShare ships with several built-in themes: `bare`, `book`, `carnival`, `chalk`, `christmas`, `comic-sans`, `cooking`, `default`, `dog`, `easter`, `halloween`, `kawaii`, `retro`, `sherlock`, `vaporwave`, and `win95`.
+LinkShare ships with several built-in themes: `bare`, `book`, `carnival`, `chalk`, `christmas`, `comic-sans`, `cooking`, `default`, `dog`, `easter`, `halloween`, `kawaii`, `retro`, `sherlock`, `vaporwave`, and `win98`.
 
 Set a theme per-section in `config.toml`:
 
