@@ -1,6 +1,5 @@
 {
   "bunVersion": "1.x",
-  "framework": null,
   "functions": {
     "api/index.ts": {
       "includeFiles": "{content,themes,locales}/**/*"
