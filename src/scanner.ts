@@ -6,6 +6,7 @@ import type {
   SectionConfig,
   ResolvedStyle,
   ScanResult,
+  CdnConfig,
 } from "./types";
 import type { ThemeDefaults } from "./theme-engine";
 import { COLOR_500 } from "./theme-engine";
@@ -100,6 +101,14 @@ async function scanDirectory(
   return section;
 }
 
+const CDN_DEFAULTS: CdnConfig = {
+  js: "cdnjs",
+  fonts: "google",
+  font_weights: [300, 400, 500, 600, 700],
+  hljs_theme: "github",
+  hljs_theme_dark: "github-dark",
+};
+
 function resolveStyle(
   config: SectionConfig,
   parent: Section | null,
@@ -128,6 +137,7 @@ function resolveStyle(
           background_color_light: themeDefaults.background_color_light,
           accent_color: COLOR_500[themeDefaults.color] || "#6366f1",
           locale: "en",
+          cdn: CDN_DEFAULTS,
         };
 
   const color = config.color ?? base.color;
@@ -144,5 +154,12 @@ function resolveStyle(
     logo: config.logo ?? (inherit ? base.logo : undefined),
     accent_color: config.accent_color ?? COLOR_500[color] ?? base.accent_color,
     locale: config.locale ?? base.locale,
+    cdn: {
+      js: config.cdn?.js ?? base.cdn.js,
+      fonts: config.cdn?.fonts ?? base.cdn.fonts,
+      font_weights: config.cdn?.font_weights ?? base.cdn.font_weights,
+      hljs_theme: config.cdn?.hljs_theme ?? base.cdn.hljs_theme,
+      hljs_theme_dark: config.cdn?.hljs_theme_dark ?? base.cdn.hljs_theme_dark,
+    },
   };
 }

@@ -19,3 +19,6 @@ card = ""
 card_static = ""
 input = ""
 hover_text = ""
+
+[assets]
+css = ["vendor/98.css"]

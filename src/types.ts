@@ -19,6 +19,14 @@ export interface ItemConfig {
   height?: number;
 }
 
+export interface CdnConfig {
+  js: "cdnjs" | "jsdelivr" | "unpkg";
+  fonts: "google" | "bunny" | "none";
+  font_weights: number[];
+  hljs_theme: string;
+  hljs_theme_dark: string;
+}
+
 export interface SectionConfig {
   title: string;
   description?: string;
@@ -33,6 +41,7 @@ export interface SectionConfig {
   accent_color?: string;
   locale?: string;
   inherit?: boolean;
+  cdn?: Partial<CdnConfig>;
   items?: ItemConfig[];
 }
 
@@ -48,6 +57,7 @@ export interface ResolvedStyle {
   logo?: string;
   accent_color: string;
   locale: string;
+  cdn: CdnConfig;
 }
 
 export interface Section {

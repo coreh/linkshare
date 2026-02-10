@@ -2,7 +2,7 @@ import Handlebars from "handlebars";
 import { parse } from "smol-toml";
 import { readdir } from "fs/promises";
 import { join } from "path";
-import type { Section, ItemConfig, ResolvedStyle } from "./types";
+import type { Section, ItemConfig, ResolvedStyle, CdnConfig } from "./types";
 import { createTranslator, DEFAULT_LOCALE } from "./i18n";
 import type { Catalogs, Translator } from "./i18n";
 
@@ -26,6 +26,12 @@ export interface ThemeDefaults {
   background_color_light?: string;
 }
 
+interface ThemeAssets {
+  css?: string[];
+  js?: string[];
+  head_js?: string[];
+}
+
 interface ThemeConfig {
   name: string;
   defaults: ThemeDefaults;
@@ -37,6 +43,7 @@ interface ThemeConfig {
     body_class?: string;
     container_class?: string;
   };
+  assets?: ThemeAssets;
 }
 
 interface CompiledTheme {
@@ -427,6 +434,7 @@ async function loadTheme(
     Record<string, string> | undefined
   >;
   const rawOptions = (raw.options || {}) as Record<string, unknown>;
+  const rawAssets = (raw.assets || {}) as Record<string, unknown>;
 
   const darkVal =
     rawDefaults.dark === "auto"
@@ -458,6 +466,14 @@ async function loadTheme(
               (rawOptions.container_class as string) || undefined,
           }
         : undefined,
+    assets:
+      rawAssets.css || rawAssets.js || rawAssets.head_js
+        ? {
+            css: (rawAssets.css as string[]) || undefined,
+            js: (rawAssets.js as string[]) || undefined,
+            head_js: (rawAssets.head_js as string[]) || undefined,
+          }
+        : undefined,
   };
 
   const page = await compileFile(join(dir, "page.html"));
@@ -481,16 +497,7 @@ async function loadTheme(
     if (tmpl) items[type] = tmpl;
   }
 
-  // Load vendor CSS files (vendor-*.css) first, then style.css
   let css = "";
-  const dirEntries = await readdir(dir);
-  const vendorFiles = dirEntries
-    .filter((f) => f.startsWith("vendor-") && f.endsWith(".css"))
-    .sort();
-  for (const vf of vendorFiles) {
-    css += await Bun.file(join(dir, vf)).text();
-    css += "\n";
-  }
   const cssFile = Bun.file(join(dir, "style.css"));
   if (await cssFile.exists()) css += await cssFile.text();
 
@@ -674,6 +681,7 @@ export function renderPage(
       bodyClass: theme.config.options?.body_class,
       containerClass: theme.config.options?.container_class,
       locale: style.locale,
+      themeAssetConfig: theme.config.assets,
     },
     body,
   );
@@ -729,6 +737,7 @@ export function renderLogin(
       bodyClass: theme.config.options?.body_class,
       containerClass: theme.config.options?.container_class,
       locale: style.locale,
+      themeAssetConfig: theme.config.assets,
     },
     body,
   );
@@ -843,6 +852,71 @@ function buildItemContext(
   };
 }
 
+/* ==================== CDN Helpers ==================== */
+
+const HLJS_VERSION = "11.11.1";
+
+function hljsScriptUrl(provider: CdnConfig["js"]): string {
+  switch (provider) {
+    case "jsdelivr":
+      return `https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@${HLJS_VERSION}/build/highlight.min.js`;
+    case "unpkg":
+      return `https://unpkg.com/@highlightjs/cdn-assets@${HLJS_VERSION}/highlight.min.js`;
+    case "cdnjs":
+    default:
+      return `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/${HLJS_VERSION}/highlight.min.js`;
+  }
+}
+
+function hljsStyleUrl(provider: CdnConfig["js"], theme: string): string {
+  switch (provider) {
+    case "jsdelivr":
+      return `https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@${HLJS_VERSION}/build/styles/${theme}.min.css`;
+    case "unpkg":
+      return `https://unpkg.com/@highlightjs/cdn-assets@${HLJS_VERSION}/styles/${theme}.min.css`;
+    case "cdnjs":
+    default:
+      return `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/${HLJS_VERSION}/styles/${theme}.min.css`;
+  }
+}
+
+function fontLinks(
+  provider: CdnConfig["fonts"],
+  font: string,
+  weights: number[],
+): string {
+  if (provider === "none" || font === "system-ui") return "";
+  const weightsStr = weights.join(";");
+  const family = encodeURIComponent(font);
+  if (provider === "bunny") {
+    return `<link rel="preconnect" href="https://fonts.bunny.net"><link href="https://fonts.bunny.net/css2?family=${family}:wght@${weightsStr}&display=swap" rel="stylesheet">`;
+  }
+  // Default: google
+  return `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=${family}:wght@${weightsStr}&display=swap" rel="stylesheet">`;
+}
+
+function themeAssetTags(
+  assets: ThemeAssets | undefined,
+  themeAssetsBase: string,
+  position: "head" | "body",
+): string {
+  if (!assets) return "";
+  const tags: string[] = [];
+  if (position === "head") {
+    for (const css of assets.css || []) {
+      tags.push(`<link rel="stylesheet" href="${themeAssetsBase}/${css}">`);
+    }
+    for (const js of assets.head_js || []) {
+      tags.push(`<script src="${themeAssetsBase}/${js}"></script>`);
+    }
+  } else {
+    for (const js of assets.js || []) {
+      tags.push(`<script src="${themeAssetsBase}/${js}"></script>`);
+    }
+  }
+  return tags.join("\n  ");
+}
+
 /* ==================== Layout Shell ==================== */
 
 interface ShellOpts {
@@ -856,6 +930,7 @@ interface ShellOpts {
   bodyClass?: string;
   containerClass?: string;
   locale?: string;
+  themeAssetConfig?: ThemeAssets;
 }
 
 function layoutShell(opts: ShellOpts, body: string): string {
@@ -897,13 +972,14 @@ function layoutShell(opts: ShellOpts, body: string): string {
   const bodyClass = `${textClass} ${themeBodyClass}`.trim();
 
   // Highlight.js theme
+  const cdn = style.cdn;
   let highlightLink = "";
   if (hasCode) {
     if (isAuto) {
-      highlightLink = `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css" media="(prefers-color-scheme: light)"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css" media="(prefers-color-scheme: dark)">`;
+      highlightLink = `<link rel="stylesheet" href="${hljsStyleUrl(cdn.js, cdn.hljs_theme)}" media="(prefers-color-scheme: light)"><link rel="stylesheet" href="${hljsStyleUrl(cdn.js, cdn.hljs_theme_dark)}" media="(prefers-color-scheme: dark)">`;
     } else {
-      const highlightTheme = dark ? "github-dark" : "github";
-      highlightLink = `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/${highlightTheme}.min.css">`;
+      const highlightTheme = dark ? cdn.hljs_theme_dark : cdn.hljs_theme;
+      highlightLink = `<link rel="stylesheet" href="${hljsStyleUrl(cdn.js, highlightTheme)}">`;
     }
   }
 
@@ -930,8 +1006,9 @@ function layoutShell(opts: ShellOpts, body: string): string {
   <title>${e(title)}</title>
   <link rel="stylesheet" href="${themeAssets}/tailwind.css">
   ${autoDarkScript}
-  ${font !== "system-ui" ? `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=${encodeURIComponent(font)}:wght@300;400;500;600;700&display=swap" rel="stylesheet">` : ""}
+  ${fontLinks(cdn.fonts, font, cdn.font_weights)}
   ${highlightLink}
+  ${themeAssetTags(opts.themeAssetConfig, themeAssets, "head")}
   <style>
     :root { ${colorCssVars(color)} }
     * { font-family: '${font}', system-ui, sans-serif; }
@@ -955,7 +1032,8 @@ function layoutShell(opts: ShellOpts, body: string): string {
     ${opts.containerClass ? body : `<div class="w-full max-w-xl">${body}</div>`}
   </div>
   ${extraStyles ? `<style>${extraStyles}</style>` : ""}
-  ${hasCode ? `<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script><script>hljs.highlightAll();</script>` : ""}
+  ${hasCode ? `<script src="${hljsScriptUrl(cdn.js)}"></script><script>hljs.highlightAll();</script>` : ""}
+  ${themeAssetTags(opts.themeAssetConfig, themeAssets, "body")}
   ${
     hasEmbed
       ? `<script>
@@ -1000,6 +1078,13 @@ function fallback404(catalogs?: Catalogs, locale?: string): string {
     background_color: "#0f172a",
     accent_color: "#6366f1",
     locale: locale || DEFAULT_LOCALE,
+    cdn: {
+      js: "cdnjs",
+      fonts: "google",
+      font_weights: [300, 400, 500, 600, 700],
+      hljs_theme: "github",
+      hljs_theme_dark: "github-dark",
+    },
   };
   return layoutShell(
     {
