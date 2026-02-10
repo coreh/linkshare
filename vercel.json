@@ -1,3 +1,8 @@
 {
-  "bunVersion": "1.x"
+  "bunVersion": "1.x",
+  "functions": {
+    "src/index.ts": {
+      "includeFiles": "{content,themes,locales}/**/*"
+    }
+  }
 }
