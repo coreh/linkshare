@@ -11,6 +11,10 @@ import type {
 import type { ThemeDefaults } from "./theme-engine";
 import { COLOR_500 } from "./theme-engine";
 
+function stripNumericPrefix(name: string): string {
+  return name.replace(/^\d+-/, "");
+}
+
 export async function scanContent(
   contentDir: string,
   getDefaults: (themeName: string) => ThemeDefaults,
@@ -62,6 +66,7 @@ async function scanDirectory(
     parent,
     style,
     protected: isProtected,
+    hidden: !!config.hidden,
   };
 
   sections.set(urlPath, section);
@@ -73,13 +78,14 @@ async function scanDirectory(
       .sort((a, b) => a.name.localeCompare(b.name));
 
     for (const entry of sorted) {
-      if (entry.name === "assets" && urlPath === "/") {
+      if (stripNumericPrefix(entry.name) === "assets" && urlPath === "/") {
         console.warn(
           `Warning: content directory "/assets" conflicts with theme asset route /assets/*. It will be shadowed.`,
         );
       }
+      const childSlug = stripNumericPrefix(entry.name);
       const childPath =
-        urlPath === "/" ? `/${entry.name}` : `${urlPath}/${entry.name}`;
+        urlPath === "/" ? `/${childSlug}` : `${urlPath}/${childSlug}`;
       const childDir = join(dir, entry.name);
 
       const childConfig = Bun.file(join(childDir, "config.toml"));

@@ -1,5 +1,5 @@
-<a href="{{url}}" target="_blank" rel="noopener noreferrer"
-   class="group block border-2 rounded-3xl p-4 transition-all duration-300 ease-out scale-100 hover:scale-[1.05] hover:shadow-xl {{dc "hover:shadow-accent-500/20" "hover:shadow-accent-300/40"}} {{card}}">
+<a href="{{url}}"{{{target_attr}}}{{{rel_attr}}}
+   class="group block border-2 rounded-3xl p-4 transition-all duration-300 ease-out scale-100 hover:scale-[1.05] hover:shadow-xl {{dc "hover:shadow-accent-500/20" "hover:shadow-accent-300/40"}} {{card}} {{class}}">
   <div class="flex items-center gap-3">
     {{#if icon}}
     <img src="{{icon}}" alt="" class="w-10 h-10 rounded-2xl object-cover shrink-0">

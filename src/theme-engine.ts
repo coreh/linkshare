@@ -66,6 +66,14 @@ function e(str: string): string {
     .replace(/'/g, "&#039;");
 }
 
+function isExternalUrl(url: string): boolean {
+  return (
+    url.startsWith("http://") ||
+    url.startsWith("https://") ||
+    url.startsWith("//")
+  );
+}
+
 function resolveUrl(asset: string, sectionPath: string): string {
   if (asset.startsWith("http://") || asset.startsWith("https://")) return asset;
   const base = sectionPath === "/" ? "" : sectionPath;
@@ -609,8 +617,9 @@ export function renderPage(
   const autoFlag = isAuto ? { auto_dark: true } : {};
   const theme_assets = `/assets/${style.theme}`;
 
-  // Pre-render child section cards
-  const childrenHtml = children
+  // Pre-render child section cards (filter out hidden sections)
+  const visibleChildren = children.filter((child) => !child.hidden);
+  const childrenHtml = visibleChildren
     .map((child) =>
       theme.section({
         title: child.config.title,
@@ -832,6 +841,7 @@ function buildItemContext(
   const path = section.path;
   const rawUrl = item.url || "#";
   const url = type === "embed" ? transformEmbedUrl(rawUrl) : rawUrl;
+  const external = isExternalUrl(rawUrl);
   return {
     title: item.title,
     description: item.description || "",
@@ -846,6 +856,10 @@ function buildItemContext(
     dark: section.style.dark === "auto" ? false : section.style.dark,
     auto_dark: section.style.dark === "auto" ? true : false,
     type,
+    external,
+    target_attr: external ? ' target="_blank"' : "",
+    rel_attr: external ? ' rel="noopener noreferrer"' : "",
+    class: item.class || "",
     theme_assets,
     __t,
     ...vars,

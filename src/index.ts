@@ -113,14 +113,27 @@ async function handleGet(urlPath: string, cookieValue: string | undefined) {
   }
 
   // Serve static file from content directory
-  const filePath = join(CONTENT_DIR, urlPath);
+  let filePath = join(CONTENT_DIR, urlPath);
 
   // Prevent path traversal
   if (!resolve(filePath).startsWith(CONTENT_DIR)) {
     return htmlResponse(render404(catalogs), 404);
   }
 
-  const file = Bun.file(filePath);
+  let file = Bun.file(filePath);
+  if (!(await file.exists())) {
+    // URL path may differ from disk path due to numeric prefix stripping
+    const owning = findOwningSection(sections, urlPath);
+    if (owning) {
+      const relativeTail = urlPath.slice(owning.path.length);
+      filePath = join(owning.dirPath, relativeTail);
+      if (!resolve(filePath).startsWith(CONTENT_DIR)) {
+        return htmlResponse(render404(catalogs), 404);
+      }
+      file = Bun.file(filePath);
+    }
+  }
+
   if (await file.exists()) {
     const owningSection = findOwningSection(sections, urlPath);
     if (owningSection && !isAuthorized(owningSection, authedPaths)) {

@@ -17,6 +17,7 @@ export interface ItemConfig {
   filename?: string;
   language?: string;
   height?: number;
+  class?: string;
 }
 
 export interface CdnConfig {
@@ -41,6 +42,7 @@ export interface SectionConfig {
   accent_color?: string;
   locale?: string;
   inherit?: boolean;
+  hidden?: boolean;
   cdn?: Partial<CdnConfig>;
   items?: ItemConfig[];
 }
@@ -69,6 +71,7 @@ export interface Section {
   parent: Section | null;
   style: ResolvedStyle;
   protected: boolean; // true if this section or any ancestor requires a password
+  hidden: boolean;
 }
 
 export interface ScanResult {
